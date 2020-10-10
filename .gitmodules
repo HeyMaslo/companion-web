@@ -1,0 +1,3 @@
+[submodule "dependencies/persona"]
+	path = dependencies/persona
+	url = git@github.com:HeyMaslo/maslo-persona.git
