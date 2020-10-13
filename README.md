@@ -3,7 +3,7 @@
 Get the Persona
 
 ```bash
-cd deoendencies && git clone git@github.com:HeyMaslo/maslo-persona.git persona && cd ..
+cd dependencies && git clone git@github.com:HeyMaslo/maslo-persona.git persona && cd ..
 ```
 
 Install dependencies
