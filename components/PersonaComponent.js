@@ -19,14 +19,13 @@ export class PersonaComponent extends React.Component {
     }
 
     loadPersona() {
-        console.log(Colors);
         this.persona = new Persona({
             element: this.element.current,
-            size: 600,
+            size: 370,
             persona: {
                 ringRes: 100,
-                radius: 200,
-                colors: Colors
+                radius: 140,
+                colors: Colors,
             },
             analytics: {
                 appName: 'masloland',

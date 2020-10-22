@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="wave-1" width="1920px" height="371px" viewBox="0 0 1920 371" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>from_1 </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="90.5469853%" x2="50%" y2="24.5787128%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.15" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="1920" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="WAVES" transform="translate(0.000000, -37.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="bg" transform="translate(-3.000000, -2.000000)">
+                <g id="Cloud_1" transform="translate(3.000000, 0.000000)">
+                    <path d="M1920,408.651004 C643.117748,410.239444 3.11774828,410.239444 0,408.651004 L0,279.469546 C740.574468,345.677945 843.188992,-128.789792 1920,35.669798 C1920,44.1946085 1920,168.521677 1920,408.651004 Z" id="from_1-" transform="translate(960.000000, 205.325502) scale(1, -1) translate(-960.000000, -205.325502) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

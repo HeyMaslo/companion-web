@@ -1,0 +1,18 @@
+
+<svg width="768px" height="270px" viewBox="0 0 768 270" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="89.1572565%" x2="50%" y2="21.9809334%" id="waves-linearGradient-2">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="768" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="768---menu-copy" transform="translate(0.000000, -721.000000)" fill="url(#waves-linearGradient-2)" fill-rule="nonzero">
+            <g id="bg" transform="translate(-1.000000, 0.000000)">
+                <g id="Clouds" transform="translate(385.000000, 870.000000) rotate(-180.000000) translate(-385.000000, -870.000000) translate(0.000000, 716.000000)">
+                    <path d="M768.226952,303.03 L0.615474886,303.03 L0.353600869,107.351444 C74.548422,66.4856818 130.763888,37.9855663 169,21.8510977 C332.327261,-47.0680067 519.373575,66.3624219 768.226952,96.6194559 C769.257683,101.41654 769.257683,170.220055 768.226952,303.03 Z" id="Shape-2" transform="translate(384.676800, 151.515000) scale(1, -1) translate(-384.676800, -151.515000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+
+<svg id="wave-2" width="1920px" height="387px" viewBox="0 0 1920 387" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="90.5469853%" x2="50%" y2="24.5787128%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.15" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="1920" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="WAVES" transform="translate(0.000000, -39.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="bg" transform="translate(0.000000, -2.000000)">
+                <g id="Cloud_2">
+                    <path d="M1920,425.977003 C643.117748,427.565442 3.11774828,427.565442 -2.84217094e-14,425.977003 L-4.54747351e-13,286.99596 C730.197368,344.977003 1195.61921,-102.022997 1920,22.9770026 C1920,31.5018132 1920,165.835146 1920,425.977003 Z" id="from_1-" transform="translate(960.000000, 213.988501) scale(1, -1) translate(-960.000000, -213.988501) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

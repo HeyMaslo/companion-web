@@ -1,0 +1,22 @@
+
+<svg width="768px" height="249px" viewBox="0 0 768 249" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="90.5469853%" x2="50%" y2="24.5787128%" id="waves-linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.15" offset="100%"></stop>
+        </linearGradient>
+        <path d="M768.226952,307.512465 L1.68403639,307.512465 L0.974335439,178.580503 C225.742085,49.0218441 481.492957,6.11682642 768.226952,49.8654497 C769.257683,54.6763271 769.257683,140.558666 768.226952,307.512465 Z" id="path-2"></path>
+    </defs>
+    <g id="768" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="768---menu-copy" transform="translate(0.000000, -716.000000)">
+            <g id="bg" transform="translate(-1.000000, 0.000000)">
+                <g id="Clouds" transform="translate(385.000000, 870.000000) rotate(-180.000000) translate(-385.000000, -870.000000) translate(0.000000, 716.000000)">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Shape-1" fill="url(#waves-linearGradient-1)" fill-rule="nonzero" transform="translate(384.987168, 170.406233) scale(1, -1) translate(-384.987168, -170.406233) " xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

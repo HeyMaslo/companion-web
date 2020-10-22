@@ -20,7 +20,7 @@ module.exports = withSass({ dynamicAssetPrefix = false, ...nextConfig } = {
         });
 
         config.module.rules.push({
-            test: /\.(png|jpg|gif|webp|svg|ico)$/,
+            test: /\.(png|jpg|gif|webp|svg|ico|svgb)$/,
             exclude: config.exclude,
             use: [
                 {
