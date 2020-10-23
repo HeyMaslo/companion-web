@@ -1,0 +1,18 @@
+#message-box {
+    display: flex;
+    background-color: $message-box-bg-color;
+    max-width: 280px;
+    padding: 22px;
+    border-radius: $border-radius;
+    margin: 0;
+    min-height: 140px;
+    flex-direction: 'row';
+    align-items: center;
+    justify-content: center;
+    &.shadow {
+        box-shadow: $global-shadow;
+    }
+    p {
+        @include font-family(18px, $p1);
+    }
+}

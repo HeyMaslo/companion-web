@@ -1,0 +1,43 @@
+#chat {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    position: absolute;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    .wrapper {
+        max-width: $chat-max-width;
+        width: 100%;
+        margin-top: 70px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 70vh;
+        .chat-transcript {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 100%;
+            .user-column,
+            .bot-column {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                overflow-y: auto;
+                justify-content: flex-end;
+                padding: 20px;
+            }
+        }
+        .input-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            padding: 20px;
+            max-width: $chat-max-width;
+            margin-top: 100px;
+        }
+    }
+}

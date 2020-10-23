@@ -1,4 +1,9 @@
 @import './colors.scss';
+@import './fonts.scss';
+
+// global
+$chat-max-width: 1120px;
+$border-radius: 20px;
 
 html,
 body {
@@ -11,4 +16,7 @@ body {
   @import './components/waves/index.scss';
   @import './components/logo/index.scss';
   @import './components/background/index.scss';
+  @import './components/chat/index.scss';
+  @import './components/message-box/index.scss';
+  @import './components/chat-input/index.scss';
 }
