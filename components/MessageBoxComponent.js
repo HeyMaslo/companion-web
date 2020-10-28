@@ -12,7 +12,9 @@ export default class MessageBoxComponent extends React.Component {
     return (
       <div
         id={`message-box`}
-        className={`${this.props.withShadow ? 'shadow' : ''} ${this.props?.opacity}`}>
+        className={`${this.props.withShadow ? 'shadow' : ''} ${
+          this.props?.opacity
+        }`}>
         <p>{this.props.text}</p>
       </div>
     );

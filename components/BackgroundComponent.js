@@ -1,9 +1,7 @@
 import React from 'react';
 
 export const BackgroundComponent = () => {
-    return (
-        <div id="background" />
-    );
-}
+  return <div id="background" />;
+};
 
 export default BackgroundComponent;

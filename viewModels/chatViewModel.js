@@ -1,4 +1,4 @@
-import { autorun, observable } from 'mobx';
+import { observable } from 'mobx';
 import { getCharacters, getNext, getSuggestion } from '../api/storyMapr';
 import {
   MASLO_BOT_NAME,
@@ -8,29 +8,37 @@ import {
 
 // TODO logger
 
+const GPT3_MAX = 3;
+
 export class ChatViewModel {
-  @observable masloBotName = MASLO_BOT_NAME;
-  @observable userCharacterName = USER_CHARACTER_NAME;
-  @observable currentNodeId = INITIAL_NODE_ID;
+
+  masloBotName = MASLO_BOT_NAME;
+  userCharacterName = USER_CHARACTER_NAME;
+  currentNodeId = INITIAL_NODE_ID;
+  wordMappings = import('../wordMaps.json');
+
   @observable masloBotCharacter = null;
   @observable userCharacter = null;
   @observable chatCount = 0;
   @observable context = {};
   @observable gpt3Mode = false;
   @observable gpt3Counter = 0;
-  @observable gpt3Max = 3;
+  @observable gpt3Max = 0;
   @observable gpt3Cache = [];
   @observable chatStates = {
     typing: true,
     botMessages: [],
     userMessages: [],
   };
-
-  @observable wordMappings = import('../wordMaps.json');
+  @observable chatCount = 0;
+  @observable renderButtons = false;
+  @observable buttons = [];
 
   constructor() {}
 
-  // initialize chat
+  /**
+   * chat entrypoint
+   */
   async start() {
     try {
       const chars = await getCharacters();
@@ -47,15 +55,21 @@ export class ChatViewModel {
         this.userCharacter.properties[key] = parseInt(value);
       });
 
+      this.gpt3Mode = true;
       await this._chatLoop();
     } catch (e) {
-      console.log(`error -- Could not start Chat due to: ${e}`);
+      console.log(`error -- could not start Chat due to: ${e}`);
     }
   }
 
-  // get users input
+  /**
+   * process user's input
+   * @param {string} message
+   */
   async userInput(message) {
     this.gpt3Mode = true;
+    this.gpt3Max = GPT3_MAX;
+
     this._scoreUserInput(message);
 
     const user_node = {
@@ -73,7 +87,11 @@ export class ChatViewModel {
   }
 
   /**
-   * private
+   * Private mathods
+   */
+
+  /**
+   * updating the chat context
    */
   _updateContext() {
     Object.keys(this.userCharacter.properties).forEach((key) => {
@@ -82,27 +100,28 @@ export class ChatViewModel {
     });
   }
 
-  // exec this to get bot response
+  /**
+   * responsible to interact with Story Mapr and control the chat flow
+   */
   async _chatLoop() {
+    this.chatCount += 1;
     let pauseLoop = false;
     this.chatStates.typing = true;
     this._updateContext();
 
-    // gpt3 chat
-    if (this.gpt3Mode == true && (this.gpt3Counter < this.gpt3Max)) {
+    // gpt3 chat (free talk with maslo)
+    if (this.gpt3Mode == true && this.gpt3Counter < this.gpt3Max) {
       return await this._gpt3_chat();
     }
 
-    this.gpt3Mode = false;
     this.gpt3Counter = 0;
 
     const nextNodes = await getNext(this.currentNodeId, this.context);
-
-    console.log('nextNodes', nextNode);
-
     const nextNode = nextNodes[Math.floor(Math.random() * nextNodes.length)];
 
     const mySpeaker = nextNode.speaker_ids[0];
+
+    // verify if maslo is talking
     if (mySpeaker === this.masloBotCharacter.smid) {
       if (nextNode.actions.length > 0) {
         nextNode.actions.forEach((action) =>
@@ -112,22 +131,28 @@ export class ChatViewModel {
 
       this.currentNodeId = nextNode.smid;
 
-      // bot response
+      // maslo response
       this._pushBotMessage(nextNode.content.en);
 
       this.chatStates.typing = false;
-      pauseLoop = true;
 
-      if (this.gpt3Mode === true) {
-        console.log('passei aqui');
-        // TODO
+      // first interaction
+      // pausing loop to wait for user answer
+      // here we assign gpt3 to false because after user input it is turned to true
+      if (this.gpt3Mode === true && this.chatCount === 1) {
+        pauseLoop = true;
+        this.gpt3Mode = false;
       }
     } else {
+      // rendering buttons
       const reactions = nextNodes.map((node) => {
         if (node.speaker_ids[0] != this.masloBotCharacter.smid) {
           return { text: node.content.en, value: node.smid };
         }
       });
+
+      this.renderButtons = true;
+      this.buttons = reactions;
 
       pauseLoop = true;
       this.chatStates.typing = false;
@@ -135,13 +160,18 @@ export class ChatViewModel {
 
     if (!pauseLoop) {
       this.chatStates.typing = true;
+      this.gpt3Mode = false;
+
+      // adding some delay to give the 'typing' experience
       setTimeout(async () => {
         await this._chatLoop();
       }, 3000);
     }
   }
 
-  // exec this to get bot response with gpt3
+  /**
+   * talk with Maslo with gpt3
+   */
   async _gpt3_chat() {
     this.chatStates.typing = true;
 
@@ -162,12 +192,15 @@ export class ChatViewModel {
     this.chatStates.typing = false;
   }
 
+  /**
+   * interact with the orb
+   * @param {string} func_string
+   */
   _execExternalFunc(func_string) {
     const [actor, method, args] = func_string
       .split(',')
       .map((actionItem) => actionItem.trim());
 
-    // NK **** This should be a switch, but JS switches suck
     if (actor == 'persona') {
       try {
         this.masloPersona._persona[method](args);
@@ -176,7 +209,6 @@ export class ChatViewModel {
       }
     }
 
-    // NK *** we probably want some protection here...maybe wrap in object
     if (actor == 'bot') {
       try {
         this[method](args);
@@ -186,47 +218,58 @@ export class ChatViewModel {
     }
   }
 
+  /**
+   * scores user's input
+   * @param {string} input
+   */
   _scoreUserInput(input) {
-    Object.keys(this.wordMappings).forEach(key => {
+    Object.keys(this.wordMappings).forEach((key) => {
       if (this.userCharacter.properties[key] === undefined) {
-        console.log(`Skipping ${key} since not in Storymapr character!`)
+        console.log(`skipping ${key} since not in Storymapr character!`);
         return;
       }
-      this.wordMappings[key].forEach(keyword => {
-        const matcher = new RegExp(keyword)
+      this.wordMappings[key].forEach((keyword) => {
+        const matcher = new RegExp(keyword);
         if (matcher.test(input)) {
-          console.log("Found!", matcher)
-          this.userCharacter.properties[key] += 1
+          this.userCharacter.properties[key] += 1;
         }
-      })
-    })
+      });
+    });
   }
 
+  /**
+   * push a new answer from user with a new css class to define the box opacity
+   * @param {string} message
+   */
   _pushUserMessage(message) {
     this.chatStates.userMessages.push({
       message: message,
       opacity: '',
     });
-    this.chatStates.userMessages.forEach((data, i) => {
-      this.chatStates.userMessages[i].opacity = `opacity_${(this.chatStates.userMessages.length - 1) - i}`;
-    }); 
+    this.chatStates.userMessages.forEach((_, i) => {
+      this.chatStates.userMessages[i].opacity = `opacity_${
+        this.chatStates.userMessages.length - 1 - i
+      }`;
+    });
   }
 
+  /**
+   * push a new answer from bot with a new css class to define the box opacity
+   * @param {string} message
+   */
   _pushBotMessage(message) {
     this.chatStates.botMessages.push({
       message: message,
       opacity: '',
     });
-    this.chatStates.botMessages.forEach((data, i) => {
-      this.chatStates.botMessages[i].opacity = `opacity_${(this.chatStates.botMessages.length - 1) - i}`;
-    }); 
+    this.chatStates.botMessages.forEach((_, i) => {
+      this.chatStates.botMessages[i].opacity = `opacity_${
+        this.chatStates.botMessages.length - 1 - i
+      }`;
+    });
   }
 }
 
 const instance = new ChatViewModel();
-
-autorun(() => {
-  console.log('chatStates', instance.chatStates.botMessages);
-});
 
 export default instance;

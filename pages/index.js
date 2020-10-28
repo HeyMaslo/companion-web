@@ -3,7 +3,7 @@ import React from 'react';
 import BackgroundComponent from '../components/BackgroundComponent';
 import ChatComponent from '../components/ChatComponent';
 import LogoComponent from '../components/LogoComponent';
-import { PersonaComponent } from '../components/PersonaComponent'
+import { PersonaComponent } from '../components/PersonaComponent';
 import WavesComponent from '../components/WavesComponent';
 import ChatViewModel from '../viewModels/ChatViewModel';
 
@@ -12,8 +12,8 @@ export class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayChat: false
-    }
+      displayChat: false,
+    };
 
     this.chatViewModel = ChatViewModel;
   }
@@ -21,7 +21,7 @@ export class Home extends React.Component {
   initialized = async () => {
     this.setState({ displayChat: true });
     await this.chatViewModel.start();
-  }
+  };
 
   render() {
     return (
@@ -32,9 +32,8 @@ export class Home extends React.Component {
         <WavesComponent />
         <ChatComponent />
       </div>
-    )
+    );
   }
 }
 
 export default Home;
-
