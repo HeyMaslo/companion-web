@@ -1,11 +1,20 @@
+import { observer } from 'mobx-react';
 import React from 'react';
+import TypingLoadingComponent from './TypingLoadingComponent';
 
-export const MessageBoxComponent = ({ opacity, text, withShadow = false }) => {
+@observer
+export default class MessageBoxComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
     return (
-        <div id={`message-box`} className={`${withShadow ? 'shadow' : ''}`}>
-            <p>{text}</p>
-        </div>
+      <div
+        id={`message-box`}
+        className={`${this.props.withShadow ? 'shadow' : ''} ${this.props?.opacity}`}>
+        <p>{this.props.text}</p>
+      </div>
     );
+  }
 }
-
-export default MessageBoxComponent;

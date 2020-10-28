@@ -6,11 +6,27 @@
     border-radius: $border-radius;
     margin: 0;
     min-height: 140px;
-    flex-direction: 'row';
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
     &.shadow {
         box-shadow: $global-shadow;
+    }
+    &.opacity_0 {
+        opacity: 1;
+    }
+    &.opacity_1 {
+        opacity: 0.45;
+    }
+    &.opacity_2 {
+        opacity: 0.15;
+    }
+    &.opacity_3 {
+        opacity: 0.05;
+    }
+    &.opacity_4 {
+        opacity: 0;
     }
     p {
         @include font-family(18px, $p1);

@@ -10,6 +10,9 @@
     box-shadow: $global-shadow;
     border-radius: $border-radius;
     padding: 5px 20px;
+    &.disabled {
+        opacity: 0.45;
+    }
     .text-field-container {
         display: flex;
         flex-direction: row;

@@ -1,7 +1,9 @@
+import { observer } from 'mobx-react';
 import React from 'react';
 import { Persona } from '../dependencies/persona/web';
 import { Colors } from '../pages/api/config/persona';
 
+@observer
 export class PersonaComponent extends React.Component {
     constructor(props) {
         super(props);

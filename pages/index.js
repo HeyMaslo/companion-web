@@ -1,32 +1,39 @@
-import React, { useState } from 'react';
+import { observer } from 'mobx-react';
+import React from 'react';
 import BackgroundComponent from '../components/BackgroundComponent';
 import ChatComponent from '../components/ChatComponent';
 import LogoComponent from '../components/LogoComponent';
 import { PersonaComponent } from '../components/PersonaComponent'
 import WavesComponent from '../components/WavesComponent';
-import ChatViewModel from '../viewModels/chatViewModel';
+import ChatViewModel from '../viewModels/ChatViewModel';
 
-export const Home = () => {
-  const [displayChat, setDisplayChat] = useState(false);
+@observer
+export class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayChat: false
+    }
 
-  const chatViewModel = new ChatViewModel();
-
-  const initialized = async () => {
-    setDisplayChat(true);
-    await chatViewModel.start();
+    this.chatViewModel = ChatViewModel;
   }
 
-  return (
-    <div>
-      <BackgroundComponent />
-      <LogoComponent />
-      <PersonaComponent initialized={initialized} />
-      <WavesComponent />
-      {displayChat && (
+  initialized = async () => {
+    this.setState({ displayChat: true });
+    await this.chatViewModel.start();
+  }
+
+  render() {
+    return (
+      <div>
+        <BackgroundComponent />
+        <LogoComponent />
+        <PersonaComponent initialized={this.initialized} />
+        <WavesComponent />
         <ChatComponent />
-      )}
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 export default Home;
