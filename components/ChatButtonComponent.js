@@ -8,7 +8,7 @@ export default class ChatButtonComponent extends React.Component {
     return (
       <Button
         id="chat-button"
-        onClick={() => this.props.submit(this.props.value)}>
+        onClick={() => this.props.submit(this.props.value, this.props.text)}>
         {this.props.text}
       </Button>
     );

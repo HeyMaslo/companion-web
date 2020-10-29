@@ -5,10 +5,9 @@ import {
   USER_CHARACTER_NAME,
   INITIAL_NODE_ID,
 } from '../consts';
+import personaViewModel from './PersonaViewModel';
 
 // TODO logger
-
-const GPT3_MAX = 3;
 
 export class ChatViewModel {
 
@@ -16,6 +15,8 @@ export class ChatViewModel {
   userCharacterName = USER_CHARACTER_NAME;
   currentNodeId = INITIAL_NODE_ID;
   wordMappings = import('../wordMaps.json');
+
+  @observable persona = personaViewModel.persona;
 
   @observable masloBotCharacter = null;
   @observable userCharacter = null;
@@ -33,6 +34,7 @@ export class ChatViewModel {
   @observable chatCount = 0;
   @observable renderButtons = false;
   @observable buttons = [];
+  @observable pauseLoop = false;
 
   constructor() {}
 
@@ -58,8 +60,18 @@ export class ChatViewModel {
       this.gpt3Mode = true;
       await this._chatLoop();
     } catch (e) {
-      console.log(`error -- could not start Chat due to: ${e}`);
+      console.log(`error -- could not start chat due to: ${e}`);
     }
+  }
+
+  /**
+   * process the user's choice
+   * @param {string} value 
+   */
+  async userReactionButtons(value, message) {
+    this.currentNodeId = value;
+    this._pushUserMessage(message);
+    await this._chatLoop();
   }
 
   /**
@@ -67,8 +79,6 @@ export class ChatViewModel {
    * @param {string} message
    */
   async userInput(message) {
-    this.gpt3Mode = true;
-    this.gpt3Max = GPT3_MAX;
 
     this._scoreUserInput(message);
 
@@ -104,8 +114,13 @@ export class ChatViewModel {
    * responsible to interact with Story Mapr and control the chat flow
    */
   async _chatLoop() {
+
+    this.renderButtons = false;
+    this.buttons = [];
+
     this.chatCount += 1;
-    let pauseLoop = false;
+    this.pauseLoop = false;
+
     this.chatStates.typing = true;
     this._updateContext();
 
@@ -114,6 +129,7 @@ export class ChatViewModel {
       return await this._gpt3_chat();
     }
 
+    this.gpt3Mode = false;
     this.gpt3Counter = 0;
 
     const nextNodes = await getNext(this.currentNodeId, this.context);
@@ -123,6 +139,7 @@ export class ChatViewModel {
 
     // verify if maslo is talking
     if (mySpeaker === this.masloBotCharacter.smid) {
+
       if (nextNode.actions.length > 0) {
         nextNode.actions.forEach((action) =>
           this._execExternalFunc(action.body)
@@ -135,15 +152,10 @@ export class ChatViewModel {
       this._pushBotMessage(nextNode.content.en);
 
       this.chatStates.typing = false;
+    }
 
-      // first interaction
-      // pausing loop to wait for user answer
-      // here we assign gpt3 to false because after user input it is turned to true
-      if (this.gpt3Mode === true && this.chatCount === 1) {
-        pauseLoop = true;
-        this.gpt3Mode = false;
-      }
-    } else {
+    // verify if needs some user interaction
+    if (mySpeaker === this.userCharacter.smid) {
       // rendering buttons
       const reactions = nextNodes.map((node) => {
         if (node.speaker_ids[0] != this.masloBotCharacter.smid) {
@@ -154,11 +166,11 @@ export class ChatViewModel {
       this.renderButtons = true;
       this.buttons = reactions;
 
-      pauseLoop = true;
+      this.pauseLoop = true;
       this.chatStates.typing = false;
     }
 
-    if (!pauseLoop) {
+    if (!this.pauseLoop) {
       this.chatStates.typing = true;
       this.gpt3Mode = false;
 
@@ -201,21 +213,27 @@ export class ChatViewModel {
       .split(',')
       .map((actionItem) => actionItem.trim());
 
-    if (actor == 'persona') {
+    if (actor === 'persona') {
       try {
-        this.masloPersona._persona[method](args);
+        this.persona._persona[method](args);
       } catch (e) {
         console.log(`error -- could not exec ${method} on persona: ${e}`);
       }
     }
 
-    if (actor == 'bot') {
+    if (actor === 'bot') {
       try {
         this[method](args);
       } catch (e) {
         console.log(`error -- Cerror -- could not exec ${method} on bot: ${e}`);
       }
     }
+  }
+
+  startGpt3(maxCount) {
+    this.gpt3Mode = true;
+    this.gpt3Max = maxCount;
+    this.pauseLoop = true;
   }
 
   /**

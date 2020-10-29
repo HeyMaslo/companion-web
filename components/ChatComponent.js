@@ -21,8 +21,8 @@ export default class ChatComponent extends React.Component {
     await this.model.userInput(text);
   }
 
-  async submitActionButtons(value) {
-    console.log(value);
+  async submitActionButtons(value, text) {
+    await this.model.userReactionButtons(value, text);
   }
 
   render() {

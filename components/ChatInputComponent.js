@@ -49,9 +49,6 @@ export default class ChatInputComponent extends React.Component {
             </FormControl>
           </div>
           <div className="btn-container">
-            <Button className="edit" disabled={this.props?.disabled}>
-              <img src={EditIcon} />
-            </Button>
             {!this.props?.disabled && (
               <Button className="done" onClick={this.submit}>
                 Done

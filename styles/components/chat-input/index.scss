@@ -32,7 +32,7 @@
         .btn-container {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-end;
             .done {
                 background-color: $message-input-done-bg-color;
                 max-width: 56px;
@@ -44,15 +44,6 @@
                 span {
                     @include font-family(12px, $message-input-done-text-color);
                 }
-            }
-            .edit {
-                min-width: 16px;
-                max-width: 16px;
-                width: 16px;
-                padding: 0;
-                flex-direction: row;
-                align-self: flex-end;
-                margin-top: 5px;
             }
         }
         

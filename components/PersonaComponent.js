@@ -2,13 +2,15 @@ import { observer } from 'mobx-react';
 import React from 'react';
 import { Persona } from '../dependencies/persona/web';
 import { Colors } from '../pages/api/config/persona';
+import PersonaViewModel from '../viewModels/PersonaViewModel';
 
 @observer
 export class PersonaComponent extends React.Component {
   constructor(props) {
     super(props);
     this.element = React.createRef();
-    this.persona = null;
+    this.persona = PersonaViewModel.persona;
+    this.model = PersonaViewModel;
     this.state = {
       personaPosition: '100vh',
     };
@@ -16,7 +18,7 @@ export class PersonaComponent extends React.Component {
 
   componentDidMount() {
     if (this.element) {
-      this.loadPersona();
+      this.loadPersona(this.element);
     } else {
       this.persona.dispose();
     }
@@ -28,7 +30,6 @@ export class PersonaComponent extends React.Component {
         );
         const newPosition = current - 1;
         this.setState({ personaPosition: `${newPosition}vh` });
-        this.persona.core.rotation = newPosition;
         if (current === 70) {
           clearInterval(interval);
           return this.props.initialized();
@@ -37,23 +38,8 @@ export class PersonaComponent extends React.Component {
     }, 3000);
   }
 
-  loadPersona() {
-    this.persona = new Persona({
-      element: this.element.current,
-      size: 370,
-      persona: {
-        ringRes: 100,
-        radius: 140,
-        colors: Colors,
-      },
-      analytics: {
-        appName: 'masloland',
-        dataSource: 'DemoUI',
-        ignoreMood: true,
-      },
-    });
-
-    this.persona.run();
+  loadPersona(element) {
+    this.model.run(element);
   }
 
   render() {
