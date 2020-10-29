@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "maslo-377f0"
+  },
+  "targets": {
+    "maslo-377f0": {
+      "hosting": {
+        "companion-web-stage": [
+          "companion-web-4a44a"
+        ]
+      }
+    }
+  }
+}

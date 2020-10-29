@@ -1,0 +1,15 @@
+{
+    "hosting": [
+        {
+            "target": "companion-web-stage",
+            "site": "companion-web-4a44a",
+            "public": "./out",
+            "rewrites": [
+                {
+                  "source": "**/**",
+                  "function": "nextjs-server"
+                }
+            ]
+        }
+    ]
+}

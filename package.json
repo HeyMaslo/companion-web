@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export",
+    "deploy:stage": "yarn build && yarn export && firebase deploy --only hosting:companion-web-stage"
   },
   "dependencies": {
     "@heymaslo/persona": "./dependencies/persona",
