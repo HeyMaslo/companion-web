@@ -1,5 +1,7 @@
 ## Getting Started
 
+Make sure you are running node v12.6!  Use nvm if you must.
+
 Get the Persona
 
 ```bash
