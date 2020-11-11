@@ -4,13 +4,14 @@ import {
   MASLO_BOT_NAME,
   USER_CHARACTER_NAME,
   INITIAL_NODE_ID,
+  CATEGORY_API_BASE
 } from '../consts';
 import personaViewModel from './PersonaViewModel';
 
 // TODO logger
 
 export class ChatViewModel {
-
+  
   masloBotName = MASLO_BOT_NAME;
   userCharacterName = USER_CHARACTER_NAME;
   currentNodeId = INITIAL_NODE_ID;
@@ -199,9 +200,34 @@ export class ChatViewModel {
 
     this.gpt3Counter += 1;
 
+    // NK **** This could eventually be stored in the gpt3Cache or context.  Calling direct animations here for now.
+    const anim = await this._getAnimFromContent(masloNode.en_content)
+    
+    console.log("anim determined for GPT3 -> ", anim)
+    this.persona._persona._persona.setState(anim)
+
     this._pushBotMessage(masloNode.en_content);
 
     this.chatStates.typing = false;
+  }
+
+  /**
+   * Fetch a anim given a string (usually a GPT3 response content)
+  */
+  async _getAnimFromContent(content) {
+    const encodedContent = encodeURIComponent(content)
+    // If the rejected items get long this will suck
+    let possible_anims = Object.keys(this.persona._persona._persona._states).filter(item => item != 'init')
+    const extras = {'happy': 'joy', 'nervous': 'shake', 'unknown': 'idle', 'neutral': 'idle', 'bored':'idle'}
+    Object.keys(extras).forEach(extra => possible_anims.push(extra))
+    const categoryUrl = CATEGORY_API_BASE + `/search?prompt=${encodedContent}&tokens=100&engine=davinci&docs=${possible_anims.join(',')}`
+    const response = await fetch(categoryUrl)
+    const data = await response.json()
+    const mapping = extras[data.response]
+    if (mapping) {return mapping} 
+      else 
+    {return data.response}
+    
   }
 
   /**
