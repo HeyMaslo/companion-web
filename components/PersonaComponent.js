@@ -9,8 +9,7 @@ export class PersonaComponent extends React.Component {
   constructor(props) {
     super(props);
     this.element = React.createRef();
-    this.persona = PersonaViewModel.persona;
-    this.model = PersonaViewModel;
+    this.persona = this.props.persona;
     this.state = {
       personaPosition: '100vh',
     };
@@ -39,7 +38,7 @@ export class PersonaComponent extends React.Component {
   }
 
   loadPersona(element) {
-    this.model.run(element);
+    this.persona.run(element);
   }
 
   render() {
