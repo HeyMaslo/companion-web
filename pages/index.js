@@ -6,6 +6,8 @@ import LogoComponent from '../components/LogoComponent';
 import { PersonaComponent } from '../components/PersonaComponent';
 import WavesComponent from '../components/WavesComponent';
 import ChatViewModel from '../viewModels/ChatViewModel';
+import PersonaViewModel from '../viewModels/PersonaViewModel';
+
 
 @observer
 export class Home extends React.Component {
@@ -15,7 +17,9 @@ export class Home extends React.Component {
       displayChat: false,
     };
 
+    this.persona = PersonaViewModel;
     this.chatViewModel = ChatViewModel;
+    this.chatViewModel.persona = this.persona;
   }
 
   initialized = async () => {
@@ -28,7 +32,7 @@ export class Home extends React.Component {
       <div>
         <BackgroundComponent />
         <LogoComponent />
-        <PersonaComponent initialized={this.initialized} />
+        <PersonaComponent initialized={this.initialized} persona={this.persona} />
         <WavesComponent />
         <ChatComponent />
       </div>

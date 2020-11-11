@@ -16,7 +16,7 @@ export class ChatViewModel {
   currentNodeId = INITIAL_NODE_ID;
   wordMappings = import('../wordMaps.json');
 
-  @observable persona = personaViewModel.persona;
+  @observable persona = null;
 
   @observable masloBotCharacter = null;
   @observable userCharacter = null;
@@ -215,7 +215,7 @@ export class ChatViewModel {
 
     if (actor === 'persona') {
       try {
-        this.persona._persona[method](args);
+        this.persona._persona._persona[method](args);
       } catch (e) {
         console.log(`error -- could not exec ${method} on persona: ${e}`);
       }
