@@ -13,6 +13,7 @@ export default class ChatInputComponent extends React.Component {
 
     // binds
     this.submit = this.submit.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   submit() {
@@ -20,6 +21,12 @@ export default class ChatInputComponent extends React.Component {
     if (text !== '') {
       this.setState({ text: '' });
       return this.props?.submit({ text });
+    }
+  }
+
+  handleKeyDown(e) {
+    if (e.keyCode == 13 && e.shiftKey) {
+      this.submit();
     }
   }
 
@@ -40,10 +47,10 @@ export default class ChatInputComponent extends React.Component {
                 onChange={(value) =>
                   this.setState({ text: value.target.value })
                 }
+                onKeyDown={this.handleKeyDown}
                 placeholder="Type here to talk with me..."
                 className="input"
                 multiline
-                rows={4}
                 InputProps={{ disableUnderline: true }}
               />
             </FormControl>
@@ -51,7 +58,7 @@ export default class ChatInputComponent extends React.Component {
           <div className="btn-container">
             {!this.props?.disabled && (
               <Button className="done" onClick={this.submit}>
-                Done
+                Send
               </Button>
             )}
           </div>

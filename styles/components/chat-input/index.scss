@@ -1,7 +1,7 @@
 #chat-input {
     background-color: $message-input-bg-color;
     max-width: 410px;
-    min-height: 125px;
+    // min-height: 125px;
     width: 100%;
     display: flex;
     align-self: flex-start;
@@ -55,4 +55,8 @@
             @include font-family(10px, $message-input-information-tip-color);
         }
     }
+}
+
+.MuiInputBase-multiline {
+    padding: 16px 0 0 !important;
 }
