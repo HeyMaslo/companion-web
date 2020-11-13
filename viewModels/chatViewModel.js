@@ -262,6 +262,10 @@ export class ChatViewModel {
     this.pauseLoop = true;
   }
 
+  showInfoModule(moduleName) {
+    alert(`I would show: ${moduleName}`)
+  }
+
   /**
    * scores user's input
    * @param {string} input
