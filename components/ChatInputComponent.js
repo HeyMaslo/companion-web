@@ -11,7 +11,7 @@ export default class ChatInputComponent extends React.Component {
       text: '',
     };
 
-    this.element = React.createRef();
+    this.textFieldRef = React.createRef();
 
     // binds
     this.submit = this.submit.bind(this);
@@ -35,7 +35,7 @@ export default class ChatInputComponent extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (!this.props?.disabled) { 
-      this.element.current.focus();
+      this.textFieldRef.current.focus();
     }
   }
 
@@ -61,7 +61,7 @@ export default class ChatInputComponent extends React.Component {
                 className="input"
                 multiline
                 InputProps={{ disableUnderline: true }}
-                inputRef={this.element}
+                inputRef={this.textFieldRef}
               />
             </FormControl>
           </div>
