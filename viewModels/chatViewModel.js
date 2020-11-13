@@ -7,6 +7,8 @@ import {
   CATEGORY_API_BASE
 } from '../consts';
 import personaViewModel from './PersonaViewModel';
+import qs from 'qs';
+
 
 // TODO logger
 
@@ -37,14 +39,21 @@ export class ChatViewModel {
   @observable buttons = [];
   @observable pauseLoop = false;
 
+  @observable dtreeId = process.env.DTR_ID
+
   constructor() {}
 
   /**
    * chat entrypoint
    */
   async start() {
+    const dtreeParam = qs.parse(window.location.search, {ignoreQueryPrefix: true})
+    if (dtreeParam.dtreeId) {
+      this.dtreeId = dtreeParam.dtreeId
+    } 
+
     try {
-      const chars = await getCharacters();
+      const chars = await getCharacters(this.dtreeId);
 
       this.masloBotCharacter = chars.find(
         (char) => char.name == this.masloBotName
@@ -133,7 +142,7 @@ export class ChatViewModel {
     this.gpt3Mode = false;
     this.gpt3Counter = 0;
 
-    const nextNodes = await getNext(this.currentNodeId, this.context);
+    const nextNodes = await getNext(this.dtreeId, this.currentNodeId, this.context);
     const nextNode = nextNodes[Math.floor(Math.random() * nextNodes.length)];
 
     const mySpeaker = nextNode.speaker_ids[0];
@@ -188,7 +197,7 @@ export class ChatViewModel {
   async _gpt3_chat() {
     this.chatStates.typing = true;
 
-    const suggestion = await getSuggestion(this.currentNodeId, this.gpt3Cache);
+    const suggestion = await getSuggestion(this.dtreeId, this.currentNodeId, this.gpt3Cache);
 
     const masloNode = {
       speaker_ids: [this.masloBotCharacter.smid],
