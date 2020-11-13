@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createRef } from 'react';
 import { Button, FormControl, TextField } from '@material-ui/core';
 import { EditIcon } from '../config/images';
 import { observer } from 'mobx-react';
@@ -10,6 +10,8 @@ export default class ChatInputComponent extends React.Component {
     this.state = {
       text: '',
     };
+
+    this.textFieldRef = React.createRef();
 
     // binds
     this.submit = this.submit.bind(this);
@@ -27,6 +29,13 @@ export default class ChatInputComponent extends React.Component {
   handleKeyDown(e) {
     if (e.keyCode == 13 && e.shiftKey) {
       this.submit();
+    }
+  }
+
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!this.props?.disabled) { 
+      this.textFieldRef.current.focus();
     }
   }
 
@@ -52,6 +61,7 @@ export default class ChatInputComponent extends React.Component {
                 className="input"
                 multiline
                 InputProps={{ disableUnderline: true }}
+                inputRef={this.textFieldRef}
               />
             </FormControl>
           </div>
