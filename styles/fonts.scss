@@ -2,7 +2,7 @@
 
 $font-family: 'Quicksand';
 
-@mixin font-family($size: 16px, $color: $h1, $weight: 500) {
+@mixin font-family($size: 12px, $color: $h1, $weight: 500) {
     font-family: $font-family;
     font-size: $size;
     font-weight: $weight;

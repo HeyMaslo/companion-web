@@ -1,35 +1,36 @@
 #chat {
     width: 100%;
+	height:100%;
+	max-width:800px;
     display: flex;
     flex-direction: row;
-    align-self: center;
+    align-self: left;
     position: absolute;
     justify-content: center;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 2;
+	margin:0 20px;
     .wrapper {
-        max-width: $chat-max-width;
         width: 100%;
-        margin-top: 20px;
+		max-width:$chat-max-width;
+		max-height:650px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         flex-direction: column;
-        height: 550px;
         .chat-transcript {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            height: 100%;
+			align-items:flex-end;
+			
             .user-column,
             .bot-column {
                 display: flex;
                 flex-direction: column;
-                height: 450px;
-                overflow-y: auto;
+
+				width:100%;
                 justify-content: flex-end;
-                padding: 20px;
-                width: 300px;
                 position: relative;
             }
         }
@@ -37,9 +38,8 @@
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
-            padding: 20px;
+			height:100px;
             max-width: $chat-max-width;
-            margin-top: 100px;
         }
     }
 }

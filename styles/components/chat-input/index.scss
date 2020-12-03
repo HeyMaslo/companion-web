@@ -1,54 +1,62 @@
 #chat-input {
     background-color: $message-input-bg-color;
-    max-width: 410px;
+    max-width: 300px;
     // min-height: 125px;
     width: 100%;
     display: flex;
     align-self: flex-start;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: $global-shadow;
-    border-radius: $border-radius;
-    padding: 5px 20px;
+    border-radius: 300px 300px 0 300px;
+    padding: 0 0 5px 0;
     &.disabled {
         opacity: 0.45;
     }
+	box-shadow:$global-shadow-hover;
     .text-field-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border-bottom: 2px solid $message-input-border-color;
+        border-bottom: 0 solid $message-input-border-color;
+	padding:0 0 0 20px;
         width: 100%;
         .input {
             textarea {
-                @include font-family(18px, $message-input-text-color, 100);
+                @include font-family(15px, $message-input-text-color);
                 &::placeholder {
-                    transform: translateY(55px);
+                    transform: translateY(40px);
                 }
             }
             max-width: 360px;
             width: 100%;
+					margin-bottom:5px;
+					
         }
         .btn-container {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             .done {
-                background-color: $message-input-done-bg-color;
+                background-color: $orb2;
                 max-width: 56px;
                 padding: 2px;
                 border-radius: $border-radius;
                 width: 100%;
-                box-shadow: $global-shadow;
+                box-shadow:$global-shadow;
                 margin-bottom: 10px;
                 span {
                     @include font-family(12px, $message-input-done-text-color);
                 }
             }
+			.done:hover{
+				box-shadow:$global-shadow-hover;
+			}
         }
         
     }
     .information-tip {
+	display:none;
+	height:0;
         display: flex;
         flex-direction: row;
         p {

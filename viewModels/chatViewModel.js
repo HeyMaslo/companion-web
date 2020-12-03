@@ -29,7 +29,6 @@ export class ChatViewModel {
   @observable gpt3Cache = [];
   @observable chatStates = {
     typing: true,
-    botMessages: [],
     userMessages: [],
   };
   @observable chatCount = 0;
@@ -71,7 +70,7 @@ export class ChatViewModel {
    */
   async userReactionButtons(value, message) {
     this.currentNodeId = value;
-    this._pushUserMessage(message);
+    this._pushMessage(message,'user');
     await this._chatLoop();
   }
 
@@ -92,7 +91,7 @@ export class ChatViewModel {
     this.gpt3Cache.push(user_node);
 
     // user response
-    this._pushUserMessage(user_node.en_content);
+    this._pushMessage(user_node.en_content,'user');
 
     await this._chatLoop();
   }
@@ -150,7 +149,7 @@ export class ChatViewModel {
       this.currentNodeId = nextNode.smid;
 
       // maslo response
-      this._pushBotMessage(nextNode.content.en);
+      this._pushMessage(nextNode.content.en,'bot');
 
       this.chatStates.typing = false;
     }
@@ -178,7 +177,7 @@ export class ChatViewModel {
       // adding some delay to give the 'typing' experience
       setTimeout(async () => {
         await this._chatLoop();
-      }, 3000);
+      }, 1000);
     }
   }
 
@@ -206,7 +205,7 @@ export class ChatViewModel {
     console.log("anim determined for GPT3 -> ", anim)
     this.persona._persona._persona.setState(anim)
 
-    this._pushBotMessage(masloNode.en_content);
+    this._pushMessage(masloNode.en_content,'bot');
 
     this.chatStates.typing = false;
   }
@@ -289,33 +288,20 @@ export class ChatViewModel {
    * push a new answer from user with a new css class to define the box opacity
    * @param {string} message
    */
-  _pushUserMessage(message) {
+  _pushMessage(message, author) {
     this.chatStates.userMessages.push({
       message: message,
       opacity: '',
+	  from:author
     });
+
     this.chatStates.userMessages.forEach((_, i) => {
-      this.chatStates.userMessages[i].opacity = `opacity_${
-        this.chatStates.userMessages.length - 1 - i
-      }`;
+      //this.chatStates.userMessages[i].opacity = `opacity_${
+      //  this.chatStates.userMessages.length - 1 - i
+      //}`;
     });
   }
 
-  /**
-   * push a new answer from bot with a new css class to define the box opacity
-   * @param {string} message
-   */
-  _pushBotMessage(message) {
-    this.chatStates.botMessages.push({
-      message: message,
-      opacity: '',
-    });
-    this.chatStates.botMessages.forEach((_, i) => {
-      this.chatStates.botMessages[i].opacity = `opacity_${
-        this.chatStates.botMessages.length - 1 - i
-      }`;
-    });
-  }
 }
 
 const instance = new ChatViewModel();

@@ -4,7 +4,7 @@ import { Logo } from './../config/images';
 export const LogoComponent = () => {
   return (
     <div id="logo">
-      <img src={Logo} />
+      maslo
     </div>
   );
 };

@@ -1,4 +1,5 @@
 #logo {
+	@include font-family(30px, $orb1,400);
     position: absolute;
     top: 40px;
     left: 40px;

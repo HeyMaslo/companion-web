@@ -74,7 +74,7 @@ export default class ChatInputComponent extends React.Component {
           </div>
         </div>
         <div className="information-tip">
-          <p>max 140 characters</p>
+          <p></p>
         </div>
       </div>
     );

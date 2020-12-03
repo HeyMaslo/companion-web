@@ -22,7 +22,7 @@ export class PersonaComponent extends React.Component {
       this.persona.dispose();
     }
     setTimeout(() => {
-      const interval = setInterval(() => {
+      /*const interval = setInterval(() => {
         const current = parseInt(
           this.state.personaPosition.replace('vh', ''),
           10
@@ -33,8 +33,12 @@ export class PersonaComponent extends React.Component {
           clearInterval(interval);
           return this.props.initialized();
         }
-      }, 10);
-    }, 3000);
+      }, 10);*/
+	  
+	  console.log(this.element.scrollHeight);
+	  document.getElementById('persona').style.marginTop='-5vh';
+	  document.getElementById('persona').style.transform='scale(1)';
+    }, 1000);
   }
 
   loadPersona(element) {

@@ -30,14 +30,9 @@ export default class ChatComponent extends React.Component {
       <div id="chat">
         <div className="wrapper">
           <div className="chat-transcript">
-            <div className="bot-column">
-              {this.model.chatStates.botMessages.map(({ message, opacity }) => {
-                return <MessageBoxComponent opacity={opacity} text={message} />;
-              })}
-              {this.model.chatStates.typing && <TypingLoadingComponent />}
-            </div>
             <div className="user-column">
-              {this.model.renderButtons && this.model.buttons.length > 0 ? (
+              
+			  {this.model.renderButtons && this.model.buttons.length > 0 ? (
                 <>
                   {this.model.buttons.map(({ text, value }) => {
                     return (
@@ -52,11 +47,12 @@ export default class ChatComponent extends React.Component {
               ) : (
                 <>
                   {this.model.chatStates.userMessages.map(
-                    ({ message, opacity }) => {
+                    ({ message, opacity, from }) => {
                       return (
                         <MessageBoxComponent
                           opacity={opacity}
                           text={message}
+						  author={from}
                           withShadow
                         />
                       );
@@ -64,6 +60,7 @@ export default class ChatComponent extends React.Component {
                   )}
                 </>
               )}
+			  {this.model.chatStates.typing && <TypingLoadingComponent />}
             </div>
           </div>
           <div className="input-row">
