@@ -35,9 +35,9 @@ export class PersonaComponent extends React.Component {
         }
       }, 10);*/
 	  
-	  console.log(this.element.scrollHeight);
 	  document.getElementById('persona').style.marginTop='-5vh';
 	  document.getElementById('persona').style.transform='scale(1)';
+	  this.props.initialized();
     }, 1000);
   }
 
