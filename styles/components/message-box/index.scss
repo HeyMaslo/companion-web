@@ -11,8 +11,10 @@
 	align-self: flex-start;
     justify-content: center;
     margin-bottom: 20px;
+	transition:all 1s ease-out;
+	box-shadow: $global-shadow;
     &.shadow {
-        box-shadow: $global-shadow;
+        
     }
     &.opacity_0 {
         opacity: 1;
@@ -43,4 +45,7 @@
 	border-radius:$border-radius $border-radius $border-radius 0px;
 	color:$p2;
 	}
+}
+#message-box:hover{
+	box-shadow: 0 0 0 black;
 }

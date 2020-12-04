@@ -9,10 +9,14 @@
     justify-content: space-between;
     border-radius: 300px 300px 0 300px;
     padding: 0 0 5px 0;
-    &.disabled {
-        opacity: 0.45;
-    }
+	transition:all .5s ease-out;
 	box-shadow:$global-shadow-hover;
+	border-bottom:solid 2px $orb7;
+    &.disabled {
+        box-shadow:none;
+		border-bottom:solid 0px rgba(0,0,0,0);
+    }
+	
     .text-field-container {
         display: flex;
         flex-direction: row;
@@ -43,6 +47,7 @@
                 border-radius: $border-radius;
                 width: 100%;
                 box-shadow:$global-shadow;
+				
                 margin-bottom: 10px;
                 span {
                     @include font-family(12px, $message-input-done-text-color);
@@ -67,4 +72,8 @@
 
 .MuiInputBase-multiline {
     padding: 16px 0 0 !important;
+}
+
+#chat-input:hover{
+box-shadow:$global-shadow-deeper;
 }

@@ -12,8 +12,12 @@ $global-bg-page-gradient-one: #7D5DEF;
 $global-bg-page-gradient-two: #B38FF3;
 $global-bg-page-gradient-three: #F5B4BA;
 
+
 $global-shadow:inset 0 0 0 rgba(0,0,0,.2), 4px 4px 4px rgba(0,0,0,.1), inset 0 0 0 rgba(0,0,0,.2), 0 0 8px rgba(0,0,0,.1);
 $global-shadow-hover:inset 4px 4px 4px rgba(0,0,0,.1), 0 0 0 rgba(0,0,0,.2), inset 0 0 8px rgba(0,0,0,.1), 0 0 0 rgba(0,0,0,.2);
+$global-shadow-deeper:inset 8px 8px 8px rgba(0,0,0,.1), 0 0 0 rgba(0,0,0,.2), inset 0 0 16px rgba(0,0,0,.1), 0 0 0 rgba(0,0,0,.2);
+
+
 // typograph
 $h1: #321B9A;
 $p1: rgba(0, 0, 0, .6);
