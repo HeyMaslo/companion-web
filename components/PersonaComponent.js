@@ -34,8 +34,8 @@ export class PersonaComponent extends React.Component {
           return this.props.initialized();
         }
       }, 10);*/
-	  
-	  document.getElementById('persona').style.marginTop='-5vh';
+	   
+	  document.getElementById('persona').style.height='90vh';
 	  document.getElementById('persona').style.transform='scale(1)';
 	  this.props.initialized();
     }, 1000);

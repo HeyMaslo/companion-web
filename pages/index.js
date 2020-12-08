@@ -7,6 +7,7 @@ import { PersonaComponent } from '../components/PersonaComponent';
 import WavesComponent from '../components/WavesComponent';
 import ChatViewModel from '../viewModels/ChatViewModel';
 import PersonaViewModel from '../viewModels/PersonaViewModel';
+import PaiperComponent from '../components/PaiperComponent';
 
 
 @observer
@@ -30,11 +31,16 @@ export class Home extends React.Component {
   render() {
     return (
       <div>
+	  
         <BackgroundComponent />
+		<WavesComponent />
         <LogoComponent />
+		
         <PersonaComponent initialized={this.initialized} persona={this.persona} />
-        <WavesComponent />
+        
+		
         <ChatComponent />
+		<PaiperComponent />
       </div>
     );
   }

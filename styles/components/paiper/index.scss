@@ -1,0 +1,16 @@
+#glcanvas, #glcontainer {
+  width: 100%;
+	
+	max-width:600px;
+    flex-direction: row;
+    align-self: left;
+    position: absolute;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 2;
+	outline:none;
+	overflow:hidden;
+	
+}
+#glcontainer{height:80%;margin:8% 0 0 10%;}

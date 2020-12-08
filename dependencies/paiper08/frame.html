@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HyperObjectWeb05</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+<iframe id="paiper" style="width:640px;height:480px;border:0px;" src="https://sandbox.cables.gl/viewer/5fc5ebb650783c37480ce03c"></iframe>
+
+    <script>
+	var paiper = document.getElementById('paiper');
+	var eventMethod = paiper.addEventListener ? "addEventListener" : "attachEvent";
+var eventer = paiper[eventMethod];
+var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+// Listen to message from child window
+eventer(messageEvent,function(e) {
+    var key = e.message ? "message" : "data";
+    var data = e[key];
+    alert(data+key);
+},false);
+    </script>
+</body>
+
+</html>
