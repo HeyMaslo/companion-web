@@ -82,7 +82,10 @@ export class ChatViewModel {
    */
   async userReactionButtons(value, message) {
     this.currentNodeId = value;
-    this._pushMessage(message,'user');
+    this._pushUserMessage(message);
+    this.showInformationModule = false;
+    this.moduleName = null;
+    this.submoduleSelected = null;
     await this._chatLoop();
   }
 
@@ -102,7 +105,7 @@ export class ChatViewModel {
     this.gpt3Cache.push(user_node);
 
     // user response
-    this._pushMessage(user_node.en_content,'user');
+    this._pushMessage(user_node.en_content, 'user');
 
     await this._chatLoop();
   }
@@ -162,7 +165,7 @@ export class ChatViewModel {
       this.currentNodeId = nextNode.smid;
 
       // maslo response
-      this._pushMessage(nextNode.content.en,'bot');
+      this._pushMessage(nextNode.content.en, 'bot');
 
       this.chatStates.typing = false;
     }
@@ -222,7 +225,7 @@ export class ChatViewModel {
     console.log('anim determined for GPT3 -> ', anim);
     this.persona._persona._persona.setState(anim);
 
-    this._pushMessage(masloNode.en_content,'bot');
+    this._pushMessage(masloNode.en_content, 'bot');
 
     this.chatStates.typing = false;
   }
@@ -325,7 +328,7 @@ export class ChatViewModel {
     this.chatStates.userMessages.push({
       message: message,
       opacity: '',
-	  from:author
+      from: author,
     });
 
     this.chatStates.userMessages.forEach((_, i) => {
@@ -334,7 +337,6 @@ export class ChatViewModel {
       //}`;
     });
   }
-
 }
 
 const instance = new ChatViewModel();
