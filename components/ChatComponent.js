@@ -5,7 +5,6 @@ import ChatButtonComponent from './ChatButtonComponent';
 import ChatInputComponent from './ChatInputComponent';
 import MessageBoxComponent from './MessageBoxComponent';
 import TypingLoadingComponent from './TypingLoadingComponent';
-
 @observer
 export default class ChatComponent extends React.Component {
   constructor(props) {
@@ -26,13 +25,22 @@ export default class ChatComponent extends React.Component {
   }
 
   render() {
+    let newPosition = '';
+    if (this.props.infoModules) {
+      newPosition = ' move-top';
+    }
     return (
-      <div id="chat">
+      <div id="chat" className={`chat-wrapper${newPosition}`}>
         <div className="wrapper">
-          <div className="chat-transcript">
-            <div className="user-column">
-              
-			  {this.model.renderButtons && this.model.buttons.length > 0 ? (
+          <div className={`chat-transcript`}>
+            <div className={`bot-column chat-height${newPosition}`}>
+              {this.model.chatStates.botMessages.map(({ message, opacity }) => {
+                return <MessageBoxComponent opacity={opacity} text={message} />;
+              })}
+              {this.model.chatStates.typing && <TypingLoadingComponent />}
+            </div>
+            <div className={`user-column chat-height${newPosition}`}>
+              {this.model.renderButtons && this.model.buttons.length > 0 ? (
                 <>
                   {this.model.buttons.map(({ text, value }) => {
                     return (
@@ -52,7 +60,7 @@ export default class ChatComponent extends React.Component {
                         <MessageBoxComponent
                           opacity={opacity}
                           text={message}
-						  author={from}
+                          author={from}
                           withShadow
                         />
                       );
@@ -60,16 +68,17 @@ export default class ChatComponent extends React.Component {
                   )}
                 </>
               )}
-			  {this.model.chatStates.typing && <TypingLoadingComponent />}
+              {this.model.chatStates.typing && <TypingLoadingComponent />}
             </div>
           </div>
           <div className="input-row">
-            {(!this.model.renderButtons || this.model.buttons.length === 0) && (
-              <ChatInputComponent
-                disabled={this.model.chatStates.typing}
-                submit={this.submit}
-              />
-            )}
+            {(!this.model.renderButtons || this.model.buttons.length === 0) &&
+              !this.props.infoModules && (
+                <ChatInputComponent
+                  disabled={this.model.chatStates.typing}
+                  submit={this.submit}
+                />
+              )}
           </div>
         </div>
       </div>

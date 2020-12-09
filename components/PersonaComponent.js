@@ -1,8 +1,5 @@
 import { observer } from 'mobx-react';
 import React from 'react';
-import { Persona } from '../dependencies/persona/web';
-import { Colors } from '../pages/api/config/persona';
-import PersonaViewModel from '../viewModels/PersonaViewModel';
 
 @observer
 export class PersonaComponent extends React.Component {
@@ -11,8 +8,15 @@ export class PersonaComponent extends React.Component {
     this.element = React.createRef();
     this.persona = this.props.persona;
     this.state = {
-      personaPosition: '100vh',
+      addPostionClass: false,
     };
+  }
+
+  updatePersonaPosition() {
+    setTimeout(() => {
+      this.setState({ addPostionClass: true });
+      return this.props.initialized();
+    }, 3000);
   }
 
   componentDidMount() {
@@ -21,24 +25,7 @@ export class PersonaComponent extends React.Component {
     } else {
       this.persona.dispose();
     }
-    setTimeout(() => {
-      /*const interval = setInterval(() => {
-        const current = parseInt(
-          this.state.personaPosition.replace('vh', ''),
-          10
-        );
-        const newPosition = current - 1;
-        this.setState({ personaPosition: `${newPosition}vh` });
-        if (current === 70) {
-          clearInterval(interval);
-          return this.props.initialized();
-        }
-      }, 10);*/
-	   
-	  document.getElementById('persona').style.height='90vh';
-	  document.getElementById('persona').style.transform='scale(1)';
-	  this.props.initialized();
-    }, 1000);
+    this.updatePersonaPosition();
   }
 
   loadPersona(element) {
@@ -46,12 +33,19 @@ export class PersonaComponent extends React.Component {
   }
 
   render() {
-    return (
-      <div
-        id="persona"
-        ref={this.element}
-        style={{ height: this.state.personaPosition }}
-      />
-    );
+    // initial position
+    let classNames = `persona-position-100`;
+
+    // position after init
+    if (this.state.addPostionClass && !this.props.infoModules) {
+      classNames += ` move-to-top`;
+    }
+
+    // position for info modules
+    if (this.state.addPostionClass && this.props.infoModules) {
+      classNames = `persona-position-100 move-to-top-2`;
+    }
+
+    return <div id="persona" className={`${classNames}`} ref={this.element} />;
   }
 }

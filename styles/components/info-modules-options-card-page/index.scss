@@ -1,0 +1,155 @@
+#info-modules-options-card-page {
+    height: 100%;
+    padding: 20px 0;
+    margin: 0 20px;
+    transition: opacity 600ms ease-out;
+    opacity: 0;
+
+    &.display {
+        opacity: 1;
+    }
+
+    .container {
+        background-color: $info-modules-bg;
+        width: 98%;
+        border-radius: 15px;
+        box-shadow: $global-shadow;
+        height: 500px;
+        padding: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+
+        .float-icon {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .info-container {
+
+            .info {
+                margin: 0 30px;
+                display: flex;
+
+                &.standard {
+                    flex-direction: column;
+                }
+
+                &.horizontal_title {
+                    flex-direction: row;
+                    height: 100%;
+                    align-items: center;
+
+                    h3 {
+                        display: block;
+                        margin: 0;
+                        align-self: center;
+                        min-width: 150px;
+                    }
+                }
+
+                .content-direction {
+                    display: flex;
+
+                    &.row {
+                        flex-direction: row;
+                    }
+
+                    &.column {
+                        flex-direction: column;
+                    }
+
+                    .item-container {
+                        display: flex;
+
+                        &.row {
+                            flex-direction: row;
+                        }
+
+                        &.column {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+
+                        .content {
+                            @include font-family(16px, $info-modules-page-title);
+
+                            &.light {
+                                opacity: 0.3;
+                            }
+
+                            &.list {
+                                width: 330px;
+                                align-self: center;
+                                text-transform: uppercase;
+                                margin: 10px 20px;
+                                font-size: 14px;
+                            }
+                        }
+
+                        img {
+                            &.full-heigth {
+                                height: 418px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.first {
+                min-width: 400px;
+                max-width: 400px;
+            }
+
+            h1 {
+                @include font-family(14px, $info-modules-title, 600);
+                margin: 0;
+            }
+
+            h2 {
+                @include font-family(22px, $info-modules-subtitle, 600);
+                margin: 50px 0;
+            }
+
+            h3 {
+                @include font-family(18px, $info-modules-page-title, 600);
+                margin: 0 0 30px 0;
+            }
+
+            p {
+                @include font-family(14px, $info-modules-content);
+                line-height: 21px;
+                margin: 0;
+
+                &:first-child {
+                    margin-bottom: 30px;
+                }
+
+                &.main-content-wrapper {
+                    margin-bottom: 50px;
+                }
+            }
+
+            span,
+            a {
+                @include font-family(14px, $info-modules-subtitle);
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+                padding: 15px 10px;
+                box-shadow: $global-shadow;
+                max-width: 120px;
+                text-align: center;
+                border-radius: 30px;
+            }
+
+            .standalone {
+                max-height: 500px;
+                padding: 0 20px;
+            }
+        }
+    }
+}

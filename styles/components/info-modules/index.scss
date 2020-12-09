@@ -1,0 +1,34 @@
+.info-module-wrapper {
+    position: absolute;
+    bottom: 50px;
+    height: auto;
+    overflow-y: hidden;
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 600ms ease-out;
+
+    &.display {
+        opacity: 1;
+    }
+
+    &.wrapper {
+        &.selected {
+            justify-content: flex-start;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+}
