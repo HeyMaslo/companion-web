@@ -84,6 +84,9 @@ export class ChatViewModel {
   async userReactionButtons(value, message) {
     this.currentNodeId = value;
     this._pushUserMessage(message);
+    this.showInformationModule = false;
+    this.moduleName = null;
+    this.submoduleSelected = null;
     await this._chatLoop();
   }
 
