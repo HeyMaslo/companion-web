@@ -3,8 +3,7 @@
     height: 100%;
     max-width: 800px;
     display: flex;
-    flex-direction: row;
-    align-self: left;
+    flex-direction: column;
     position: absolute;
     justify-content: center;
     top: 0;
@@ -33,6 +32,8 @@
         display: flex;
         justify-content: flex-end;
         flex-direction: column;
+        align-self: flex-end;
+        margin: 0 100px 0 0;
 
         .chat-transcript {
             display: flex;

@@ -9,61 +9,71 @@
     justify-content: space-between;
     border-radius: 300px 300px 0 300px;
     padding: 0 0 5px 0;
-	transition:all .5s ease-out;
-	box-shadow:$global-shadow-hover;
-	border-bottom:solid 2px $orb7;
+    transition: all .5s ease-out;
+    box-shadow: $global-shadow-hover;
+    border-bottom: solid 2px $orb7;
+
     &.disabled {
-        box-shadow:none;
-		border-bottom:solid 0px rgba(0,0,0,0);
+        box-shadow: none;
+        border-bottom: solid 0px rgba(0, 0, 0, 0);
     }
-	
+
     .text-field-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         border-bottom: 0 solid $message-input-border-color;
-	padding:0 0 0 20px;
+        padding: 0 0 0 20px;
         width: 100%;
+
         .input {
             textarea {
                 @include font-family(15px, $message-input-text-color);
+
                 &::placeholder {
                     transform: translateY(40px);
                 }
             }
+
             max-width: 360px;
             width: 100%;
-					margin-bottom:5px;
-					
+            margin-bottom:5px;
+
         }
+
         .btn-container {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+
             .done {
                 background-color: $orb2;
                 max-width: 56px;
                 padding: 2px;
                 border-radius: $border-radius;
                 width: 100%;
-                box-shadow:$global-shadow;
-				
+                box-shadow: $global-shadow;
+
                 margin-bottom: 10px;
+
                 span {
                     @include font-family(12px, $message-input-done-text-color);
                 }
             }
-			.done:hover{
-				box-shadow:$global-shadow-hover;
-			}
+
+            .done:hover {
+                box-shadow: $global-shadow-hover;
+            }
         }
-        
+
     }
+
     .information-tip {
-	display:none;
-	height:0;
+        display: none;
+        height: 0;
         display: flex;
         flex-direction: row;
+
         p {
             @include font-family(10px, $message-input-information-tip-color);
         }
@@ -74,6 +84,6 @@
     padding: 16px 0 0 !important;
 }
 
-#chat-input:hover{
-box-shadow:$global-shadow-deeper;
+#chat-input:hover {
+    box-shadow: $global-shadow-deeper;
 }
