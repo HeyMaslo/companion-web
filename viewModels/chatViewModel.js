@@ -28,7 +28,6 @@ export class ChatViewModel {
   @observable gpt3Cache = [];
   @observable chatStates = {
     typing: true,
-    botMessages: [],
     userMessages: [],
   };
   @observable chatCount = 0;
@@ -36,11 +35,11 @@ export class ChatViewModel {
   @observable buttons = [];
   @observable pauseLoop = false;
 
-  @observable dtreeId = process.env.DTR_ID;
-
   @observable showInformationModule = false;
   @observable moduleName = null;
   @observable submoduleSelected = null;
+
+  @observable dtreeId = process.env.DTR_ID
 
   constructor() {}
 
@@ -48,12 +47,11 @@ export class ChatViewModel {
    * chat entrypoint
    */
   async start() {
-    const dtreeParam = qs.parse(window.location.search, {
-      ignoreQueryPrefix: true,
-    });
+
+    const dtreeParam = qs.parse(window.location.search, {ignoreQueryPrefix: true})
     if (dtreeParam.dtreeId) {
-      this.dtreeId = dtreeParam.dtreeId;
-    }
+      this.dtreeId = dtreeParam.dtreeId
+    } 
 
     try {
       const chars = await getCharacters(this.dtreeId);
@@ -83,7 +81,7 @@ export class ChatViewModel {
    */
   async userReactionButtons(value, message) {
     this.currentNodeId = value;
-    this._pushUserMessage(message);
+    this._pushMessage(message, 'user');
     this.showInformationModule = false;
     this.moduleName = null;
     this.submoduleSelected = null;
@@ -106,7 +104,7 @@ export class ChatViewModel {
     this.gpt3Cache.push(user_node);
 
     // user response
-    this._pushUserMessage(user_node.en_content);
+    this._pushMessage(user_node.en_content, 'user');
 
     await this._chatLoop();
   }
@@ -146,11 +144,7 @@ export class ChatViewModel {
     this.gpt3Mode = false;
     this.gpt3Counter = 0;
 
-    const nextNodes = await getNext(
-      this.dtreeId,
-      this.currentNodeId,
-      this.context
-    );
+    const nextNodes = await getNext(this.dtreeId, this.currentNodeId, this.context);
     const nextNode = nextNodes[Math.floor(Math.random() * nextNodes.length)];
 
     const mySpeaker = nextNode.speaker_ids[0];
@@ -166,7 +160,7 @@ export class ChatViewModel {
       this.currentNodeId = nextNode.smid;
 
       // maslo response
-      this._pushBotMessage(nextNode.content.en);
+      this._pushMessage(nextNode.content.en, 'bot');
 
       this.chatStates.typing = false;
     }
@@ -194,7 +188,7 @@ export class ChatViewModel {
       // adding some delay to give the 'typing' experience
       setTimeout(async () => {
         await this._chatLoop();
-      }, 3000);
+      }, 1000);
     }
   }
 
@@ -204,11 +198,7 @@ export class ChatViewModel {
   async _gpt3_chat() {
     this.chatStates.typing = true;
 
-    const suggestion = await getSuggestion(
-      this.dtreeId,
-      this.currentNodeId,
-      this.gpt3Cache
-    );
+    const suggestion = await getSuggestion(this.dtreeId, this.currentNodeId, this.gpt3Cache);
 
     const masloNode = {
       speaker_ids: [this.masloBotCharacter.smid],
@@ -226,7 +216,7 @@ export class ChatViewModel {
     console.log('anim determined for GPT3 -> ', anim);
     this.persona._persona._persona.setState(anim);
 
-    this._pushBotMessage(masloNode.en_content);
+    this._pushMessage(masloNode.en_content, 'bot');
 
     this.chatStates.typing = false;
   }
@@ -325,31 +315,17 @@ export class ChatViewModel {
    * push a new answer from user with a new css class to define the box opacity
    * @param {string} message
    */
-  _pushUserMessage(message) {
+  _pushMessage(message, author) {
     this.chatStates.userMessages.push({
       message: message,
       opacity: '',
+      from: author,
     });
-    this.chatStates.userMessages.forEach((_, i) => {
-      this.chatStates.userMessages[i].opacity = `opacity_${
-        this.chatStates.userMessages.length - 1 - i
-      }`;
-    });
-  }
 
-  /**
-   * push a new answer from bot with a new css class to define the box opacity
-   * @param {string} message
-   */
-  _pushBotMessage(message) {
-    this.chatStates.botMessages.push({
-      message: message,
-      opacity: '',
-    });
-    this.chatStates.botMessages.forEach((_, i) => {
-      this.chatStates.botMessages[i].opacity = `opacity_${
-        this.chatStates.botMessages.length - 1 - i
-      }`;
+    this.chatStates.userMessages.forEach((_, i) => {
+      //this.chatStates.userMessages[i].opacity = `opacity_${
+      //  this.chatStates.userMessages.length - 1 - i
+      //}`;
     });
   }
 }

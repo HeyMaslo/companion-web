@@ -33,12 +33,6 @@ export default class ChatComponent extends React.Component {
       <div id="chat" className={`chat-wrapper${newPosition}`}>
         <div className="wrapper">
           <div className={`chat-transcript`}>
-            <div className={`bot-column chat-height${newPosition}`}>
-              {this.model.chatStates.botMessages.map(({ message, opacity }) => {
-                return <MessageBoxComponent opacity={opacity} text={message} />;
-              })}
-              {this.model.chatStates.typing && <TypingLoadingComponent />}
-            </div>
             <div className={`user-column chat-height${newPosition}`}>
               {this.model.renderButtons && this.model.buttons.length > 0 ? (
                 <>

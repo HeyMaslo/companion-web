@@ -1,6 +1,5 @@
 import API from './config';
 
-
 const getCharacters = async (dtreeId) => {
   const { data } = await API.get(
     `/published/dialogue_trees/${dtreeId}/characters.json`
