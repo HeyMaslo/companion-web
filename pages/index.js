@@ -5,11 +5,12 @@ import ChatComponent from '../components/ChatComponent';
 import InfoModuleOptions from '../components/InfoModulesOptions';
 import InfoModulesOptionsPage from '../components/InfoModulesOptionsPage';
 import InfoModulesWrapper from '../components/InfoModulesWrapper';
-import LogoComponent from '../components/LogoComponent';
+import Header from '../components/Header';
 import { PersonaComponent } from '../components/PersonaComponent';
 import WavesComponent from '../components/WavesComponent';
 import ChatViewModel from '../viewModels/ChatViewModel';
 import PersonaViewModel from '../viewModels/PersonaViewModel';
+import LogoComponent from '../components/LogoComponent';
 // import PaiperComponent from '../components/PaiperComponent';
 @observer
 export class Home extends React.Component {
@@ -36,6 +37,7 @@ export class Home extends React.Component {
         <BackgroundComponent />
         <WavesComponent />
         <LogoComponent />
+        <Header infoModules={this.chatViewModel.showInformationModule} />
         <PersonaComponent
           initialized={this.initialized}
           persona={this.persona}

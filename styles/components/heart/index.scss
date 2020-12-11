@@ -1,0 +1,58 @@
+#heart-btn {
+    button {
+        background-color: $heart-bg;
+        border: none;
+        box-shadow: none;
+        display: flex;
+        padding: 4px;
+        border-radius: 5px;
+        margin-top: -5px;
+        position: relative;
+
+        &.filled {
+            svg {
+                path {
+                    fill: $orb1
+                }
+            }
+        }
+
+        &.empty {
+            svg {
+                path {
+                    stroke: $orb1;
+                }
+            }
+        }
+    }
+
+    .opened-container {
+        position: absolute;
+        width: 225px;
+        background-color: $heart-bg;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        bottom: 40px;
+
+        p {
+            @include font-family(14px, $orb1, 600);
+            margin: 0;
+            width: 150px;
+            text-align: center;
+        }
+
+        a {
+            @include font-family(14px, $orb1, 400);
+            background-color: $orb1;
+            color: $heart-btn-text;
+            text-transform: none;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+    }
+}
