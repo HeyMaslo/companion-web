@@ -1,7 +1,6 @@
-import { Link } from '@material-ui/core';
+import { Button, Link } from '@material-ui/core';
 import React from 'react';
 import { infoModules } from '../data/infoModules';
-
 export default class InfoModulesOptionsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -24,16 +23,14 @@ export default class InfoModulesOptionsPage extends React.Component {
           <img src={data.icon} className="float-icon" />
           <div className="info-container first">
             <h1>{data.title}</h1>
-            <h2>{data.subtitle}</h2>
+            <h2 style={{ color: data.subtitleColor }}>{data.subtitle}</h2>
             <>{data.bio}</>
             <>
-              {data.button.action.type === 'url' ? (
+              {data?.button?.action?.type === 'url' ? (
                 <Link href={data.button.action.path} target="_blank">
                   {data.button.title}
                 </Link>
-              ) : (
-                <Button>{data.button.title}</Button>
-              )}
+              ) : null}
             </>
           </div>
           {data.sections.map((section) => {

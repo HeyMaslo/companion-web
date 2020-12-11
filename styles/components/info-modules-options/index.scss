@@ -3,7 +3,7 @@
     width: 100%;
     height: 100%;
     padding: 20px 0;
-	
+
     &.submodule {
         &.selected {
             max-width: 710px;
@@ -17,7 +17,8 @@
         border-radius: 15px;
         box-shadow: $global-shadow;
         margin-left: 20px;
-overflow:hidden;
+        overflow: hidden;
+
         h1 {
             @include font-family(14px, $info-modules-title, 600);
             margin: 0;
@@ -52,11 +53,12 @@ overflow:hidden;
 
         .options-container {
 
-            
+
 
             box-shadow: $info-modules-options-shadow;
-			max-height:550px;
-			overflow:auto;
+            max-height: 550px;
+            overflow: auto;
+
             .options-container-list {
                 padding: 10px 20px;
                 height: 100%;
@@ -66,8 +68,10 @@ overflow:hidden;
             }
         }
 
-        btn {padding:20px;}
-		img{height:50px;}
+        img {
+            height: 50px;
+        }
+
         span,
         a {
             @include font-family(14px, $info-modules-subtitle);
@@ -82,9 +86,10 @@ overflow:hidden;
             text-align: center;
             border-radius: 30px;
         }
-		a:hover{
-			box-shadow: $global-shadow-hover;
-		}
+
+        a:hover {
+            box-shadow: $global-shadow-hover;
+        }
     }
 
     #info-modules-options-card {
@@ -94,7 +99,7 @@ overflow:hidden;
         justify-content: space-between;
         margin-bottom: 10px;
         box-shadow: $global-shadow;
-        padding:10px;
+        padding: 10px 10px;
         border-radius: 15px;
         cursor: pointer;
 
@@ -106,12 +111,17 @@ overflow:hidden;
 
         img {
             border-radius: 14px;
-			width:50px;
+            width: 75px;
+            height: auto;
         }
 
         p {
-            margin:0 0 0 10px;
-            @include font-family(18px, $info-modules-subtitle, 600);
+            margin-bottom: 0;
+            @include font-family(15px, $info-modules-subtitle, 600);
         }
-    }#info-modules-options-card:hover {box-shadow: $global-shadow-hover};
+
+        &:hover {
+            box-shadow: $global-shadow-hover;
+        }
+    }
 }

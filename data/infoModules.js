@@ -20,16 +20,11 @@ import {
   ToosIcon,
   UseCasesDashboard,
   CompanionWebIcon,
-  AiblyIcon,
-  CANBINDIcon,
-  EvaIcon,
-  EmilyIcon,
-  SigBeeFamilyIcon,
-  SigBeeCaseWorkerIcon,
-  CareerCompanionIcon,
-  BabeIcon,
-  StellaIcon,
-  OptiIcon,
+  EvaOrb,
+  SigbeeOrb,
+  CareerCompanionOrb,
+  StellaOrb,
+  OptiOrb,
   MaslolandIcon,
   MasloPlatformIcon,
   TimeIcon,
@@ -42,6 +37,7 @@ import {
   SequencerIcon,
   HyperObjectWebIcon,
   PaiperIcon,
+  PaiperOrb,
   TheAvatarIcon,
   Masloland,
   MasloPlatform,
@@ -56,39 +52,31 @@ import {
   HyperObjectWeb,
   Paiper,
   TheAvatar,
-  Aibly01,
-  Aibly02,
-  Aibly03,
-  Aibly04,
-  Aibly05,
-  Aibly06,
-  Aibly07,
-  Aibly08,
-  Canbind01,
-  Canbind02,
-  Canbind03,
-  Canbind04,
-  Canbind05,
-  Canbind06,
-  Eva01,
-  Eva02,
-  Eva03,
-  Eva04,
-  Eva05,
-  Eva06,
-  Emily01,
-  Emily02,
-  Emily03,
-  Emily04,
-  Emily05,
-  Emily06,
-  CareerCompanion01,
-  CareerCompanion02,
-  CareerCompanion03,
-  CareerCompanion04,
-  CareerCompanion05,
-  CareerCompanion06,
+  CANBINDOrb,
+  EmilyOrb,
   ResearchPaperIcon,
+  BabeOrb,
+  HealthOrb,
+  BabeMainIcon,
+  BabeGraphic,
+  CanBindGraphic,
+  EvaMainIcon,
+  EvaGtaphic,
+  EmilyMainIcon,
+  EmilyGraphic,
+  SigbeeMainIcon,
+  SigbeeGraphic,
+  OptiMainIcon,
+  OptiGraphic,
+  StellaMainIcon,
+  StellaGraphic,
+  CareerMainIcon,
+  CareerGraphic,
+  CanBindMainIcon,
+  PaiperMainIcon,
+  PaiperGraphic,
+  HealthMainIcon,
+  HealthGraphic,
 } from '../config/images';
 
 export const infoModules = {
@@ -127,12 +115,6 @@ export const infoModules = {
         icon: CompanionServerIcon,
         action: 'pages',
         page: 'companionserver',
-      },
-      {
-        title: 'Companion Web',
-        icon: CompanionWebIcon,
-        action: 'pages',
-        page: 'companionweb',
       },
     ],
     companionkit: {
@@ -459,724 +441,359 @@ export const infoModules = {
     },
   },
   masloCompanions: {
-    title: 'Maslo Companions',
-    subtitle: 'Discover our companions',
+    title: 'Companions',
+    subtitle:
+      'Companions meet you where you are and help you get to where you want to be.',
     bio: (
       <p className="main-content-wrapper">
         <p>
-          Maslo exists in many forms and can address many needs. Each companion
-          has been specialy trained to be an expert in its environment, health,
-          education, business, creativity... They all are tuned to observe and
-          respond to you with relevant content and relatable infographics a well
-          as connect you to the appropriate services. Our design focuses on
-          empathetic user experience and our signal processing is only limited
-          by imagination.
+          A companion is a personal being that helps people set goals, grow, and
+          learn. We do this for our partners in several categories related to
+          deep fundamental human needs.
         </p>
-        <p>We hope to hear from you about the training of your companion!</p>
+        <p>
+          Maslo has many different established companionships. Check the latest
+          companions.
+        </p>
       </p>
     ),
-    button: {
-      title: 'visit maslo.ai',
-      action: {
-        type: 'url',
-        path: 'https://maslo.ai/',
-      },
-    },
     options: [
       {
-        title: 'Aibly',
-        icon: AiblyIcon,
-        action: 'pages',
-        page: 'aibly',
-      },
-      {
-        title: 'CAN-BIND',
-        icon: CANBINDIcon,
-        action: 'pages',
-        page: 'canbind',
-      },
-      {
-        title: 'Eva',
-        icon: EvaIcon,
-        action: 'pages',
-        page: 'eva',
-      },
-      {
-        title: 'Emily',
-        icon: EmilyIcon,
-        action: 'pages',
-        page: 'emily',
-      },
-      {
-        title: 'SigBee Family',
-        icon: SigBeeFamilyIcon,
-        action: 'pages',
-        page: 'sigbeefamily',
-      },
-      {
-        title: 'SigBee Case Worker',
-        icon: SigBeeCaseWorkerIcon,
-        action: 'pages',
-        page: 'sigbeecaseworker',
-      },
-      {
-        title: 'Career Companion',
-        icon: CareerCompanionIcon,
-        action: 'pages',
-        page: 'careercompanion',
-      },
-      {
-        title: 'Opti',
-        icon: OptiIcon,
-        action: 'pages',
-        page: 'opti',
-      },
-      {
-        title: 'Babe',
-        icon: BabeIcon,
+        title: 'Babe - Behavioral Health Companion',
+        icon: BabeOrb,
         action: 'pages',
         page: 'babe',
       },
       {
-        title: 'Stella',
-        icon: StellaIcon,
+        title: 'EVA - Coaching Companion',
+        icon: EvaOrb,
+        action: 'pages',
+        page: 'eva',
+      },
+      {
+        title: 'Emily - Breastfeeding & Mothers Companion ',
+        icon: EmilyOrb,
+        action: 'pages',
+        page: 'emily',
+      },
+      {
+        title: 'SigBee - Foster Care Companion',
+        icon: SigbeeOrb,
+        action: 'pages',
+        page: 'sigbeefamily',
+      },
+      {
+        title: 'Opti - Personal Treatment Companion',
+        icon: OptiOrb,
+        action: 'pages',
+        page: 'opti',
+      },
+      {
+        title: 'Stella - Fasting Companion',
+        icon: StellaOrb,
         action: 'pages',
         page: 'stella',
       },
+      {
+        title: 'Carree - Career Companion',
+        icon: CareerCompanionOrb,
+        action: 'pages',
+        page: 'careercompanion',
+      },
+      {
+        title: 'Canbe - Depression Companion',
+        icon: CANBINDOrb,
+        action: 'pages',
+        page: 'canbind',
+      },
+      {
+        title: 'Paiper - Creative Companion',
+        icon: PaiperOrb,
+        action: 'pages',
+        page: 'paiper',
+      },
+      {
+        title: 'Public Health Companion',
+        icon: HealthOrb,
+        action: 'pages',
+        page: 'health',
+      },
     ],
-    aibly: {
-      title: 'Aibly',
-      subtitle: 'The smart check-in companion for therapists',
-      icon: '',
+    babe: {
+      title: 'Companions | Babe',
+      subtitle: 'Your Behavioral Health companion',
+      subtitleColor: '#F1B6C1',
+      icon: BabeMainIcon,
       bio: (
         <p className="main-content-wrapper">
           <p>
-            "Aibly Powered by Maslo makes easier for therapists to understand
-            what happens with clients between sessions. They get feedback on
-            client mood based on analysis of the client's speech patterns and
-            more. An empathetic companion that could harness the power of
-            Machine Learning could provide invaluable insights to the user &
-            improve overall care. Maslo powering use cases include
-            anxiety/depression identification, therapist comprehension, and
-            behavior improvements. "
+            Maslo takes an integrated approach to design, machine learning,
+            behaviors, & data science.
           </p>
-        </p>
-      ),
-      button: {
-        title: 'Go to Aibly',
-        action: {
-          type: 'url',
-          path: 'https://app.aibly.com/signin',
-        },
-      },
-      sections: [
-        {
-          type: 'standard',
-          title: '',
-          contentDirection: 'row',
-          bg: 'light',
-          image: '',
-          items: [
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Aibly01,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Aibly02,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Aibly03,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Aibly04,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Aibly05,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Aibly06,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Aibly07,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Aibly08,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-          ],
-        },
-      ],
-    },
-    canbind: {
-      title: 'can-bind',
-      subtitle: 'Improving Depression Care Together',
-      icon: '',
-      bio: (
-        <p className="main-content-wrapper">
           <p>
-            CAN-BIND powered by Maslo is a patient engagement and communication
-            tool designed to make it easier to gather information from patients
-            with behavioral health conditions to send to their therapist.
-            CAN-BIND has the ability to determine patient mood, specifically
-            depression, and respond to treatment based on artificial
-            intelligence analysis of speech patterns and facial expressions.
+            We created Babe, an invitation-only client engagement and
+            communication tool designed to make it easier for clinicians to
+            gather behavioral health information from their client in between
+            therapy sessions.{' '}
           </p>
-        </p>
-      ),
-      button: {
-        title: 'Open can-bind',
-        action: {
-          type: 'url',
-          path: 'https://can-bind.maslo.ai/signin',
-        },
-      },
-      sections: [
-        {
-          type: 'standard',
-          title: '',
-          contentDirection: 'row',
-          bg: 'light',
-          image: '',
-          items: [
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Canbind01,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Canbind02,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Canbind03,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Canbind04,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Canbind05,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Canbind06,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-          ],
-        },
-      ],
-    },
-    eva: {
-      title: 'Eva',
-      subtitle: 'Your leadership accountability companion',
-      icon: '',
-      bio: (
-        <p className="main-content-wrapper">
           <p>
-            "Maslo has created EVA, a coaching companion designed to foster
-            self-reflection and accountability towards goals and commitments.
-            With EVA, coaches and their clients can track progress over time,
-            and encourage a deeper connection with more frequency and fluidity
-            between sessions."
+            Babe is built on top of the Maslo platform and can be white labeled
+            or licensed as is.
           </p>
         </p>
       ),
-      button: {
-        title: 'Open evolution',
-        action: {
-          type: 'url',
-          path: 'https://evolution.maslo.ai/',
-        },
-      },
-      sections: [
-        {
-          type: 'standard',
-          title: '',
-          contentDirection: 'row',
-          bg: 'light',
-          image: '',
-          items: [
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Eva01,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Eva02,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Eva03,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Eva04,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Eva05,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Eva06,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-          ],
-        },
-      ],
-    },
-    emily: {
-      title: 'Emily',
-      subtitle: 'Your breastfeeding and wellness companion',
-      icon: '',
-      bio: (
-        <p className="main-content-wrapper">
-          <p>
-            Emily is a breastfeeding tracking, mom and baby companion app
-            designed to seamlessly keep track and improve the well-being of
-            families. Emily tracks baby's feedings, diaper outputs, and growth
-            charts, in addition to mom's diet, vitamin and supplement intake.
-            Emily is also a hub for educational content targeting a woman's
-            journey through preconception counseling, pregnancy, lactation and
-            returning to work. Emily is more than just an app, it is a companion
-            that offers empathetic, AI-enhanced emotional support in the form of
-            everyday check-ins, tracking your mood, energy, sleep patterns,
-            anxiety along with your progress around being your healthiest self
-            and helping your child and family thrive.
-          </p>
-        </p>
-      ),
-      button: {
-        title: 'Open Emily on the app store',
-        action: {
-          type: 'url',
-          path:
-            'https://apps.apple.com/us/app/emily-powered-by-maslo/id1536511540',
-        },
-      },
-      sections: [
-        {
-          type: 'standard',
-          title: '',
-          contentDirection: 'row',
-          bg: 'light',
-          image: '',
-          items: [
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Emily01,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Emily02,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Emily03,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Emily04,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Emily05,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: Emily06,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-          ],
-        },
-      ],
-    },
-    sigbeefamily: {
-      title: 'SigBee Family',
-      subtitle: 'Your Family Companion',
-      icon: '',
-      bio: (
-        <p className="main-content-wrapper">
-          <p>
-            "The SigBee Companion is a simple to use app that promotes fun and
-            engaging interactions that help case workers and families alike
-            gauge their situations in greater detail than ever before possible.
-            Use of the app is by invitation from case workers only. By offering
-            specific prompts and tracking detailed analytics, the SigBee
-            Companion gives case workers helpful insight into families, family
-            members, and caretakers. SigBee Powered by Maslo helps families and
-            case workers understand what happens between visits. Case workers
-            get feedback on client mood based on analysis of the client’s speech
-            patterns and more. Families get assistance customized to their
-            needs."
-          </p>
-
-          <p>Coming Soon</p>
-        </p>
-      ),
-      button: {
-        title: 'Go to Sigbee.com',
-        action: {
-          type: 'url',
-          path: 'http://www.sigbee.com.',
-        },
-      },
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: '',
+          image: BabeGraphic,
           items: [],
         },
       ],
     },
-    sigbeecaseworker: {
-      title: 'Emily',
-      subtitle: 'Your Case Worker Companion',
-      icon: '',
+    eva: {
+      title: 'Companions | Eva',
+      subtitle: 'Your Leadership Accountability Companion',
+      subtitleColor: '#24807B',
+      icon: EvaMainIcon,
       bio: (
         <p className="main-content-wrapper">
           <p>
-            The SigBee Companion is a simple to use app that promotes fun and
-            engaging interactions that help case workers and families alike
-            gauge their situations in greater detail than ever before possible.
-            By offering specific prompts and tracking detailed analytics, the
-            SigBee Companion gives case workers helpful insight into families,
-            family members, and caretakers. SigBee Powered by Maslo helps
-            families and case workers understand what happens between visits.
-            Case workers get feedback on client mood based on analysis of the
-            client’s speech patterns and more. Families get assistance
-            customized to their needs. Use of the app is limited to agencies
-            enrolled in the SigBee program for family preservation. If you’re
-            interested in applying, please contact support@sigbee.com
+            Maslo created EVA, an empathetic coaching companion designed to
+            foster self-reflection and accountability towards goals and
+            commitments.
+          </p>
+          <p>
+            With EVA, coaches and their clients can track progress over time,
+            and encourage a deeper connection with more frequency and fluidity
+            between sessions.
           </p>
         </p>
       ),
-      button: {
-        title: 'Go to Sigbee.com',
-        action: {
-          type: 'url',
-          path: 'http://www.sigbee.com.',
-        },
-      },
       sections: [
         {
-          type: 'standard',
+          type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: '',
+          image: EvaGtaphic,
+          items: [],
+        },
+      ],
+    },
+    emily: {
+      title: 'Companions | Emily',
+      subtitle: 'Your Breastfeeding and Wellness Companion',
+      icon: EmilyMainIcon,
+      subtitleColor: '#F9945D',
+      bio: (
+        <p className="main-content-wrapper">
+          <p>
+            Maslo ai and Lactation Lab, the first at-home full-spectrum breast
+            milk analysis solution, have collaborated to create ‘Emily.’
+          </p>
+          <p>
+            Emily is the first AI-based empathetic computing companion app that
+            allows breastfeeding mothers to track their own wellness (mental and
+            physical) via daily journaling/tracking and the nutritional make up
+            of their breast milk including vitamin content, proteins and
+            environmental toxins.
+          </p>
+        </p>
+      ),
+      sections: [
+        {
+          type: 'standalone',
+          title: '',
+          contentDirection: 'row',
+          bg: 'light',
+          image: EmilyGraphic,
+          items: [],
+        },
+      ],
+    },
+    sigbeefamily: {
+      title: 'Companions | SigBee',
+      subtitle: 'Foster Care Companion for Families and Caseworkers',
+      icon: SigbeeMainIcon,
+      subtitleColor: '#FDC300',
+      bio: (
+        <p className="main-content-wrapper">
+          <p>
+            The SigBee Family Companion promotes engaging interactions that help
+            case workers and families alike gauge their situations in greater
+            detail than ever before.
+          </p>
+        </p>
+      ),
+      sections: [
+        {
+          type: 'standalone',
+          title: '',
+          contentDirection: 'row',
+          bg: 'light',
+          image: SigbeeGraphic,
+          items: [],
+        },
+      ],
+    },
+    opti: {
+      title: 'Companions | Opti',
+      subtitle: 'Your Personalized Treatment Companion',
+      subtitleColor: '#D69A9E',
+      icon: OptiMainIcon,
+      bio: (
+        <p className="main-content-wrapper">
+          <p>
+            Your personalized companion for treatment-resistant depression by
+            helping people find cutting edge treatments, and feel confident that
+            their new treatment works.
+          </p>
+        </p>
+      ),
+      sections: [
+        {
+          type: 'standalone',
+          title: '',
+          contentDirection: 'row',
+          bg: 'light',
+          image: OptiGraphic,
+          items: [],
+        },
+      ],
+    },
+    stella: {
+      title: 'Companions | Stella',
+      subtitle: 'Your Fasting Companion',
+      icon: StellaMainIcon,
+      subtitleColor: '#66B6BD',
+      bio: (
+        <p className="main-content-wrapper">
+          <p>
+            Your fasting and progress-tracking companion designed to assist in
+            finding the fasting plan for your liffestyle, and encouraging
+            consistency through check-ins.
+          </p>
+        </p>
+      ),
+      sections: [
+        {
+          type: 'standalone',
+          title: '',
+          contentDirection: 'row',
+          bg: 'light',
+          image: StellaGraphic,
           items: [],
         },
       ],
     },
     careercompanion: {
-      title: 'Career Companion',
-      subtitle: 'Your Career Building Companion',
-      icon: '',
+      title: 'Companions | Carree',
+      subtitle: 'Your Career Companion',
+      icon: CareerMainIcon,
+      subtitleColor: '#2D124F',
       bio: (
         <p className="main-content-wrapper">
           <p>
-            ThisWay and Maslo have collaborated to create the first job-matching
-            resource and Career Companion, offering empathetic, AI-enhanced
-            emotional support in the form of everyday check ins, resume
-            building, job search reminders and more to ensure millions feel
-            supported during these unprecedented economic times. The ThisWay app
-            powered by Maslo will analyze registered job seekers’ details and
-            sources jobs for applicants from one of more than 3,000 ThisWay
-            partners to identify the best job matches. The ThisWay app powered
-            by Maslo will analyze registered job seekers’ details and sources
-            jobs for applicants from one of ThisWay's partners to identify the
-            best job matches.
+            A career-building companion created to support and assist active
+            job-seekers in collaboration with ThisWay Global.
           </p>
         </p>
       ),
-      button: {
-        title: 'Open Career Companion on the app store',
-        action: {
-          type: 'url',
-          path:
-            'https://play.google.com/store/apps/details?id=com.maslo.thisway&hl=en_US',
-        },
-      },
       sections: [
         {
-          type: 'standard',
+          type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: '',
-          items: [
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: CareerCompanion01,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: CareerCompanion02,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: CareerCompanion03,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: CareerCompanion04,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: CareerCompanion05,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-            {
-              type: 'image',
-              alt: 'Companion-kit',
-              bottonTitle: '',
-              bottomTitleClass: 'light',
-              image: CareerCompanion06,
-              class: 'column',
-              imgClass: 'full-heigth',
-            },
-          ],
+          image: CareerGraphic,
+          items: [],
         },
       ],
     },
-    opti: {
-      title: 'Opti',
-      subtitle:
-        'Your personalized companion for treatment-resistant depression',
-      icon: '',
+    canbind: {
+      title: 'Companions | Canbe',
+      subtitle: 'Your Depression Companion',
+      icon: CanBindMainIcon,
+      subtitleColor: '#0E3B73',
       bio: (
         <p className="main-content-wrapper">
           <p>
-            Opti, by Options MD, helps people with treatment-resistant
-            depression find cutting edge treatments, access better doctors, and
-            feel confident that their new treatment works. Opti tracks your
-            symptoms of depression over time, helping you understand when your
-            new treatment has kicked in, or when it’s time to try something new.
-            Opti lets you know if you are experiencing side effects of a
-            medication and offers you opportunities to switch treatments when
-            necessary. Opti is more than just an app, it is a companion that
-            offers empathetic, AI-enhanced emotional support in the form of
-            everyday check-ins, tracking your mood, daily doses of inspiration,
-            and community.
+            Engagement and communication companion designed to make it easier to
+            gather information from patients with behavioral health conditions
+            to send to research staff.
           </p>
-          <p>Coming Soon</p>
         </p>
       ),
-      button: {
-        title: 'Contact us',
-        action: {
-          type: 'url',
-          path: 'https://maslo.ai/',
+      sections: [
+        {
+          type: 'standalone',
+          title: '',
+          contentDirection: 'row',
+          bg: 'light',
+          image: CanBindGraphic,
+          items: [],
         },
-      },
-      sections: [],
+      ],
     },
-    babe: {
-      title: 'Babe',
-      subtitle: 'Your behavioral health companion',
-      icon: '',
+    paiper: {
+      title: 'Companions | Paiper',
+      subtitle: 'Your Creative Companion',
+      icon: PaiperMainIcon,
+      subtitleColor: '#565656',
       bio: (
         <p className="main-content-wrapper">
           <p>
-            Babe powered by Maslo is an invitation-only client engagement and
-            communication tool designed to make it easier to gather behavioral
-            health information in between therapy sessions. Babe has the ability
-            to determine client mood and severity, including anger, anxiety and
-            depression, and respond with specific goals and interventions by
-            utilizing artificial intelligence analysis of speech patterns,
-            facial expressions, intonation, and more.
+            A drawing and writing companion designed co-learn and co-creaate
+            alongside you. Developed as a proof of concept for Moleskine.
           </p>
-          <p>Coming Soon</p>
         </p>
       ),
-      button: {
-        title: 'Contact us',
-        action: {
-          type: 'url',
-          path: 'https://maslo.ai/',
+      sections: [
+        {
+          type: 'standalone',
+          title: '',
+          contentDirection: 'row',
+          bg: 'light',
+          image: PaiperGraphic,
+          items: [],
         },
-      },
-      sections: [],
+      ],
     },
-    stella: {
-      title: 'Stella',
-      subtitle: 'Your fasting and progress-tracking companion',
-      icon: '',
+    health: {
+      title: 'Companions | Public',
+      subtitle: 'Public Health Companion',
+      icon: HealthMainIcon,
+      subtitleColor: '#0A0A33',
       bio: (
         <p className="main-content-wrapper">
-          <p>Coming Soon</p>
+          <p>
+            A personalized AI COVID-19 companion that offers invaluable
+            objective window into the thoughts, feelings, activity patterns,
+            biomarkers and other behavioral markers of COVID-19 patients at
+            different stages of their illness.
+          </p>
+          <p>
+            THE PHC is aimed at getting a better understanding of the
+            progression of the disease and patient health over the course of the
+            illness. The goal is to have accurate data that can better inform
+            clinical interventions and public policy, and just as critically,
+            mass media.
+          </p>
         </p>
       ),
-      button: {
-        title: 'Contact us',
-        action: {
-          type: 'url',
-          path: 'https://maslo.ai/',
+      sections: [
+        {
+          type: 'standalone',
+          title: '',
+          contentDirection: 'row',
+          bg: 'light',
+          image: HealthGraphic,
+          items: [],
         },
-      },
-      sections: [],
+      ],
     },
   },
   researchProjects: {
