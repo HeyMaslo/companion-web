@@ -2,7 +2,7 @@
     position: absolute;
     bottom: 50px;
     height: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
     width: 100%;
     overflow-x: auto;
     display: flex;
@@ -31,4 +31,7 @@
     &::-webkit-scrollbar-thumb {
         background-color: transparent;
     }
+}
+.module-info{
+overflow:auto;
 }

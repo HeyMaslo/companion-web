@@ -2,7 +2,7 @@
     display: flex;
     background-color: $message-box-bg-color;
     max-width: 280px;
-    padding:12px;
+    padding:0px 20px;
     border-radius: $border-radius;
     margin: 0;
     height: auto;
@@ -10,7 +10,7 @@
     align-items: center;
 	align-self: flex-start;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 	transition:all 1s ease-out;
 	box-shadow: $global-shadow;
     &.shadow {
@@ -38,11 +38,11 @@
 	float:right;
 	align-self: flex-end;
 	color:$p1;	
-	border-radius:$border-radius $border-radius 0px $border-radius;
+	border-radius:$border-radius $border-radius 3px $border-radius;
 	}
 	&.bot, &.bot p{
 	background-color:$orb1;
-	border-radius:$border-radius $border-radius $border-radius 0px;
+	border-radius: 3px $border-radius $border-radius $border-radius ;
 	color:$p2;
 	}
 }

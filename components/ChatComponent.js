@@ -34,19 +34,10 @@ export default class ChatComponent extends React.Component {
         <div className="wrapper">
           <div className={`chat-transcript`}>
             <div className={`user-column chat-height${newPosition}`}>
-              {this.model.renderButtons && this.model.buttons.length > 0 ? (
-                <>
-                  {this.model.buttons.map(({ text, value }) => {
-                    return (
-                      <ChatButtonComponent
-                        text={text}
-                        value={value}
-                        submit={this.submitActionButtons}
-                      />
-                    );
-                  })}
-                </>
-              ) : (
+              {
+				  //this.model.renderButtons && this.model.buttons.length > 0 ? (
+                
+              //) : (
                 <>
                   {this.model.chatStates.userMessages.map(
                     ({ message, opacity, from }) => {
@@ -61,18 +52,33 @@ export default class ChatComponent extends React.Component {
                     }
                   )}
                 </>
-              )}
+              //)
+			  }
               {this.model.chatStates.typing && <TypingLoadingComponent />}
+			  {this.model.buttons.map(({ text, value }) => {
+                    return (
+                      <ChatButtonComponent
+                        text={text}
+                        value={value}
+                        submit={this.submitActionButtons}
+                      />
+                    );
+            })} 
             </div>
           </div>
           <div className="input-row">
+		    
             {(!this.model.renderButtons || this.model.buttons.length === 0) &&
               !this.props.infoModules && (
                 <ChatInputComponent
                   disabled={this.model.chatStates.typing}
                   submit={this.submit}
                 />
-              )}
+				
+            )}
+                
+
+			  
           </div>
         </div>
       </div>

@@ -188,7 +188,7 @@ export class ChatViewModel {
       // adding some delay to give the 'typing' experience
       setTimeout(async () => {
         await this._chatLoop();
-      }, 1000);
+      }, 3000);
     }
   }
 

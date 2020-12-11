@@ -1,16 +1,17 @@
 #chat-button {
     display: flex;
-    background-color: $orb2;
+    background-color: $orb5;
     max-width: 280px;
 	padding:10px 12px;
     border-radius: $border-radius;
     margin: 0;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
 	align-self: flex-end;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 	box-shadow:$global-shadow;
+	transition:all .1s ease-out;
     &.opacity_0 {
         opacity: 1;
     }
@@ -32,5 +33,7 @@
     }
 }
 #chat-button:hover{
-box-shadow:$global-shadow-hover;
+	box-shadow:$global-shadow-hover;
+	border-radius: $border-radius $border-radius 3px  $border-radius ;
+
 }
