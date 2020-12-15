@@ -1,6 +1,7 @@
 #glcanvas, #glcontainer {
   width: 100%;
-	
+  height:500px;
+	max-height:500px;
 	max-width:600px;
     flex-direction: row;
     align-self: left;
@@ -10,7 +11,8 @@
     left: 0;
     z-index: 2;
 	outline:none;
-	overflow:hidden;
+	overflow-x:visible;
+	overflow-y:visible;
 	
 }
-#glcontainer{height:80%;margin:8% 0 0 10%;}
+#glcontainer{margin:8% 0 0 10%;}
