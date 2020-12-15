@@ -2,6 +2,11 @@ import React, { useState, createRef } from 'react';
 import { Button, FormControl, TextField } from '@material-ui/core';
 import { EditIcon } from '../config/images';
 import { observer } from 'mobx-react';
+export var messageFromChatInput;
+import { messageFromPaiper } from './PaiperComponent';
+
+
+
 
 @observer
 export default class ChatInputComponent extends React.Component {
@@ -38,6 +43,7 @@ export default class ChatInputComponent extends React.Component {
       this.textFieldRef.current.focus();
     }
   }
+  
 
   render() {
     return (

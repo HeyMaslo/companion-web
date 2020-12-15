@@ -1,5 +1,6 @@
 import { computed, observable } from 'mobx';
 import { Persona } from '../dependencies/persona/web';
+
 //import { Colors } from '../pages/api/config/persona';
 
 ////http://c0bra.github.io/color-scheme-js/

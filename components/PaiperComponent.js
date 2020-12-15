@@ -2,15 +2,19 @@ import { observer } from 'mobx-react';
 import React from 'react';
 import { colorpalette } from './../viewModels/PersonaViewModel';
 
+
+
+
 @observer
 export default class PaiperComponent extends React.Component {
   constructor(props) {
     super(props);
   }
+  
   componentDidMount() {
     const script1 = document.createElement("script");
     script1.async = true;
-    script1.src = "https://alivemachine.io/paiper08/js/patch.js";
+    script1.src = "https://alivemachine.io/paiper10/js/patch.js";
     document.body.appendChild(script1);
 	
 	function showError(errId, errMsg) {
@@ -20,9 +24,7 @@ export default class PaiperComponent extends React.Component {
         function patchInitialized(patch) {
             // You can now access the patch object (patch), register variable watchers and so on
         }
-		function say(str){
-			CABLES.patch.setVariable("probe",str);
-		}
+		
 		var loaded = false;
         function patchFinishedLoading(patch) {
 			var probe = CABLES.patch.getVar("probe");
@@ -30,8 +32,19 @@ export default class PaiperComponent extends React.Component {
 			// will be called every time value changes
 				probe.addListener(function(newValue) {
 					if(newValue!=='' && newValue!==' '){
+						//CONNECT TO CHAT INPUT
+						//
+						//
+						//CHAT INPUT = newValue;
+						//
+						//
+						//
+						//
+						//messageFromChat = newValue;	
+						//document.getElementById('chat-input').getElementsByTagName('textarea')[0].value = newValue;
+						//document.getElementById('chat-button').click();
+						//ChatComponent.submitActionButtons(newValue, text);
 						//document.getElementById('chat-input').setState({value: newValue});
-
 					}
 				});
 				//document.getElementById('glcanvas').style.width='50%';
@@ -64,6 +77,13 @@ export default class PaiperComponent extends React.Component {
             });
         });
   }
+  
+	componentDidUpdate(prevProps) {
+		if (prevProps.messageFromPaiper !== this.props.messageFromPaiper) {
+			
+		}
+		alert('has changed');
+	}
 
   render() {
     return (

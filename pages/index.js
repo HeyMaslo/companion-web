@@ -11,7 +11,9 @@ import WavesComponent from '../components/WavesComponent';
 import ChatViewModel from '../viewModels/ChatViewModel';
 import PersonaViewModel from '../viewModels/PersonaViewModel';
 import LogoComponent from '../components/LogoComponent';
-// import PaiperComponent from '../components/PaiperComponent';
+ import PaiperComponent from '../components/PaiperComponent';
+ import messageFromPaiper from '../components/PaiperComponent';
+ import messageFromChatInput from '../components/ChatInputComponent';
 @observer
 export class Home extends React.Component {
   constructor(props) {
@@ -21,7 +23,8 @@ export class Home extends React.Component {
     };
 
     this.persona = PersonaViewModel;
-
+	
+	
     this.chatViewModel = ChatViewModel;
     this.chatViewModel.persona = this.persona;
   }
@@ -45,7 +48,7 @@ export class Home extends React.Component {
         />
         <WavesComponent />
         <ChatComponent infoModules={this.chatViewModel.showInformationModule} />
-        {/* <PaiperComponent /> */}
+        { <PaiperComponent messageFromPaiper={messageFromChatInput} /> }
         {this.chatViewModel.showInformationModule && (
           <InfoModulesWrapper submodule={this.chatViewModel.submoduleSelected}>
             <InfoModuleOptions

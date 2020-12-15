@@ -16,10 +16,15 @@
 
         svg {
             margin-right: 10px;
-
+			margin-top:3px;
             g {
                 stroke: $orb1
             }
         }
+		
     }
+	a:hover{
+		color:$orb2;
+		svg g{stroke: $orb2}
+	}
 }

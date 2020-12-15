@@ -8,7 +8,8 @@
         border-radius: 5px;
         margin-top: -5px;
         position: relative;
-
+		box-shadow:$global-shadow;
+		cursor:pointer;
         &.filled {
             svg {
                 path {
@@ -25,6 +26,9 @@
             }
         }
     }
+	button:hover{
+	box-shadow:$global-shadow-hover;
+}
 
     .opened-container {
         position: absolute;
@@ -38,7 +42,7 @@
         align-items: center;
         height: 80px;
         bottom: 40px;
-
+		box-shadow:$global-shadow;
         p {
             @include font-family(14px, $orb1, 600);
             margin: 0;
@@ -53,6 +57,10 @@
             text-transform: none;
             padding: 5px 10px;
             border-radius: 15px;
+			box-shadow:$global-shadow;
         }
+		a:hover{
+			box-shadow:$global-shadow-hover;
+		}
     }
 }
