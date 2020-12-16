@@ -23,8 +23,6 @@ export class Home extends React.Component {
     };
 
     this.persona = PersonaViewModel;
-	
-	
     this.chatViewModel = ChatViewModel;
     this.chatViewModel.persona = this.persona;
   }
@@ -48,7 +46,8 @@ export class Home extends React.Component {
         />
         <WavesComponent />
         <ChatComponent infoModules={this.chatViewModel.showInformationModule} />
-        { <PaiperComponent messageFromPaiper={messageFromChatInput} /> }
+			
+		<PaiperComponent messageFromPaiper={messageFromChatInput} /> 
         {this.chatViewModel.showInformationModule && (
           <InfoModulesWrapper submodule={this.chatViewModel.submoduleSelected}>
             <InfoModuleOptions

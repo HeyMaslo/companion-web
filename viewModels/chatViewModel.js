@@ -9,7 +9,7 @@ import {
 import qs from 'qs';
 
 // TODO logger
-
+export var messageFromBot = '';
 export class ChatViewModel {
   masloBotName = MASLO_BOT_NAME;
   userCharacterName = USER_CHARACTER_NAME;
@@ -161,6 +161,7 @@ export class ChatViewModel {
 
       // maslo response
       this._pushMessage(nextNode.content.en, 'bot');
+		
 
       this.chatStates.typing = false;
     }
@@ -217,7 +218,7 @@ export class ChatViewModel {
     this.persona._persona._persona.setState(anim);
 
     this._pushMessage(masloNode.en_content, 'bot');
-
+	messageFromBot = masloNode.en_content;
     this.chatStates.typing = false;
   }
 

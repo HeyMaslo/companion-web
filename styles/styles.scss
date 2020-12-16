@@ -11,7 +11,7 @@ body {
   margin: 0;
   height: 100vh;
   overflow-x:hidden;
-  overflow-y:auto;
+  overflow-y:hidden;
   // components
   @import './components/persona/index.scss';
   @import './components/waves/index.scss';

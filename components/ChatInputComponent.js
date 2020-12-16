@@ -2,8 +2,7 @@ import React, { useState, createRef } from 'react';
 import { Button, FormControl, TextField } from '@material-ui/core';
 import { EditIcon } from '../config/images';
 import { observer } from 'mobx-react';
-export var messageFromChatInput;
-import { messageFromPaiper } from './PaiperComponent';
+
 
 
 
@@ -22,11 +21,13 @@ export default class ChatInputComponent extends React.Component {
     this.submit = this.submit.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
-
+	
   submit() {
     const { text } = this.state;
     if (text !== '') {
       this.setState({ text: '' });
+	  
+	  
       return this.props?.submit({ text });
     }
   }
@@ -43,7 +44,6 @@ export default class ChatInputComponent extends React.Component {
       this.textFieldRef.current.focus();
     }
   }
-  
 
   render() {
     return (

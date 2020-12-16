@@ -5,6 +5,12 @@ import ChatButtonComponent from './ChatButtonComponent';
 import ChatInputComponent from './ChatInputComponent';
 import MessageBoxComponent from './MessageBoxComponent';
 import TypingLoadingComponent from './TypingLoadingComponent';
+export var messageFromChat = "fromchat";
+
+		
+		
+		
+		
 @observer
 export default class ChatComponent extends React.Component {
   constructor(props) {
@@ -17,12 +23,15 @@ export default class ChatComponent extends React.Component {
     this.submitActionButtons = this.submitActionButtons.bind(this);
   }
   async submit({ text }) {
+	messageFromChat = text;
     await this.model.userInput(text);
   }
 
   async submitActionButtons(value, text) {
     await this.model.userReactionButtons(value, text);
   }
+  
+  
 
   render() {
     let newPosition = '';
