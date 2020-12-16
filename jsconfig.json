@@ -3,6 +3,7 @@
         "experimentalDecorators": true
     },
     "exclude": [
-        "./.next/*"
+        "./.next/*",
+        "./.firebase/*"
     ]
 }

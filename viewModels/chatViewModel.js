@@ -9,7 +9,6 @@ import {
 import qs from 'qs';
 
 // TODO logger
-export var messageFromBot = '';
 export class ChatViewModel {
   masloBotName = MASLO_BOT_NAME;
   userCharacterName = USER_CHARACTER_NAME;
@@ -36,10 +35,14 @@ export class ChatViewModel {
   @observable pauseLoop = false;
 
   @observable showInformationModule = false;
+  @observable showPaiperModule = false;
   @observable moduleName = null;
   @observable submoduleSelected = null;
 
-  @observable dtreeId = process.env.DTR_ID
+  @observable userInputMessage = null;
+  @observable messageFromBot = null;
+
+  @observable dtreeId = process.env.DTR_ID;
 
   constructor() {}
 
@@ -47,11 +50,12 @@ export class ChatViewModel {
    * chat entrypoint
    */
   async start() {
-
-    const dtreeParam = qs.parse(window.location.search, {ignoreQueryPrefix: true})
+    const dtreeParam = qs.parse(window.location.search, {
+      ignoreQueryPrefix: true,
+    });
     if (dtreeParam.dtreeId) {
-      this.dtreeId = dtreeParam.dtreeId
-    } 
+      this.dtreeId = dtreeParam.dtreeId;
+    }
 
     try {
       const chars = await getCharacters(this.dtreeId);
@@ -93,6 +97,7 @@ export class ChatViewModel {
    * @param {string} message
    */
   async userInput(message) {
+    this.userInputMessage = message;
     this._scoreUserInput(message);
 
     const user_node = {
@@ -144,7 +149,11 @@ export class ChatViewModel {
     this.gpt3Mode = false;
     this.gpt3Counter = 0;
 
-    const nextNodes = await getNext(this.dtreeId, this.currentNodeId, this.context);
+    const nextNodes = await getNext(
+      this.dtreeId,
+      this.currentNodeId,
+      this.context
+    );
     const nextNode = nextNodes[Math.floor(Math.random() * nextNodes.length)];
 
     const mySpeaker = nextNode.speaker_ids[0];
@@ -161,7 +170,6 @@ export class ChatViewModel {
 
       // maslo response
       this._pushMessage(nextNode.content.en, 'bot');
-		
 
       this.chatStates.typing = false;
     }
@@ -199,7 +207,11 @@ export class ChatViewModel {
   async _gpt3_chat() {
     this.chatStates.typing = true;
 
-    const suggestion = await getSuggestion(this.dtreeId, this.currentNodeId, this.gpt3Cache);
+    const suggestion = await getSuggestion(
+      this.dtreeId,
+      this.currentNodeId,
+      this.gpt3Cache
+    );
 
     const masloNode = {
       speaker_ids: [this.masloBotCharacter.smid],
@@ -218,7 +230,8 @@ export class ChatViewModel {
     this.persona._persona._persona.setState(anim);
 
     this._pushMessage(masloNode.en_content, 'bot');
-	messageFromBot = masloNode.en_content;
+
+    this.messageFromBot = masloNode.en_content;
     this.chatStates.typing = false;
   }
 
@@ -286,10 +299,19 @@ export class ChatViewModel {
     this.pauseLoop = true;
   }
 
+  showPaiper() {
+    console.log('display paiper command');
+    this.showPaiperModule = true;
+  }
+
   showInfoModule(moduleName) {
     if (moduleName) {
-      this.showInformationModule = true;
-      this.moduleName = moduleName;
+      if (moduleName !== 'paiper') {
+        this.showInformationModule = true;
+        this.moduleName = moduleName;
+      } else {
+        this.showPaiper();
+      }
     }
   }
 
