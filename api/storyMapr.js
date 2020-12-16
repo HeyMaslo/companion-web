@@ -7,6 +7,23 @@ const getCharacters = async (dtreeId) => {
   return data;
 };
 
+const getToxicity = async (dtreeId, nodeId, prompt) => {
+  const {
+    data,
+  } = await API.post(
+    `/published/dialogue_trees/${dtreeId}/nodes/${nodeId}/toxicity.json`,
+    { prompt }
+  );
+  return data;
+};
+// very last minute hack, this should 
+// const getToxicity = async (prompt) => {
+//   const { data } = await API.get(
+//     `/toxic_check.json?prompt=${prompt}`
+//   );
+//   return data;
+// };
+
 const getCharacterByName = async (dtreeId, characterName) => {
   const { data } = await API.get(
     `/published/dialogue_trees/${dtreeId}/characters.json?name=${characterName}`
@@ -54,4 +71,5 @@ export {
   getSuggestion,
   getSummary,
   getNext,
+  getToxicity
 };

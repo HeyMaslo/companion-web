@@ -1,5 +1,5 @@
 import { observable } from 'mobx';
-import { getCharacters, getNext, getSuggestion } from '../api/storyMapr';
+import { getCharacters, getNext, getSuggestion, getToxicity } from '../api/storyMapr';
 import {
   MASLO_BOT_NAME,
   USER_CHARACTER_NAME,
@@ -15,6 +15,7 @@ export class ChatViewModel {
   userCharacterName = USER_CHARACTER_NAME;
   currentNodeId = INITIAL_NODE_ID;
   wordMappings = import('../wordMaps.json');
+  do_toxic_check = true;
 
   @observable persona = null;
 
@@ -199,12 +200,37 @@ export class ChatViewModel {
   async _gpt3_chat() {
     this.chatStates.typing = true;
 
-    const suggestion = await getSuggestion(this.dtreeId, this.currentNodeId, this.gpt3Cache);
+    // this.gpt3Cache[-1].en_content is the user's last entry
+    if (this.do_toxic_check == true) {
+      const toxic_check = await getToxicity(this.dtreeId, this.currentNodeId, this.gpt3Cache[this.gpt3Cache.length - 1].en_content)
+
+      if (toxic_check.verdict == 2) {
+        // throw away the offending node and retry
+        this.gpt3Cache.pop()
+        this._pushMessage("Hey that wasn't very nice...want to try that again?", 'bot');
+        this.chatStates.typing = false;
+        return
+      }
+    }
+    
+    const suggestions = await getSuggestion(this.dtreeId, this.currentNodeId, this.gpt3Cache);
+
+    let final_suggestion = null;
+    
+    if (this.do_toxic_check == true) {
+      final_suggestion = await this._suggestions_toxic_check(this.dtreeId, this.currentNodeId, suggestions)
+    } else {
+      final_suggestion = suggestions[0]
+    }
+
+    if (final_suggestion == null) {
+      final_suggestion = {en_content: "Sorry..I'm still learning and sometimes get confused.  Want to try saying that differently?"}
+    }
 
     const masloNode = {
       speaker_ids: [this.masloBotCharacter.smid],
       listener_ids: [this.userCharacter.smid],
-      en_content: suggestion[0].en_content,
+      en_content: final_suggestion.en_content,
     };
 
     this.gpt3Cache.push(masloNode);
@@ -311,6 +337,24 @@ export class ChatViewModel {
       });
     });
   }
+
+  /**
+   * toxicity checks responses
+   * @param {string} suggestions
+   */
+  async _suggestions_toxic_check(dtreeId, nodeId, suggestions) {
+    let retval = null;
+    for (var i = 0; i < suggestions.length; i++) {
+      const toxic_check = await getToxicity(dtreeId, nodeId, suggestions[i].en_content)
+      if ((toxic_check.verdict == 0) || (toxic_check.verdict == 1)) {
+        retval = suggestions[i];
+        break;
+      }
+    }
+    return retval
+    
+
+   }
 
   /**
    * push a new answer from user with a new css class to define the box opacity
