@@ -12,14 +12,14 @@
     #{$global-bg-page-gradient-two} 51.09%,
     #{$global-bg-page-gradient-three} 105.63%
   );
-  background-image:url('http://alivemachine.io/moleskine_BG.jpg');
+  background-image:url('http://alivemachine.io/wolfy_BG.png');
 
 	background-size:cover;
 	
-	mix-blend-mode:overlay;
+	mix-blend-mode:multiply;
 	overflow:hidden;
-	opacity:.4;
+	opacity:.1;
 }
 body{
-background-color:$orb7;
+background-color:white;
 }

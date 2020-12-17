@@ -5,7 +5,7 @@ import { messageFromChat } from './ChatComponent';
 import { messageFromBot } from '././../viewModels/ChatViewModel';
 var colors = [];
 				for(var i=0;i<colorpalette.length;i++){
-					colors[i]="#"+colorpalette[i];
+					colors[i]="#"+colorpalette.reverse()[i];
 				}
 
 @observer
