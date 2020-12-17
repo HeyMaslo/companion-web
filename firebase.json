@@ -1,7 +1,7 @@
 {
     "hosting": [
         {
-            "target": "moleskine-stage",
+            "target": "wolfram-stage",
             "public": "./out",
             "rewrites": [
                 {
