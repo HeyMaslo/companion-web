@@ -13,7 +13,7 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" type="image/x-icon" href={Ico} />
-          <title>Talk to Moleskine</title>
+          <title>Talk to Wolfy</title>
         </Head>
         <body>
           <Main />

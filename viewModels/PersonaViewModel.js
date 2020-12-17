@@ -8,13 +8,14 @@ var ColorScheme = require('color-scheme');
 
 var scheme = new ColorScheme();
 scheme
-  .from_hue(300) // Start the scheme
-  .scheme('contrast') // Use the 'triade' scheme, that is, colors
+  .from_hue(0) // Start the scheme
+  .scheme('analogic') // Use the 'triade' scheme, that is, colors
   // selected from 3 points equidistant around
   // the color wheel.
-  .variation('pale'); // default pastel soft light hard pale
+  .variation('default') // default pastel soft light hard pale
+  .distance(0.2);
 
-export var colorpalette = scheme.colors();
+export var colorpalette = scheme.colors().reverse();
 //document.documentElement.style.setProperty('$orb1', '#333333');
 updatetheme();
 function getRandomInt(max) {
