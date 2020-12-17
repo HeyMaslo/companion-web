@@ -1,16 +1,6 @@
 {
     "hosting": [
         {
-            "target": "companion-web-stage",
-            "public": "./out",
-            "rewrites": [
-                {
-                  "source": "**/**",
-                  "function": "nextjs-server"
-                }
-            ]
-        },
-        {
             "target": "moleskine-stage",
             "public": "./out",
             "rewrites": [

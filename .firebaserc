@@ -4,9 +4,6 @@
       "hosting": {
         "moleskine-stage": [
           "moleskine"
-        ],
-        "companion-web-stage": [
-          "companion-web-4a44a"
         ]
       }
     }
