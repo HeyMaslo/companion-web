@@ -8,11 +8,11 @@ var ColorScheme = require('color-scheme');
 
 var scheme = new ColorScheme();
 scheme
-  .from_hue(getRandomInt(360)) // Start the scheme
+  .from_hue(300) // Start the scheme
   .scheme('contrast') // Use the 'triade' scheme, that is, colors
   // selected from 3 points equidistant around
   // the color wheel.
-  .variation('soft'); // default pastel soft light hard pale
+  .variation('pale'); // default pastel soft light hard pale
 
 export var colorpalette = scheme.colors();
 //document.documentElement.style.setProperty('$orb1', '#333333');

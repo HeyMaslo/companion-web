@@ -51,6 +51,6 @@ module.exports = withSass({ dynamicAssetPrefix = false, ...nextConfig } = {
     },
     env: {
         STORY_MAPR_API_URL: 'https://beta.storymapr.com',
-        DTR_ID: '5fd2da87c860c2582a1e483c',
+        DTR_ID: '5fdaa6cac860c2255f029942',
     }
 });
