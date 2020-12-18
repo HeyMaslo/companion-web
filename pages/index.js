@@ -39,6 +39,7 @@ export class Home extends React.Component {
         <WavesComponent />
         <LogoComponent />
         <Header infoModules={this.chatViewModel.showInformationModule} />
+		<PaiperComponent messageFromPaiper={messageFromChatInput} /> 
         <PersonaComponent
           initialized={this.initialized}
           persona={this.persona}
@@ -47,7 +48,7 @@ export class Home extends React.Component {
         <WavesComponent />
         <ChatComponent infoModules={this.chatViewModel.showInformationModule} />
 			
-		<PaiperComponent messageFromPaiper={messageFromChatInput} /> 
+		
         {this.chatViewModel.showInformationModule && (
           <InfoModulesWrapper submodule={this.chatViewModel.submoduleSelected}>
             <InfoModuleOptions
