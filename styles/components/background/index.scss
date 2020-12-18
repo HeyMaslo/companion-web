@@ -12,14 +12,14 @@
     #{$global-bg-page-gradient-two} 51.09%,
     #{$global-bg-page-gradient-three} 105.63%
   );
-  background-image:url('http://alivemachine.io/wolfy_BG.png');
+  background-image:url('http://alivemachine.io/paiper_BG.gif');
 
-	background-size:cover;
-	
-	mix-blend-mode:multiply;
+	background-size:contain;
+	background-repeat:no-repeat;
+	mix-blend-mode:darken;
 	overflow:hidden;
-	opacity:.1;
+	opacity:.5;
 }
 body{
-background-color:white;
+background-color:#f0f0f0;
 }
