@@ -103,7 +103,27 @@ import CompanionServerInfoGraphic from '../assets/img/opensource/companionserver
 
 import ResearchPaperIcon from '../assets/img/opensource/researchpaper-icon.png';
 
+
+import AdaptivePersonalSystem from '../assets/img/moleskine/AdaptivePersonalSystem.png';
+import WhoIsMoleskine from '../assets/img/moleskine/WhoIsMoleskine.png';
+import EmpatheticUX from '../assets/img/moleskine/EmpatheticUX.png';
+import IntegrationofMoleskineApps from '../assets/img/moleskine/IntegrationofMoleskineApps.png';
+import MoleskineSmartApps from '../assets/img/moleskine/MoleskineSmartApps.png';
+import MoleskineSpecificNeeds from '../assets/img/moleskine/MoleskineSpecificNeeds.png';
+import ProjectMilestoneTimeline from '../assets/img/moleskine/ProjectMilestoneTimeline.png';
+import StatementofWork from '../assets/img/moleskine/StatementofWork.png';
+import UseCases from '../assets/img/moleskine/UseCases.png';
+
 export {
+	AdaptivePersonalSystem,
+	WhoIsMoleskine,
+	EmpatheticUX,
+	IntegrationofMoleskineApps,
+	MoleskineSmartApps,
+	MoleskineSpecificNeeds,
+	ProjectMilestoneTimeline,
+	StatementofWork,
+	UseCases,
   Wave1,
   Wave2,
   Logo,

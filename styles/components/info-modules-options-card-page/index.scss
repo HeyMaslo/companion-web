@@ -14,8 +14,7 @@
         width: 98%;
         border-radius: 15px;
         box-shadow: $global-shadow;
-        height: 500px;
-        padding: 20px;
+        
         position: relative;
         display: flex;
         flex-direction: row;
@@ -28,11 +27,11 @@
         }
 
         .info-container {
-
+			max-height:540px;
             .info {
                 margin: 0 30px;
                 display: flex;
-
+				
                 &.standard {
                     flex-direction: column;
                 }
@@ -99,8 +98,7 @@
             }
 
             &.first {
-                min-width: 400px;
-                max-width: 400px;
+
             }
 
             h1 {
@@ -148,8 +146,8 @@
                 border-radius: 30px;
             }
             .standalone {
-                max-height: 500px;
-                padding: 0 20px;
+                height: 540px;
+				margin:0;padding:0;
             }
         }
     }

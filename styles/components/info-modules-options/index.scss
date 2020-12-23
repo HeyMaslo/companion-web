@@ -26,7 +26,6 @@
 
         h2 {
             @include font-family(22px, $info-modules-subtitle, 600);
-            margin: 50px 0;
         }
 
         p {
@@ -49,6 +48,7 @@
             flex-direction: column;
             justify-content: space-between;
             height: 500px;
+
         }
 
         .options-container {
@@ -70,6 +70,7 @@
 
         img {
             height: 50px;
+			display:none;
         }
 
         span,
@@ -79,7 +80,7 @@
             &:hover {
                 text-decoration: none;
             }
-
+			
             padding: 15px 10px;
             box-shadow: $global-shadow;
             max-width: 120px;
@@ -107,6 +108,7 @@
             &.selected {
                 border: 2px solid $info-modules-options-card-border;
             }
+			height:28px;
         }
 
         img {
