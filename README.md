@@ -65,16 +65,16 @@ scheme
    .variation('pastel')
    .web_safe(false);
 ```
-- Custom colors go to: [google.com/search?q=color+picker](https://www.google.com/search?q=color+picker) and copy 
+- Custom colors go to: [google.com/search?q=color+picker](https://www.google.com/search?q=color+picker) and copy the HEX code
 - Then replace `colorpalette[ index ] = ' HEX ';` then replace the HEX code of the color of your choice (without the hash `#`)
-- Inverte the color palette enable the line `colorpalette.reverse();`
+- Invert the color palette by enabling the line `colorpalette.reverse();`
 Paiper's thought bubbles are gradients extracted from the color palette in `./components/PaiperComponent.js`
 By default:
 meta bubbles are of a random color between colorpalette[0] and colorpalette[1],
 console bubbles are of a random color between colorpalette[2] and colorpalette[3],
 data bubbles are of a random color between colorpalette[4] and colorpalette[5].
 
-- Individual element colors go to `./styles/colors.scss`
+- Colors of individual element can be edited here `./styles/colors.scss`
 - Modify the background in `./styles/components/background/index.scss`
 
 - Set your browser in full screen and take a screenshot. Replace the file `./screenshot.png`.
