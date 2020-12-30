@@ -1,3 +1,9 @@
+# NISSA
+
+![alt text](screenshot.png)
+
+Welcome to my repository!
+
 ## Getting Started
 
 Make sure you are running node v12.6!  Use nvm if you must.
@@ -21,3 +27,4 @@ yarn dev
 ```
 
 
+## Personalize your Companion 
