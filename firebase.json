@@ -1,7 +1,7 @@
 {
     "hosting": [
         {
-            "target": "moleskine-stage",
+            "target": "nissacompanion-stage",
             "public": "./out",
             "rewrites": [
                 {

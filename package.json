@@ -9,7 +9,7 @@
     "export": "next export",
     "deploy:stage": "yarn build && yarn export && firebase deploy --only hosting:companion-web-stage",
 	"deploy:moleskine": "yarn build && yarn export && firebase deploy --only hosting:moleskine-stage",
-	"deploy:nissa": "yarn build && yarn export && firebase deploy --only hosting:nissa-stage"
+	"deploy:nissacompanion": "yarn build && yarn export && firebase deploy --only hosting:nissacompanion-stage"
   },
   "dependencies": {
     "@heymaslo/persona": "./dependencies/persona",

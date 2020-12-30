@@ -2,7 +2,7 @@
   "targets": {
     "maslo-377f0": {
       "hosting": {
-        "nissa-stage": [
+        "nissacompanion-stage": [
           "nissacompanion"
         ]
       }
