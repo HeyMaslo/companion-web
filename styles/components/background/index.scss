@@ -12,14 +12,10 @@
     #{$global-bg-page-gradient-two} 51.09%,
     #{$global-bg-page-gradient-three} 105.63%
   );
-  background-image:url('http://alivemachine.io/moleskine_BG.jpg');
-
+  background-image:url('https://cdn.thingiverse.com/assets/6e/83/c8/ec/4e/photo.png');
+  background-blend-mode: darken;
 	background-size:cover;
-	
-	mix-blend-mode:overlay;
+	opacity:.6;
 	overflow:hidden;
-	opacity:.4;
-}
-body{
-background-color:$orb7;
+	background-color:#a0b6bd;
 }

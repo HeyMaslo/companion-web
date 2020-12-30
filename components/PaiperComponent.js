@@ -4,9 +4,16 @@ import { colorpalette } from './../viewModels/PersonaViewModel';
 import { messageFromChat } from './ChatComponent';
 import { messageFromBot } from '././../viewModels/ChatViewModel';
 var colors = [];
-				for(var i=0;i<colorpalette.length;i++){
-					colors[i]="#"+colorpalette[i];
-				}
+for(var i=0;i<colorpalette.length;i++){
+	colors[i]="#"+colorpalette[i];
+}
+//colors can be written in RGB or HEX
+//colors[0] = 'rgb(200,64,0)'; //meta
+//colors[1] = 'rgb(200, 0, 128)'; //meta
+//colors[2] = 'rgb(32,100,0)'; //console
+//colors[3] = 'rgb(0, 100, 64)'; //console
+//colors[4] = 'rgb(0,128,200)'; //data
+//colors[5] = 'rgb(0, 64, 200)'; //data
 
 @observer
 export default class PaiperComponent extends React.Component {
