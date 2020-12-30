@@ -11,28 +11,27 @@ Welcome to my repository!
 To Create a new Companion you are going to need a Github account, a Storymapr account, and Firebase account.
 Make sure you are running node v12.6!  Use nvm if you must.
 
-Get the Persona
-
+- In Github Desktop add a new repository to your local files.
+- Fork it and give it a name.
+- Using the command prompt naviguate to your `companion-web` folder folder using `cd`
+- Get the Persona
 ```bash
 cd dependencies && git clone git@github.com:HeyMaslo/maslo-persona.git persona && cd persona && git fetch --all && git checkout colors-config && cd ../../
 ```
-
-Install dependencies
-
+- Install dependencies
 ```bash
 yarn install
 ```
-
-Run the development server:
-
+- Run the development server:
 ```bash
 yarn dev
 ```
-
+- Access your local companion by opening `http://localhost:3000/` with Chrome.
+- CONGRATS! You have your own personal companion.
 
 ## Personalize your Companion 
 
-Update the guided conversation with Storymapr
+### Update the guided conversation with Storymapr
 - Go to [beta.storymapr.com/dialogue_trees](https://beta.storymapr.com/dialogue_trees)
 - Display all the trees and pick an existing companion tree like [MasloWebCompanion_greg](https://beta.storymapr.com/dialogue_trees/5fd2da87c860c2582a1e483c/workbench)
 - `Clone` it. Rename the Dialogue. Edit your tree. Click  `Share` and `Publish`
@@ -46,12 +45,12 @@ env: {
     }
 ```
 - Replace DTR_ID by your tree ID
-- To preview Storymapr actions add your tree id in the URL as follows: `http://localhost:3000/?dtreeId=5faeef6bc860c23e30275e36`
+- To preview Storymapr actions add your tree id in the URL as follows: ```http://localhost:3000/?dtreeId=5faeef6bc860c23e30275e36```
 
 - Update the page title in `.components/LogoComponent.js`
 - Update the tab title in `./pages/_document.js`
 
-Change the color palette
+### Change the style, colors and name
 - Go to [c0bra.github.io/color-scheme-js](http://c0bra.github.io/color-scheme-js/) and create the palette of your choice.
 - Go to `./viewModels/PersonaViewModel.js` and replace the following lines with your new parameters:
 ```
@@ -98,7 +97,7 @@ data bubbles are of a random color between colorpalette[4] and colorpalette[5].
 }
 ```
 - Go to `./package.json` and in `"scripts"` add the line 
-`"deploy:COMPANIONNAME": "yarn build && yarn export && firebase deploy --only hosting:COMPANIONNAME-stage"`
+```"deploy:COMPANIONNAME": "yarn build && yarn export && firebase deploy --only hosting:COMPANIONNAME-stage"```
 - In the cmd line type `yarn deploy:COMPANIONNAME`
 - In your browser go to `https://COMPANIONNAME.web.app/`
-- CONGRATS, you have deploy your new companion.
+- CONGRATS! you have deployed your new companion.
