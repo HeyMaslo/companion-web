@@ -5,14 +5,13 @@ import { Persona } from '../dependencies/persona/web';
 
 ////http://c0bra.github.io/color-scheme-js/
 var ColorScheme = require('color-scheme');
-
 var scheme = new ColorScheme();
 scheme
-  .from_hue(300) // Start the scheme
-  .scheme('contrast') // Use the 'triade' scheme, that is, colors
-  // selected from 3 points equidistant around
-  // the color wheel.
-  .variation('pale'); // default pastel soft light hard pale
+  .from_hue(0)
+  .scheme('analogic') 
+  .variation('hard')
+  .distance(0.1)
+  .web_safe(true);
 
 export var colorpalette = scheme.colors();
 //document.documentElement.style.setProperty('$orb1', '#333333');
@@ -24,14 +23,14 @@ function getRandomInt(max) {
 function updatetheme() {
   if (typeof window !== 'undefined') {
     var s = window.document.documentElement.style;
-    s.setProperty('--oc1', '#' + colorpalette[colorpalette.length - 1]);
-    s.setProperty('--oc2', '#' + colorpalette[colorpalette.length - 2]);
-    s.setProperty('--oc3', '#' + colorpalette[colorpalette.length - 3]);
-    s.setProperty('--oc4', '#' + colorpalette[colorpalette.length - 4]);
-    s.setProperty('--oc5', '#' + colorpalette[colorpalette.length - 5]);
-    s.setProperty('--oc6', '#' + colorpalette[colorpalette.length - 6]);
-    s.setProperty('--oc7', '#' + colorpalette[colorpalette.length - 7]);
-    s.setProperty('--oc8', '#' + colorpalette[colorpalette.length - 8]);
+    s.setProperty('--oc1', '#' + colorpalette[0]);
+    s.setProperty('--oc2', '#' + colorpalette[1]);
+    s.setProperty('--oc3', '#' + colorpalette[2]);
+    s.setProperty('--oc4', '#' + colorpalette[3]);
+    s.setProperty('--oc5', '#' + colorpalette[4]);
+    s.setProperty('--oc6', '#' + colorpalette[5]);
+    s.setProperty('--oc7', '#' + colorpalette[6]);
+    s.setProperty('--oc8', '#' + colorpalette[7]);
   } else {
     setTimeout(function () {
       updatetheme();
