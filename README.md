@@ -101,7 +101,9 @@ data bubbles are of a random color between colorpalette[4] and colorpalette[5].
 }
 ```
 - Go to `./package.json` and in `"scripts"` add the line 
-```"deploy:COMPANIONNAME": "yarn build && yarn export && firebase deploy --only hosting:COMPANIONNAME-stage"```
+```
+"deploy:COMPANIONNAME": "yarn build && yarn export && firebase deploy --only hosting:COMPANIONNAME-stage"
+```
 - In the cmd line type `yarn deploy:COMPANIONNAME`
 - In your browser go to `https://COMPANIONNAME.web.app/`
 - CONGRATS! you have deployed your new companion.
