@@ -116,5 +116,5 @@ data bubbles are of a random color between colorpalette[4] and colorpalette[5].
 ```shell
 Birthdate - 29th of December 2020
 Birthplace - Venice, CA
-Nursery - [Maslo](https://dreamjournal.maslo.ai/)`
+Nursery - [Maslo](https://dreamjournal.maslo.ai/)
 ```
