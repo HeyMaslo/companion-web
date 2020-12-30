@@ -8,12 +8,16 @@ Welcome to my repository!
 
 ## Getting Started
 
-To Create a new Companion you are going to need a Github account, a Storymapr account, and Firebase account.
+To Create a new Companion you are going to need:
+- A Github account to download the code
+- A [Stroymapr](https://beta.storymapr.com/) account to edit the conversational tree
+- A [firebase](https://console.firebase.google.com) account to publish it online.
+
 Make sure you are running node v12.6!  Use nvm if you must.
 
 - In Github Desktop add a new repository to your local files.
 - Fork it and give it a name.
-- Using the command prompt naviguate to your `companion-web` folder folder using `cd`
+- Using the command prompt naviguate to your `companion-web` folder folder with `cd`
 - Get the Persona
 ```bash
 cd dependencies && git clone git@github.com:HeyMaslo/maslo-persona.git persona && cd persona && git fetch --all && git checkout colors-config && cd ../../
