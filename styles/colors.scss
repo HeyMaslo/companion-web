@@ -13,9 +13,18 @@ $global-bg-page-gradient-two: #B38FF3;
 $global-bg-page-gradient-three: #F5B4BA;
 
 
-$global-shadow:inset 0 0 0 rgba(0,0,0,.2), 4px 4px 4px rgba(0,0,0,.1), inset 0 0 0 rgba(0,0,0,.2), 0 0 8px rgba(0,0,0,.1);
-$global-shadow-hover:inset 4px 4px 4px rgba(0,0,0,.1), 0 0 0 rgba(0,0,0,.2), inset 0 0 8px rgba(0,0,0,.1), 0 0 0 rgba(0,0,0,.2);
-$global-shadow-deeper:inset 8px 8px 8px rgba(0,0,0,.1), 0 0 0 rgba(0,0,0,.2), inset 0 0 16px rgba(0,0,0,.1), 0 0 0 rgba(0,0,0,.2);
+$global-shadow:inset 0 0 0 rgba(0, 0, 0, .2),
+4px 4px 4px rgba(0, 0, 0, .1),
+inset 0 0 0 rgba(0, 0, 0, .2),
+0 0 8px rgba(0, 0, 0, .1);
+$global-shadow-hover:inset 4px 4px 4px rgba(0, 0, 0, .1),
+0 0 0 rgba(0, 0, 0, .2),
+inset 0 0 8px rgba(0, 0, 0, .1),
+0 0 0 rgba(0, 0, 0, .2);
+$global-shadow-deeper:inset 8px 8px 8px rgba(0, 0, 0, .1),
+0 0 0 rgba(0, 0, 0, .2),
+inset 0 0 16px rgba(0, 0, 0, .1),
+0 0 0 rgba(0, 0, 0, .2);
 
 
 // typograph
@@ -49,3 +58,12 @@ $info-modules-page-title: #2F2F2F;
 // heart
 $heart-bg: $orb7;
 $heart-btn-text: #FFFFFF;
+
+// form
+$login-form-bg: #F2F2F2;
+$login-form-title: #2F2F2F;
+$login-form-input-shadow:  0px 4px 15px rgba(0, 0, 0, 0.1);
+$login-form-border: #000000;
+$login-form-signup-btn: #AC89DF;
+$login-form-btn-shadow:  0px 4px 15px rgba(0, 0, 0, 0.1);
+$login-form-btn: #D1B8F6;

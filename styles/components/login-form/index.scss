@@ -1,0 +1,106 @@
+#signup-form-component,
+#login-form-component {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form {
+        background-color: $login-form-bg;
+        width: 500px;
+        height: 600px;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .form-container {
+            padding: 20px 20px 0 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .form-input {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+                width: 400px;
+                align-self: center;
+
+                .MuiInputBase-fullWidth {
+
+                    input {
+                        height: 55px;
+                        padding: 5px 30px;
+                        border-radius: 30px;
+                        box-shadow: $login-form-input-shadow;
+                        margin: 10px auto;
+                        @include font-family(14px, $login-form-title);
+                    }
+                }
+
+                button {
+                    background-color: $login-form-btn;
+                    height: 55px;
+                    border-radius: 50px;
+                    margin-bottom: 20px;
+                    box-shadow: $login-form-btn-shadow;
+
+                    span {
+                        @include font-family(18px, $login-form-title);
+                        text-transform: none;
+                    }
+                }
+            }
+        }
+
+        h1 {
+            margin: 30px 0 0 0;
+            text-align: center;
+            @include font-family(32px, $login-form-title, 700);
+        }
+
+        p {
+            @include font-family(16px, $login-form-title);
+            text-align: center;
+            width: 430px;
+            align-self: center;
+            margin: 20px 0;
+        }
+
+        .form-bottom {
+            width: 100%;
+
+            .line {
+                opacity: 0.1;
+                background-color: $login-form-border;
+                width: 100%;
+                height: 1px;
+            }
+
+            p {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include font-family(14px, $login-form-title);
+                margin: 20px 0;
+                width: 100%;
+
+                button {
+                    padding: 0;
+
+                    span {
+                        @include font-family(14px, $login-form-signup-btn);
+                        text-transform: lowercase;
+                    }
+                }
+            }
+        }
+    }
+}

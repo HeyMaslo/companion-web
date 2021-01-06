@@ -1,5 +1,4 @@
 import React from 'react';
-import { Mail } from './../config/images';
 
 export const LogoComponent = () => {
   return (

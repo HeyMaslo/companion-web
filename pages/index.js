@@ -11,9 +11,13 @@ import WavesComponent from '../components/WavesComponent';
 import ChatViewModel from '../viewModels/ChatViewModel';
 import PersonaViewModel from '../viewModels/PersonaViewModel';
 import LogoComponent from '../components/LogoComponent';
- import PaiperComponent from '../components/PaiperComponent';
- import messageFromPaiper from '../components/PaiperComponent';
- import messageFromChatInput from '../components/ChatInputComponent';
+import PaiperComponent from '../components/PaiperComponent';
+import messageFromChatInput from '../components/ChatInputComponent';
+import AccessViewModel from '../viewModels/accessViewModel';
+import LoginFormComponent from '../components/LoginFormComponent';
+import SignupFormComponent from '../components/SignupFormComponent';
+import firebase from '../firebase/index';
+
 @observer
 export class Home extends React.Component {
   constructor(props) {
@@ -24,7 +28,13 @@ export class Home extends React.Component {
 
     this.persona = PersonaViewModel;
     this.chatViewModel = ChatViewModel;
+    this.access = AccessViewModel;
     this.chatViewModel.persona = this.persona;
+  }
+
+  componentDidMount() {
+    firebase.bootstrap();
+    this.access.bootstrap();
   }
 
   initialized = async () => {
@@ -39,28 +49,39 @@ export class Home extends React.Component {
         <WavesComponent />
         <LogoComponent />
         <Header infoModules={this.chatViewModel.showInformationModule} />
-        <PersonaComponent
-          initialized={this.initialized}
-          persona={this.persona}
-          infoModules={this.chatViewModel.showInformationModule}
-        />
-        <WavesComponent />
-        <ChatComponent infoModules={this.chatViewModel.showInformationModule} />
-			
-		<PaiperComponent messageFromPaiper={messageFromChatInput} /> 
-        {this.chatViewModel.showInformationModule && (
-          <InfoModulesWrapper submodule={this.chatViewModel.submoduleSelected}>
-            <InfoModuleOptions
-              module={this.chatViewModel.moduleName}
-              submodule={this.chatViewModel.submoduleSelected}
+        {this.access.logged ? (
+          <>
+            <PersonaComponent
+              initialized={this.initialized}
+              persona={this.persona}
+              infoModules={this.chatViewModel.showInformationModule}
             />
-            {this.chatViewModel.submoduleSelected && (
-              <InfoModulesOptionsPage
-                module={this.chatViewModel.moduleName}
-                submodule={this.chatViewModel.submoduleSelected}
-              />
+            <WavesComponent />
+            <ChatComponent
+              infoModules={this.chatViewModel.showInformationModule}
+            />
+            <PaiperComponent messageFromPaiper={messageFromChatInput} />
+            {this.chatViewModel.showInformationModule && (
+              <InfoModulesWrapper
+                submodule={this.chatViewModel.submoduleSelected}>
+                <InfoModuleOptions
+                  module={this.chatViewModel.moduleName}
+                  submodule={this.chatViewModel.submoduleSelected}
+                />
+                {this.chatViewModel.submoduleSelected && (
+                  <InfoModulesOptionsPage
+                    module={this.chatViewModel.moduleName}
+                    submodule={this.chatViewModel.submoduleSelected}
+                  />
+                )}
+              </InfoModulesWrapper>
             )}
-          </InfoModulesWrapper>
+          </>
+        ) : (
+          <>
+            {this.access.mode === 'login' && <LoginFormComponent />}
+            {this.access.mode === 'signup' && <SignupFormComponent />}
+          </>
         )}
       </div>
     );
