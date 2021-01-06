@@ -8,6 +8,17 @@
     top: 0;
     left: 0;
     z-index: 2;
+    &.chat-wrapper {
+        &.move-top {
+            height: 130px;
+            .wrapper {
+                height: 130px;
+            }
+            .input-row {
+                display: none;
+            }
+        }
+    }
     .wrapper {
         max-width: $chat-max-width;
         width: 100%;
@@ -25,12 +36,18 @@
             .bot-column {
                 display: flex;
                 flex-direction: column;
-                height: 450px;
                 overflow-y: auto;
                 justify-content: flex-end;
                 padding: 20px;
                 width: 300px;
                 position: relative;
+                transition: width 600ms ease-out, height 600ms ease-out;
+                &.chat-height {
+                    height: 450px;
+                }
+                &.move-top {
+                    height: 120px;
+                }
             }
         }
         .input-row {

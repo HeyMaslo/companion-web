@@ -4,16 +4,13 @@ import {
   MASLO_BOT_NAME,
   USER_CHARACTER_NAME,
   INITIAL_NODE_ID,
-  CATEGORY_API_BASE
+  CATEGORY_API_BASE,
 } from '../consts';
-import personaViewModel from './PersonaViewModel';
 import qs from 'qs';
-
 
 // TODO logger
 
 export class ChatViewModel {
-  
   masloBotName = MASLO_BOT_NAME;
   userCharacterName = USER_CHARACTER_NAME;
   currentNodeId = INITIAL_NODE_ID;
@@ -39,7 +36,11 @@ export class ChatViewModel {
   @observable buttons = [];
   @observable pauseLoop = false;
 
-  @observable dtreeId = process.env.DTR_ID
+  @observable dtreeId = process.env.DTR_ID;
+
+  @observable showInformationModule = false;
+  @observable moduleName = null;
+  @observable submoduleSelected = null;
 
   constructor() {}
 
@@ -47,10 +48,12 @@ export class ChatViewModel {
    * chat entrypoint
    */
   async start() {
-    const dtreeParam = qs.parse(window.location.search, {ignoreQueryPrefix: true})
+    const dtreeParam = qs.parse(window.location.search, {
+      ignoreQueryPrefix: true,
+    });
     if (dtreeParam.dtreeId) {
-      this.dtreeId = dtreeParam.dtreeId
-    } 
+      this.dtreeId = dtreeParam.dtreeId;
+    }
 
     try {
       const chars = await getCharacters(this.dtreeId);
@@ -76,11 +79,14 @@ export class ChatViewModel {
 
   /**
    * process the user's choice
-   * @param {string} value 
+   * @param {string} value
    */
   async userReactionButtons(value, message) {
     this.currentNodeId = value;
     this._pushUserMessage(message);
+    this.showInformationModule = false;
+    this.moduleName = null;
+    this.submoduleSelected = null;
     await this._chatLoop();
   }
 
@@ -89,7 +95,6 @@ export class ChatViewModel {
    * @param {string} message
    */
   async userInput(message) {
-
     this._scoreUserInput(message);
 
     const user_node = {
@@ -124,7 +129,6 @@ export class ChatViewModel {
    * responsible to interact with Story Mapr and control the chat flow
    */
   async _chatLoop() {
-
     this.renderButtons = false;
     this.buttons = [];
 
@@ -142,14 +146,17 @@ export class ChatViewModel {
     this.gpt3Mode = false;
     this.gpt3Counter = 0;
 
-    const nextNodes = await getNext(this.dtreeId, this.currentNodeId, this.context);
+    const nextNodes = await getNext(
+      this.dtreeId,
+      this.currentNodeId,
+      this.context
+    );
     const nextNode = nextNodes[Math.floor(Math.random() * nextNodes.length)];
 
     const mySpeaker = nextNode.speaker_ids[0];
 
     // verify if maslo is talking
     if (mySpeaker === this.masloBotCharacter.smid) {
-
       if (nextNode.actions.length > 0) {
         nextNode.actions.forEach((action) =>
           this._execExternalFunc(action.body)
@@ -197,7 +204,11 @@ export class ChatViewModel {
   async _gpt3_chat() {
     this.chatStates.typing = true;
 
-    const suggestion = await getSuggestion(this.dtreeId, this.currentNodeId, this.gpt3Cache);
+    const suggestion = await getSuggestion(
+      this.dtreeId,
+      this.currentNodeId,
+      this.gpt3Cache
+    );
 
     const masloNode = {
       speaker_ids: [this.masloBotCharacter.smid],
@@ -210,10 +221,10 @@ export class ChatViewModel {
     this.gpt3Counter += 1;
 
     // NK **** This could eventually be stored in the gpt3Cache or context.  Calling direct animations here for now.
-    const anim = await this._getAnimFromContent(masloNode.en_content)
-    
-    console.log("anim determined for GPT3 -> ", anim)
-    this.persona._persona._persona.setState(anim)
+    const anim = await this._getAnimFromContent(masloNode.en_content);
+
+    console.log('anim determined for GPT3 -> ', anim);
+    this.persona._persona._persona.setState(anim);
 
     this._pushBotMessage(masloNode.en_content);
 
@@ -222,21 +233,34 @@ export class ChatViewModel {
 
   /**
    * Fetch a anim given a string (usually a GPT3 response content)
-  */
+   */
   async _getAnimFromContent(content) {
-    const encodedContent = encodeURIComponent(content)
+    const encodedContent = encodeURIComponent(content);
     // If the rejected items get long this will suck
-    let possible_anims = Object.keys(this.persona._persona._persona._states).filter(item => item != 'init')
-    const extras = {'happy': 'joy', 'nervous': 'shake', 'unknown': 'idle', 'neutral': 'idle', 'bored':'idle'}
-    Object.keys(extras).forEach(extra => possible_anims.push(extra))
-    const categoryUrl = CATEGORY_API_BASE + `/search?prompt=${encodedContent}&tokens=100&engine=davinci&docs=${possible_anims.join(',')}`
-    const response = await fetch(categoryUrl)
-    const data = await response.json()
-    const mapping = extras[data.response]
-    if (mapping) {return mapping} 
-      else 
-    {return data.response}
-    
+    let possible_anims = Object.keys(
+      this.persona._persona._persona._states
+    ).filter((item) => item != 'init');
+    const extras = {
+      happy: 'joy',
+      nervous: 'shake',
+      unknown: 'idle',
+      neutral: 'idle',
+      bored: 'idle',
+    };
+    Object.keys(extras).forEach((extra) => possible_anims.push(extra));
+    const categoryUrl =
+      CATEGORY_API_BASE +
+      `/search?prompt=${encodedContent}&tokens=100&engine=davinci&docs=${possible_anims.join(
+        ','
+      )}`;
+    const response = await fetch(categoryUrl);
+    const data = await response.json();
+    const mapping = extras[data.response];
+    if (mapping) {
+      return mapping;
+    } else {
+      return data.response;
+    }
   }
 
   /**
@@ -272,7 +296,10 @@ export class ChatViewModel {
   }
 
   showInfoModule(moduleName) {
-    alert(`I would show: ${moduleName}`)
+    if (moduleName) {
+      this.showInformationModule = true;
+      this.moduleName = moduleName;
+    }
   }
 
   /**
