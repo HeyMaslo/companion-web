@@ -103,7 +103,6 @@ import CompanionServerInfoGraphic from '../assets/img/opensource/companionserver
 
 import ResearchPaperIcon from '../assets/img/opensource/researchpaper-icon.png';
 
-
 import AdaptivePersonalSystem from '../assets/img/moleskine/AdaptivePersonalSystem.png';
 import WhoIsMoleskine from '../assets/img/moleskine/WhoIsMoleskine.png';
 import EmpatheticUX from '../assets/img/moleskine/EmpatheticUX.png';
@@ -113,7 +112,6 @@ import MoleskineSpecificNeeds from '../assets/img/moleskine/MoleskineSpecificNee
 import ProjectMilestoneTimeline from '../assets/img/moleskine/ProjectMilestoneTimeline.png';
 import StatementofWork from '../assets/img/moleskine/StatementofWork.png';
 import UseCases from '../assets/img/moleskine/UseCases.png';
-
 
 // nissan assets
 import NissanAgentObjective from '../assets/img/nissan/nissan-agent-objective.svg';
@@ -125,18 +123,18 @@ import TheFutureAutomotiveExperience from '../assets/img/nissan/the-future-autom
 import CustomAgentPersonification from '../assets/img/nissan/custom-agent-personification.svg';
 import MindPerceptionInDigitalAgents from '../assets/img/nissan/mind-perception-in-digital-agents.svg';
 import NextSteps from '../assets/img/nissan/next-steps.svg';
-
+import HalfOrb from '../assets/img/nissan/half-orb.svg';
 
 export {
-	AdaptivePersonalSystem,
-	WhoIsMoleskine,
-	EmpatheticUX,
-	IntegrationofMoleskineApps,
-	MoleskineSmartApps,
-	MoleskineSpecificNeeds,
-	ProjectMilestoneTimeline,
-	StatementofWork,
-	UseCases,
+  AdaptivePersonalSystem,
+  WhoIsMoleskine,
+  EmpatheticUX,
+  IntegrationofMoleskineApps,
+  MoleskineSmartApps,
+  MoleskineSpecificNeeds,
+  ProjectMilestoneTimeline,
+  StatementofWork,
+  UseCases,
   Wave1,
   Wave2,
   Logo,
@@ -229,4 +227,5 @@ export {
   CustomAgentPersonification,
   MindPerceptionInDigitalAgents,
   NextSteps,
+  HalfOrb,
 };
