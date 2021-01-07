@@ -14,12 +14,12 @@
         width: 98%;
         border-radius: 15px;
         box-shadow: $global-shadow;
-        
         position: relative;
         display: flex;
         flex-direction: row;
-		overflow-x:hidden;
-		overflow-y:auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+
         .float-icon {
             position: absolute;
             bottom: 0;
@@ -27,11 +27,16 @@
         }
 
         .info-container {
-			max-height:540px;
+            max-height: 540px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+
             .info {
                 margin: 0 30px;
                 display: flex;
-				
+
                 &.standard {
                     flex-direction: column;
                 }
@@ -98,7 +103,19 @@
             }
 
             &.first {
+                &.standard {
+                    min-width: 400px;
+                    max-width: 400px;
 
+                    .content-data {
+                        padding: 20px;
+                        min-height: 400px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 100%
+                    }
+                }
             }
 
             h1 {
@@ -108,7 +125,7 @@
 
             h2 {
                 @include font-family(22px, $info-modules-subtitle, 600);
-                margin: 50px 0;
+                margin: 20px 0;
             }
 
             h3 {
@@ -117,16 +134,14 @@
             }
 
             p {
-                @include font-family(14px, $info-modules-content);
-                line-height: 21px;
+                @include font-family(22px, $info-modules-content);
+                line-height: 30px;
                 margin: 0;
 
-                &:first-child {
-                    margin-bottom: 30px;
-                }
+                &:first-child {}
 
                 &.main-content-wrapper {
-                    margin-bottom: 50px;
+                    max-width: 380px;
                 }
             }
 
@@ -136,18 +151,20 @@
 
                 &:hover {
                     text-decoration: none;
-					box-shadow: $global-shadow-hover
+                    box-shadow: $global-shadow-hover
                 }
 
                 padding: 15px 10px;
                 box-shadow: $global-shadow;
-                max-width: 120px;
+                max-width: 200px;
                 text-align: center;
                 border-radius: 30px;
             }
+
             .standalone {
                 height: 540px;
-				margin:0;padding:0;
+                margin: 0;
+                padding: 0;
             }
         }
     }

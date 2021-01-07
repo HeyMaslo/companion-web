@@ -1,93 +1,4 @@
 import {
-  BabeApp,
-  CareerApp,
-  CareerIcon,
-  CheckinIcon,
-  ClinicalIcon,
-  CompanionKitApp,
-  CompanionKitIcon,
-  CompanionKitOrb,
-  CompanionServerIcon,
-  CompanionServerInfoGraphic,
-  DeeApp,
-  EducationIcon,
-  EvaApp,
-  ObservingIcon,
-  ResilienseIcon,
-  ServerIcon,
-  SignalIcon,
-  TaggingIcon,
-  ToosIcon,
-  UseCasesDashboard,
-  CompanionWebIcon,
-  EvaOrb,
-  SigbeeOrb,
-  CareerCompanionOrb,
-  StellaOrb,
-  OptiOrb,
-  MaslolandIcon,
-  MasloPlatformIcon,
-  TimeIcon,
-  NewsIcon,
-  omIcon,
-  ArtMachineIcon,
-  ProphetIcon,
-  OrageIcon,
-  theprojectofthecenturyIcon,
-  SequencerIcon,
-  HyperObjectWebIcon,
-  PaiperIcon,
-  PaiperOrb,
-  TheAvatarIcon,
-  Masloland,
-  MasloPlatform,
-  Time,
-  News,
-  om,
-  ArtMachine,
-  Prophet,
-  Orage,
-  theprojectofthecentury,
-  Sequencer,
-  HyperObjectWeb,
-  Paiper,
-  TheAvatar,
-  CANBINDOrb,
-  EmilyOrb,
-  ResearchPaperIcon,
-  BabeOrb,
-  HealthOrb,
-  BabeMainIcon,
-  BabeGraphic,
-  CanBindGraphic,
-  EvaMainIcon,
-  EvaGtaphic,
-  EmilyMainIcon,
-  EmilyGraphic,
-  SigbeeMainIcon,
-  SigbeeGraphic,
-  OptiMainIcon,
-  OptiGraphic,
-  StellaMainIcon,
-  StellaGraphic,
-  CareerMainIcon,
-  CareerGraphic,
-  CanBindMainIcon,
-  PaiperMainIcon,
-  PaiperGraphic,
-  HealthMainIcon,
-  HealthGraphic,
-	AdaptivePersonalSystem,
-	WhoIsMoleskine,
-	EmpatheticUX,
-	IntegrationofMoleskineApps,
-	MoleskineSmartApps,
-	MoleskineSpecificNeeds,
-	ProjectMilestoneTimeline,
-	StatementofWork,
-  UseCases,
-  NissanExpectation,
-  NissanProposal,
   NissanAgentObjective,
   WhoIsMaslo,
   MasloDna,
@@ -97,10 +8,7 @@ import {
   CustomAgentPersonification,
   MindPerceptionInDigitalAgents,
   NextSteps,
-
-
-
-
+  HalfOrb,
 } from '../config/images';
 
 export const infoModules = {
@@ -115,8 +23,7 @@ export const infoModules = {
           learn. We do this for our partners in several categories related to
           deep fundamental human needs.
         </p>
-        <p>
-        </p>
+        <p></p>
       </p>
     ),
     options: [
@@ -126,49 +33,49 @@ export const infoModules = {
         action: 'pages',
         page: 'NissanAgentObjective',
       },
-	  {
+      {
         title: 'Who is Maslo',
         icon: '',
         action: 'pages',
         page: 'WhoIsMaslo',
       },
-	  {
+      {
         title: 'Maslo Dna',
         icon: '',
         action: 'pages',
         page: 'MasloDna',
       },
-	  {
+      {
         title: 'Maslo Agent Approach',
         icon: '',
         action: 'pages',
         page: 'MasloAgentApproach',
       },
-	  {
+      {
         title: 'Maslo Ai',
         icon: '',
         action: 'pages',
         page: 'MasloAi',
       },
-	  {
+      {
         title: 'The Future Automotive Experience',
         icon: '',
         action: 'pages',
         page: 'TheFutureAutomotiveExperience',
       },
-	  {
+      {
         title: 'Custom Agent Personification',
         icon: '',
         action: 'pages',
         page: 'CustomAgentPersonification',
       },
-	  {
+      {
         title: 'Mind Perception In Digital Agents',
         icon: '',
         action: 'pages',
         page: 'MindPerceptionInDigitalAgents',
       },
-	  {
+      {
         title: 'Next Steps',
         icon: '',
         action: 'pages',
@@ -187,7 +94,7 @@ export const infoModules = {
         },
       ],
     },
-	WhoIsMaslo: {
+    WhoIsMaslo: {
       sections: [
         {
           type: 'standalone',
@@ -199,7 +106,7 @@ export const infoModules = {
         },
       ],
     },
-	MasloDna: {
+    MasloDna: {
       sections: [
         {
           type: 'standalone',
@@ -211,7 +118,7 @@ export const infoModules = {
         },
       ],
     },
-	MasloAgentApproach: {
+    MasloAgentApproach: {
       sections: [
         {
           type: 'standalone',
@@ -223,7 +130,7 @@ export const infoModules = {
         },
       ],
     },
-	MasloAi: {
+    MasloAi: {
       sections: [
         {
           type: 'standalone',
@@ -235,7 +142,7 @@ export const infoModules = {
         },
       ],
     },
-	TheFutureAutomotiveExperience: {
+    TheFutureAutomotiveExperience: {
       sections: [
         {
           type: 'standalone',
@@ -247,7 +154,30 @@ export const infoModules = {
         },
       ],
     },
-	CustomAgentPersonification: {
+    CustomAgentPersonification: {
+      title: 'Custom Agent Personification',
+      subtitle: ' ',
+      icon: HalfOrb,
+      type: 'standard',
+      subtitleColor: '#922F27',
+      titleColor: '#3C0603',
+      bio: (
+        <p className="main-content-wrapper">
+          <p>
+            We will work with you to come up with the best personification of
+            your digital agent depending on the qualities that you find most
+            valuable.
+          </p>
+          <p></p>
+        </p>
+      ),
+      button: {
+        title: 'Inventing the Maslo Persona',
+        action: {
+          type: 'url',
+          path: 'https://medium.com/maslo/art-ex-machina-bbbfb605b7b7',
+        },
+      },
       sections: [
         {
           type: 'standalone',
@@ -260,6 +190,30 @@ export const infoModules = {
       ],
     },
     MindPerceptionInDigitalAgents: {
+      title: 'Mind Perception In Digital Agents',
+      subtitle: 'Co-learning / Co-creation Research',
+      icon: HalfOrb,
+      type: 'standard',
+      subtitleColor: '#922F27',
+      titleColor: '#3C0603',
+      bio: (
+        <p className="main-content-wrapper">
+          <p>
+            A study by researchers at Maslo and the University of British
+            Columbia found that younger users with more experience interacting
+            with digital agents were much more likely to perceive qualities of
+            mind and develop trusting relationships with machines.
+          </p>
+          <p></p>
+        </p>
+      ),
+      button: {
+        title: 'view the research study',
+        action: {
+          type: 'url',
+          path: 'https://psyarxiv.com/p49g7/download',
+        },
+      },
       sections: [
         {
           type: 'standalone',
@@ -271,7 +225,7 @@ export const infoModules = {
         },
       ],
     },
-	NextSteps: {
+    NextSteps: {
       sections: [
         {
           type: 'standalone',
@@ -284,5 +238,4 @@ export const infoModules = {
       ],
     },
   },
- 
 };

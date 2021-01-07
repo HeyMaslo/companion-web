@@ -17,21 +17,24 @@ export default class InfoModulesOptionsPage extends React.Component {
     const display = this.state.display ? ' display' : '';
     const { submodule, module } = this.props;
     const data = infoModules[module][submodule];
+    const firstcardCalss = data.type ? ` ${data.type}` : '';
     return (
       <div id="info-modules-options-card-page" className={display}>
         <div className="container">
           <img src={data.icon} className="float-icon" />
-          <div className="info-container first">
-            <h1>{data.title}</h1>
-            <h2 style={{ color: data.subtitleColor }}>{data.subtitle}</h2>
-            <>{data.bio}</>
-            <>
-              {data?.button?.action?.type === 'url' ? (
-                <Link href={data.button.action.path} target="_blank">
-                  {data.button.title}
-                </Link>
-              ) : null}
-            </>
+          <div className={`info-container first${firstcardCalss}`}>
+            <div className="content-data">
+              <h1 style={{ color: data.titleColor }}>{data.title}</h1>
+              <h2 style={{ color: data.subtitleColor }}>{data.subtitle}</h2>
+              <>{data.bio}</>
+              <>
+                {data?.button?.action?.type === 'url' ? (
+                  <Link href={data.button.action.path} target="_blank">
+                    {data.button.title}
+                  </Link>
+                ) : null}
+              </>
+            </div>
           </div>
           {data.sections.map((section) => {
             return (
