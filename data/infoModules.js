@@ -85,12 +85,27 @@ import {
 	MoleskineSpecificNeeds,
 	ProjectMilestoneTimeline,
 	StatementofWork,
-	UseCases,
+  UseCases,
+  NissanExpectation,
+  NissanProposal,
+  NissanAgentObjective,
+  WhoIsMaslo,
+  MasloDna,
+  MasloAgentApproach,
+  MasloAi,
+  TheFutureAutomotiveExperience,
+  CustomAgentPersonification,
+  MindPerceptionInDigitalAgents,
+  NextSteps,
+
+
+
+
 } from '../config/images';
 
 export const infoModules = {
-  WhoIsMoleskine: {
-    title: 'About Moleskine x Maslo',
+  NissanMaslo: {
+    title: 'About Nissan x Maslo',
     subtitle:
       'Companions meet you where you are and help you get to where you want to be.',
     bio: (
@@ -106,164 +121,164 @@ export const infoModules = {
     ),
     options: [
       {
-        title: 'Who Is Moleskine',
+        title: 'Nissan Agent Objective',
         icon: '',
         action: 'pages',
-        page: 'WhoIs',
+        page: 'NissanAgentObjective',
       },
 	  {
-        title: 'Adaptive Personal System',
+        title: 'Who is Maslo',
         icon: '',
         action: 'pages',
-        page: 'AdaptivePersonalSystem',
+        page: 'WhoIsMaslo',
       },
 	  {
-        title: 'Empathetic UX',
+        title: 'Maslo Dna',
         icon: '',
         action: 'pages',
-        page: 'EmpatheticUX',
+        page: 'MasloDna',
       },
 	  {
-        title: 'Integration of Moleskine Apps',
+        title: 'Maslo Agent Approach',
         icon: '',
         action: 'pages',
-        page: 'IntegrationofMoleskineApps',
+        page: 'MasloAgentApproach',
       },
 	  {
-        title: 'Moleskine SmartApps',
+        title: 'Maslo Ai',
         icon: '',
         action: 'pages',
-        page: 'MoleskineSmartApps',
+        page: 'MasloAi',
       },
 	  {
-        title: 'Moleskine Specific Needs',
+        title: 'The Future Automotive Experience',
         icon: '',
         action: 'pages',
-        page: 'MoleskineSpecificNeeds',
+        page: 'TheFutureAutomotiveExperience',
       },
 	  {
-        title: 'Project Milestone Timeline',
+        title: 'Custom Agent Personification',
         icon: '',
         action: 'pages',
-        page: 'ProjectMilestoneTimeline',
+        page: 'CustomAgentPersonification',
       },
 	  {
-        title: 'Statement of Work',
+        title: 'Mind Perception In Digital Agents',
         icon: '',
         action: 'pages',
-        page: 'StatementofWork',
+        page: 'MindPerceptionInDigitalAgents',
       },
 	  {
-        title: 'Use Cases',
+        title: 'Next Steps',
         icon: '',
         action: 'pages',
-        page: 'UseCases',
+        page: 'NextSteps',
       },
     ],
-    WhoIs: {
+    NissanAgentObjective: {
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: WhoIsMoleskine,
+          image: NissanAgentObjective,
           items: [],
         },
       ],
     },
-	AdaptivePersonalSystem: {
+	WhoIsMaslo: {
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: AdaptivePersonalSystem,
+          image: WhoIsMaslo,
           items: [],
         },
       ],
     },
-	EmpatheticUX: {
+	MasloDna: {
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: EmpatheticUX,
+          image: MasloDna,
           items: [],
         },
       ],
     },
-	IntegrationofMoleskineApps: {
+	MasloAgentApproach: {
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: IntegrationofMoleskineApps,
+          image: MasloAgentApproach,
           items: [],
         },
       ],
     },
-	MoleskineSmartApps: {
+	MasloAi: {
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: MoleskineSmartApps,
+          image: MasloAi,
           items: [],
         },
       ],
     },
-	MoleskineSpecificNeeds: {
+	TheFutureAutomotiveExperience: {
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: MoleskineSpecificNeeds,
+          image: TheFutureAutomotiveExperience,
           items: [],
         },
       ],
     },
-	ProjectMilestoneTimeline: {
+	CustomAgentPersonification: {
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: ProjectMilestoneTimeline,
+          image: CustomAgentPersonification,
           items: [],
         },
       ],
     },
-	StatementofWork: {
+    MindPerceptionInDigitalAgents: {
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: StatementofWork,
+          image: MindPerceptionInDigitalAgents,
           items: [],
         },
       ],
     },
-	UseCases: {
+	NextSteps: {
       sections: [
         {
           type: 'standalone',
           title: '',
           contentDirection: 'row',
           bg: 'light',
-          image: UseCases,
+          image: NextSteps,
           items: [],
         },
       ],

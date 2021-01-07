@@ -114,6 +114,19 @@ import ProjectMilestoneTimeline from '../assets/img/moleskine/ProjectMilestoneTi
 import StatementofWork from '../assets/img/moleskine/StatementofWork.png';
 import UseCases from '../assets/img/moleskine/UseCases.png';
 
+
+// nissan assets
+import NissanAgentObjective from '../assets/img/nissan/nissan-agent-objective.svg';
+import WhoIsMaslo from '../assets/img/nissan/who-is-maslo.svg';
+import MasloDna from '../assets/img/nissan/maslo-dna.svg';
+import MasloAgentApproach from '../assets/img/nissan/maslo-agent-approach.svg';
+import MasloAi from '../assets/img/nissan/maslo-ai.svg';
+import TheFutureAutomotiveExperience from '../assets/img/nissan/the-future-automotive-experience-maslo.svg';
+import CustomAgentPersonification from '../assets/img/nissan/custom-agent-personification.svg';
+import MindPerceptionInDigitalAgents from '../assets/img/nissan/mind-perception-in-digital-agents.svg';
+import NextSteps from '../assets/img/nissan/next-steps.svg';
+
+
 export {
 	AdaptivePersonalSystem,
 	WhoIsMoleskine,
@@ -207,4 +220,13 @@ export {
   PaiperGraphic,
   HealthMainIcon,
   HealthGraphic,
+  NissanAgentObjective,
+  WhoIsMaslo,
+  MasloDna,
+  MasloAgentApproach,
+  MasloAi,
+  TheFutureAutomotiveExperience,
+  CustomAgentPersonification,
+  MindPerceptionInDigitalAgents,
+  NextSteps,
 };
