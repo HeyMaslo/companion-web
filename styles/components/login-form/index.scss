@@ -19,6 +19,10 @@
         flex-direction: column;
         justify-content: space-between;
 
+        &.reset-password {
+            height: 470px;
+        }
+
         .form-container {
             padding: 20px 20px 0 20px;
             display: flex;
@@ -55,6 +59,23 @@
                     span {
                         @include font-family(18px, $login-form-title);
                         text-transform: none;
+                    }
+                }
+
+                .forgot-password {
+                    display: flex;
+                    flex-direction: column;
+
+                    button {
+                        padding: 0;
+                        background-color: transparent;
+                        box-shadow: none;
+                        align-self: flex-end;
+
+                        span {
+                            @include font-family(14px, $login-form-signup-btn);
+                            text-transform: lowercase;
+                        }
                     }
                 }
             }

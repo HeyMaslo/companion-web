@@ -1,5 +1,5 @@
 import { computed, observable } from 'mobx';
-import { login, signup } from '../api/firebase';
+import { login, signup, resetPasswordEmailLink } from '../api/firebase';
 
 const USER_KEY = 'user';
 
@@ -68,8 +68,7 @@ export class AccessViewModel {
       const result = await login(this._user.username, this._user.password);
       localStorage.setItem(USER_KEY, result.user.uid);
 
-      this._logged = true;
-      this._loading = false;
+      window.location.reload();
     } catch (e) {
       this._errorMessage = e.message;
       this._isError = true;
@@ -77,7 +76,25 @@ export class AccessViewModel {
     }
   };
 
-  logout = async () => {};
+  resetPassword = async () => {
+    this._loading = true;
+
+    try {
+      await resetPasswordEmailLink(this._user.username);
+      this._errorMessage = 'We just sent an email with a reset password link';
+      this._loading = false;
+      this._mode = 'login';
+    } catch (e) {
+      this._errorMessage = e.message;
+      this._isError = true;
+      this._loading = false;
+    }
+  };
+
+  logout = async () => {
+    localStorage.removeItem(USER_KEY);
+    window.location.reload();
+  };
 
   signup = async () => {
     this._loading = true;
@@ -86,8 +103,7 @@ export class AccessViewModel {
       const result = await signup(this._user.username, this._user.password);
       localStorage.setItem(USER_KEY, result.user.uid);
 
-      this._logged = true;
-      this._loading = false;
+      window.location.reload();
     } catch (e) {
       this._errorMessage = e.message;
       this._isError = true;

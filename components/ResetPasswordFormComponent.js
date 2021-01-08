@@ -5,33 +5,31 @@ import React from 'react';
 import AccessViewModel from '../viewModels/accessViewModel';
 
 @observer
-export default class LoginFormComponent extends React.Component {
+export default class ResetPasswordFormComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: '',
-      password: '',
-    };
   }
 
   data = {
     username: '',
-    password: '',
   };
 
   access = AccessViewModel;
 
   submit = async () => {
-    await this.access.login();
+    await this.access.resetPassword();
   };
 
   render() {
     return (
-      <div id="login-form-component">
-        <div className="form">
+      <div id="signup-form-component">
+        <div className="form reset-password">
           <div className="form-container">
-            <h1>Hi there, welcome!</h1>
-            <p>Please login to join Maslo Companion Web beta experience.</p>
+            <h1>Forgot password? No worries!</h1>
+            <p>
+              Enter the email address you used when you joined and we will send
+              you instructions to reset your password.
+            </p>
             <Formik initialValues={this.data} onSubmit={this.submit}>
               {(formProps) => {
                 const {
@@ -64,34 +62,14 @@ export default class LoginFormComponent extends React.Component {
                           InputProps={{ disableUnderline: true }}
                         />
                       </FormControl>
-                      <FormControl fullWidth>
-                        <TextField
-                          name="password"
-                          type="password"
-                          fullWidth
-                          value={values.password}
-                          onChange={change.bind(null, 'password')}
-                          placeholder="password"
-                          className={`input-text`}
-                          InputProps={{ disableUnderline: true }}
-                        />
-                      </FormControl>
-                      <div className="forgot-password">
-                        <Button
-                          onClick={() => (this.access.mode = 'resetpassword')}>
-                          Forgot password?
-                        </Button>
-                      </div>
                     </div>
                     <p>{this.access.errorMessage}</p>
                     <Button
                       type="submit"
                       disabled={
-                        !this.access.user.username ||
-                        !this.access.user.password ||
-                        this.access.loading
+                        !this.access.user.username || this.access.loading
                       }>
-                      Login
+                      Send a reset link
                     </Button>
                   </form>
                 );
@@ -101,9 +79,9 @@ export default class LoginFormComponent extends React.Component {
           <div className="form-bottom">
             <div className="line" />
             <p>
-              Do not have an account?{' '}
-              <Button onClick={() => (this.access.mode = 'signup')}>
-                Sign up
+              Already have an account?{' '}
+              <Button onClick={() => (this.access.mode = 'login')}>
+                Sign in
               </Button>
             </p>
           </div>

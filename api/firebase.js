@@ -10,4 +10,8 @@ const login = async (username, password) => {
   return await firebase.auth().signInWithEmailAndPassword(username, password);
 };
 
-export { signup, login };
+const resetPasswordEmailLink = async (username) => {
+  return await firebase.auth().sendPasswordResetEmail(username);
+};
+
+export { signup, login, resetPasswordEmailLink };

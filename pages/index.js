@@ -16,6 +16,7 @@ import messageFromChatInput from '../components/ChatInputComponent';
 import AccessViewModel from '../viewModels/accessViewModel';
 import LoginFormComponent from '../components/LoginFormComponent';
 import SignupFormComponent from '../components/SignupFormComponent';
+import ResetPasswordFormComponent from '../components/ResetPasswordFormComponent';
 import firebase from '../firebase/index';
 
 @observer
@@ -81,6 +82,9 @@ export class Home extends React.Component {
           <>
             {this.access.mode === 'login' && <LoginFormComponent />}
             {this.access.mode === 'signup' && <SignupFormComponent />}
+            {this.access.mode === 'resetpassword' && (
+              <ResetPasswordFormComponent />
+            )}
           </>
         )}
       </div>
