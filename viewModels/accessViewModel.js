@@ -3,6 +3,9 @@ import { login, signup, resetPasswordEmailLink } from '../api/firebase';
 
 const USER_KEY = 'user';
 
+import ReactGA from 'react-ga';
+
+
 const userData = {
   username: '',
   password: '',
@@ -67,7 +70,12 @@ export class AccessViewModel {
     try {
       const result = await login(this._user.username, this._user.password);
       localStorage.setItem(USER_KEY, result.user.uid);
-
+		
+ReactGA.set({
+  userId: USER_KEY,
+  // any data that is relevant to the user session
+  // that you would like to track with google analytics
+})
       window.location.reload();
     } catch (e) {
       this._errorMessage = e.message;

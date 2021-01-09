@@ -19,6 +19,14 @@ import SignupFormComponent from '../components/SignupFormComponent';
 import ResetPasswordFormComponent from '../components/ResetPasswordFormComponent';
 import firebase from '../firebase/index';
 
+
+	import ReactGA from 'react-ga';
+const trackingId = "G-PN3TWVQF8G"; // Replace with your Google Analytics tracking ID
+ReactGA.initialize(trackingId);
+
+
+
+
 @observer
 export class Home extends React.Component {
   constructor(props) {
@@ -36,6 +44,8 @@ export class Home extends React.Component {
   componentDidMount() {
     firebase.bootstrap();
     this.access.bootstrap();
+	ReactGA.pageview(window.location.pathname + window.location.search);
+
   }
 
   initialized = async () => {

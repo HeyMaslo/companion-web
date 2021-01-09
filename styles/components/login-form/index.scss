@@ -35,7 +35,7 @@
                 justify-content: space-between;
                 height: 100%;
                 width: 400px;
-                align-self: center;
+                align-self: center;	
 
                 .MuiInputBase-fullWidth {
 
@@ -47,6 +47,9 @@
                         margin: 10px auto;
                         @include font-family(14px, $login-form-title);
                     }
+					input:hover{
+						box-shadow: $login-form-input-shadow-hover;
+					}
                 }
 
                 button {
@@ -61,7 +64,9 @@
                         text-transform: none;
                     }
                 }
-
+				button:hover{
+					box-shadow: $login-form-input-shadow-hover;
+				}
                 .forgot-password {
                     display: flex;
                     flex-direction: column;
