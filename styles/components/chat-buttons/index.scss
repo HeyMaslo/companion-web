@@ -31,6 +31,7 @@
         @include font-family(14px, $p2);
         text-transform: none;
     }
+	pointer-events: auto; 
 }
 #chat-button:hover{
 	box-shadow:$global-shadow-hover;
