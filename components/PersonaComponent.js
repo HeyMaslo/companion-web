@@ -35,12 +35,12 @@ export class PersonaComponent extends React.Component {
   render() {
     // initial position
     let classNames = `persona-position-100`;
-
+	/*
     // position after init
     if (this.state.addPostionClass && !this.props.infoModules) {
       classNames += ` move-to-top`;
     }
-
+	*/
     // position for info modules
     if (this.state.addPostionClass && this.props.infoModules) {
       classNames = `persona-position-100 move-to-top-2`;

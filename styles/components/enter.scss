@@ -1,0 +1,47 @@
+#enter {
+	display: flex;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 400px;
+  margin: -50px auto;
+  padding-left:250px;
+    button {
+        background-color: $orb4;
+        border:none;
+        box-shadow: none;
+		outline:none;
+        display: flex;
+        padding: 15px 50px;
+        border-radius: 0px 100px 100px 100px;
+        margin-top: -5px;
+        position: relative;
+		box-shadow:$global-shadow;
+		cursor:pointer;
+		transition: border-radius .2s ease-out;
+		z-index:5;
+		@include font-family(18px, $orb7, 500);
+        &.filled {
+            svg {
+                path {
+                    fill: $orb1
+                }
+            }
+        }
+
+        &.empty {
+            svg {
+                path {
+                    stroke: $orb1;
+                }
+            }
+        }
+    }
+	button:hover{
+	box-shadow:$global-shadow-hover;
+	border-radius: 100px 100px 0px 100px;
+	}
+}
+

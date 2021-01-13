@@ -14,6 +14,7 @@ import LogoComponent from '../components/LogoComponent';
  import PaiperComponent from '../components/PaiperComponent';
  import messageFromPaiper from '../components/PaiperComponent';
  import messageFromChatInput from '../components/ChatInputComponent';
+ import EnterComponent from '../components/EnterComponent';
 @observer
 export class Home extends React.Component {
   constructor(props) {
@@ -44,6 +45,7 @@ export class Home extends React.Component {
           persona={this.persona}
           infoModules={this.chatViewModel.showInformationModule}
         />
+		<EnterComponent />
         <WavesComponent />
         <ChatComponent infoModules={this.chatViewModel.showInformationModule} />
 			
