@@ -18,13 +18,13 @@ export var colorpalette = scheme.colors();
 var temp = colorpalette;
 
 
-colorpalette[0] = '8900FF';
-colorpalette[1] = 'FF00EE';
-colorpalette[2] = 'FF00AE';
-colorpalette[3] = 'FF0067';
-colorpalette[4] = 'FF3700';
-colorpalette[5] = 'FF7700';
-colorpalette[6] = 'F1FC15';
+colorpalette[0] = '145f29';
+colorpalette[1] = '197432';
+colorpalette[2] = '1d893b';
+colorpalette[3] = '229e44';
+colorpalette[4] = '27b34d';
+colorpalette[5] = '2bc856';
+colorpalette[6] = '38d463';
 colorpalette[7] = 'FFFFFF';//top
 colorpalette.reverse();
 updatetheme();
@@ -37,7 +37,7 @@ function updatetheme() {
     var s = window.document.documentElement.style;
     s.setProperty('--oc1', '#' + colorpalette[7]); //maslo bubbles
     s.setProperty('--oc2', '#' + colorpalette[1]); // highlights
-    s.setProperty('--oc3', '#' + '8900FF');
+    s.setProperty('--oc3', '#' + colorpalette[2]);
     s.setProperty('--oc4', '#' + colorpalette[3]);
     s.setProperty('--oc5', '#' + colorpalette[4]);
     s.setProperty('--oc6', '#' + colorpalette[5]);

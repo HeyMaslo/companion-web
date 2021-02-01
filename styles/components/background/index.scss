@@ -8,43 +8,19 @@
 
   
   background-image:url('https://alivemachine.io/oracle/random358.1.png');
+  background-image:none;
   background-blend-mode: normal;
+  background-color:#fafafa;
 	background-size:cover;
 	opacity:1;
 	overflow:hidden;
-	-webkit-animation: hue 15s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite alternate ;
-	        animation: hue 15s cubic-bezier(0.770, 0.000, 0.175, 1.000) infinite alternate ;
 	background-position:center;
+	filter:hue-rotate(280deg);
 	
 }
 #backgroundwrapper{
 height:100%;position:absolute;width:100vw;
 
 }
-#boids{z-index:-2;outline:0;border:0;weight:110vw;height:110vh;padding:-5vh -5vw;
-background-color:#3B0852;
-}
 
 
-
-/**
- * ----------------------------------------
- * animation hue
- * ----------------------------------------
- */
-@-webkit-keyframes hue {
-  0% {
-			filter:hue-rotate(-90deg);
-  }
-  100% {
-			filter:hue-rotate(90deg);
-  }
-}
-@keyframes hue {
-  0% {
-			filter:hue-rotate(-90deg);
-  }
-  100% {
-			filter:hue-rotate(90deg);
-  }
-}

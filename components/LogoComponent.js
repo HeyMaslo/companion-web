@@ -4,7 +4,7 @@ import { Mail } from './../config/images';
 export const LogoComponent = () => {
   return (
     <div id="logo">
-      The Oracle |{' '}
+      10 Billion Dollars |{' '}
       <a href="mailto:sayhi@maslo.ai">
         <svg
           width="18px"
