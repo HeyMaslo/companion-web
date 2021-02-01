@@ -20,13 +20,15 @@
         justify-content: space-between;
         margin: 0;
         list-style-type: none;
-        width: 300px;
+        width: 400px;
         padding: 0;
         position: absolute;
         top: 40px;
         left: 40px;
         z-index: 999;
+        align-items: center;
 
+        span,
         a {
             @include font-family(14px, $orb1, 600);
             text-transform: uppercase;

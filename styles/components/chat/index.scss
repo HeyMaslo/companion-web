@@ -12,6 +12,7 @@
     margin: 0 20px;
 
     &.chat-wrapper {
+	pointer-events:none;
         &.move-top {
             height: 152px;
 			
@@ -34,6 +35,7 @@
         flex-direction: column;
         align-self: flex-end;
         margin: 0 20% 0 0;
+		
         .chat-transcript {
             display: flex;
             flex-direction: row;

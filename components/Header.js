@@ -1,10 +1,12 @@
 import React from 'react';
-import { LogoComponent } from './LogoComponent';
 import HeartBtn from './HeartBtn';
 import { observer } from 'mobx-react';
+import AccessViewModel from '../viewModels/accessViewModel';
+import { Button } from '@material-ui/core';
 
 @observer
 export default class Header extends React.Component {
+  access = AccessViewModel;
   render() {
     const hidden = this.props.infoModules ? ' hidden' : '';
     return (
@@ -28,6 +30,11 @@ export default class Header extends React.Component {
               Blog
             </a>
           </li>
+          {this.access.logged && (
+            <li>
+              <Button onClick={() => this.access.logout()}>Logout</Button>
+            </li>
+          )}
         </ul>
       </div>
     );
