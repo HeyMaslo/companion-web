@@ -8,8 +8,8 @@
     "start": "next start",
     "export": "next export",
     "deploy:stage": "yarn build && yarn export && firebase deploy --only hosting:companion-web-stage",
-	"deploy:moleskine": "yarn build && yarn export && firebase deploy --only hosting:moleskine-stage",
-	"deploy:nissacompanion": "yarn build && yarn export && firebase deploy --only hosting:nissacompanion-stage"
+    "deploy:moleskine": "yarn build && yarn export && firebase deploy --only hosting:moleskine-stage",
+    "deploy:nissacompanion": "yarn build && yarn export && firebase deploy --only hosting:nissacompanion-stage"
   },
   "dependencies": {
     "@heymaslo/persona": "./dependencies/persona",
@@ -26,6 +26,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "^6.1.0",
+    "react-iframe": "^1.8.0",
     "react-indiana-drag-scroll": "^1.8.0",
     "react-loadingg": "^1.7.2"
   },

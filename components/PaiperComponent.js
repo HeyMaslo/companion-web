@@ -27,7 +27,7 @@ export default class PaiperComponent extends React.Component {
   componentDidMount() {
     const script1 = document.createElement("script");
     script1.async = true;
-    script1.src = "https://alivemachine.io/paiper10/js/patch.js";
+    script1.src = "https://alivemachine.io/how/js/patch.js";
     document.body.appendChild(script1);
 	
 	
@@ -46,7 +46,11 @@ export default class PaiperComponent extends React.Component {
         }
 
         function patchInitialized(patch) {
-            // You can now access the patch object (patch), register variable watchers and so on
+			//text is activated by default
+            //patch.setVariable("command","paiper");
+			patch.setVariable("command","image");
+			patch.setVariable("command","twitter");
+			patch.setVariable("command","meta");
         }
 		
 		

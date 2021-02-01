@@ -7,8 +7,8 @@ import { Persona } from '../dependencies/persona/web';
 var ColorScheme = require('color-scheme');
 var scheme = new ColorScheme();
 scheme
-  .from_hue(0)
-  .scheme('analogic') 
+  .from_hue(260)
+  .scheme('contrast') 
   .variation('hard')
   .distance(0)
   .web_safe(true);
@@ -16,14 +16,17 @@ scheme
 export var colorpalette = scheme.colors();
 //duplicate on a temporary array of color to reorganize the color palette
 var temp = colorpalette;
-//colorpalette.reverse();
-colorpalette[5] = temp[3];
-colorpalette[3] = temp[0];
-colorpalette[2] = temp[1];
-colorpalette[1] = '4a0000';
-colorpalette[0] = '262626';
-colorpalette[7] = '262626';
 
+
+colorpalette[0] = '8900FF';
+colorpalette[1] = 'FF00EE';
+colorpalette[2] = 'FF00AE';
+colorpalette[3] = 'FF0067';
+colorpalette[4] = 'FF3700';
+colorpalette[5] = 'FF7700';
+colorpalette[6] = 'F1FC15';
+colorpalette[7] = 'FFFFFF';//top
+colorpalette.reverse();
 updatetheme();
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -32,14 +35,14 @@ function getRandomInt(max) {
 function updatetheme() {
   if (typeof window !== 'undefined') {
     var s = window.document.documentElement.style;
-    s.setProperty('--oc1', '#' + colorpalette[0]); //maslo bubbles
-    s.setProperty('--oc2', '#' + colorpalette[6]); // highlights
-    s.setProperty('--oc3', '#' + colorpalette[2]);
+    s.setProperty('--oc1', '#' + colorpalette[7]); //maslo bubbles
+    s.setProperty('--oc2', '#' + colorpalette[1]); // highlights
+    s.setProperty('--oc3', '#' + '8900FF');
     s.setProperty('--oc4', '#' + colorpalette[3]);
     s.setProperty('--oc5', '#' + colorpalette[4]);
     s.setProperty('--oc6', '#' + colorpalette[5]);
     s.setProperty('--oc7', '#' + colorpalette[6]); 
-    s.setProperty('--oc8', '#' + colorpalette[7]);
+    s.setProperty('--oc8', '#' + colorpalette[0]);
   } else {
     setTimeout(function () {
       updatetheme();
@@ -57,7 +60,7 @@ export class PersonaViewModel {
       element: element.current,
       size: 500,
       persona: {
-        ringRes: 100,
+        ringRes: 80,
         radius: 180,
         colors: colorpalette,
       },

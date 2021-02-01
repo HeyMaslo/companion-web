@@ -1,7 +1,6 @@
 {
-  "programmer_focus": ["open source","github","sdk","javascript","tensorflow","fastai"],
-  "case_study_focus":["work","case study","examples","projects"],
-  "detailed_focus": ["explore", "work", "read", "know more", "details"],
-  "academic_focus":["whitepaper","openAI","research", "academic", "university"],
-  "curious_focus":["games","fun","experimental","easter egg","friend"]
+  "information_focus": ["open source","github","sdk","javascript","tensorflow","fastai","research", "project", "work", "know more", "details", "read", "explore", "tutorial", "maslo", "ai","artificial","intelligence","system","software","computer", "code", "how","read","info","information","doc","document","documentation","science"],
+  "play_focus":["ahahah","lol ahah","maybe","play","joke","beautiful","what","easter","egg","secrets","laugh","smile","love","sad","paint","tricks","weird"],
+  "relax_focus": ["relax", "calm", "wind down", "stressed", "worried","alarmed","scared","sleep"],
+  "timetravel_focus":["alive","machine","conscious","consciousness","computation","being","time","experiments","art","immortal","white rabbit","mind","dream","empathetic","understand","confusing"]
 }

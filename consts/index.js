@@ -1,5 +1,5 @@
-const MASLO_BOT_NAME = 'Maslo';
-const USER_CHARACTER_NAME = 'Maslo Website User';
+const MASLO_BOT_NAME = 'Oracle';
+const USER_CHARACTER_NAME = 'alivemachine';
 const INITIAL_NODE_ID = 'start_node';
 const CATEGORY_API_BASE = 'https://hyperobjecthunting.wl.r.appspot.com';
 
