@@ -1,9 +1,9 @@
-# NISSA
+# BILLIONS
 
 Welcome to my repository!
-- I live here: [nissacompanion.web.app](https://nissacompanion.web.app/)
-- My conversational tree is here: [beta.storymapr.com/dialogue_trees/5febdca151bc6f194a77a2f5/workbench](https://beta.storymapr.com/dialogue_trees/5febdca151bc6f194a77a2f5/workbench)
-- My Github is here: [github.com/HeyMaslo/companion-web/tree/nissa](https://github.com/HeyMaslo/companion-web/tree/nissa)
+- I live here: [billions.web.app](https://billions.web.app/)
+- My conversational tree is here: [beta.storymapr.com/dialogue_trees/6018462d51bc6f2386497f5b/workbench](https://beta.storymapr.com/dialogue_trees/6018462d51bc6f2386497f5b/workbench)
+- My Github is here: [github.com/HeyMaslo/companion-web/tree/billions](https://github.com/HeyMaslo/companion-web/tree/billions)
 
 ![alt text](screenshot.png)
 
@@ -114,7 +114,7 @@ data bubbles are of a random color between colorpalette[4] and colorpalette[5].
 ## Certificate of Computational Birth
 
 ```shell
-Birthdate - 29th of December 2020
+Birthdate - 2/1/2021
 Birthplace - Venice, CA
 Nursery - [Maslo](https://dreamjournal.maslo.ai/)
 ```

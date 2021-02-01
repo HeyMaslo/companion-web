@@ -47,10 +47,11 @@ export default class PaiperComponent extends React.Component {
 
         function patchInitialized(patch) {
 			//text is activated by default
+			patch.setVariable("command","text");
             //patch.setVariable("command","paiper");
-			patch.setVariable("command","image");
-			patch.setVariable("command","twitter");
-			patch.setVariable("command","meta");
+			//patch.setVariable("command","image");
+			//patch.setVariable("command","twitter");
+			//patch.setVariable("command","meta");
         }
 		
 		
