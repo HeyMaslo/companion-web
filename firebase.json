@@ -1,7 +1,7 @@
 {
     "hosting": [
         {
-            "target": "nissacompanion-stage",
+            "target": "patienslikeme-stage",
             "public": "./out",
             "rewrites": [
                 {

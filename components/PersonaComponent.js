@@ -14,7 +14,6 @@ export class PersonaComponent extends React.Component {
 
   updatePersonaPosition() {
     setTimeout(() => {
-      this.setState({ addPostionClass: true });
       return this.props.initialized();
     }, 3000);
   }

@@ -7,13 +7,13 @@ var colors = [];
 for(var i=0;i<colorpalette.length;i++){
 	colors[i]="#"+colorpalette[i];
 }
-//colors can be written in RGB or HEX
-//colors[0] = 'rgb(200,64,0)'; //meta
-//colors[1] = 'rgb(200, 0, 128)'; //meta
-//colors[2] = 'rgb(32,100,0)'; //console
-//colors[3] = 'rgb(0, 100, 64)'; //console
-//colors[4] = 'rgb(0,128,200)'; //data
-//colors[5] = 'rgb(0, 64, 200)'; //data
+
+// overriding default colors
+colors[1] = colors[0];
+colors[2] = colors[0];
+colors[3] = colors[0];
+colors[4] = colors[0];
+colors[5] = colors[0];
 
 @observer
 export default class PaiperComponent extends React.Component {

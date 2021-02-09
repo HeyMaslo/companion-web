@@ -6,16 +6,14 @@
   width: 100vw;
   height: 100vh;
 
-  background-image: linear-gradient(
-    111.25deg,
+  background-image: linear-gradient(111.25deg,
     #{$global-bg-page-gradient-one} -2.11%,
     #{$global-bg-page-gradient-two} 51.09%,
-    #{$global-bg-page-gradient-three} 105.63%
-  );
-  background-image:url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/d80f2160115331.5a3c36513dc62.jpg');
+    #{$global-bg-page-gradient-three} 105.63%);
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/maslo-377f0.appspot.com/o/patienslikeme.jpg?alt=media&token=38d58d70-9237-485c-ba7d-0bdb0a44d989');
   background-blend-mode: multiply;
-	background-size:cover;
-	opacity:.5;
-	overflow:hidden;
-	background-color:#a0b6bd;
+  background-size: cover;
+  opacity: .5;
+  overflow: hidden;
+  background-color: #F4F4F4;
 }
