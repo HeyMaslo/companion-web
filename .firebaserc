@@ -2,8 +2,8 @@
   "targets": {
     "maslo-377f0": {
       "hosting": {
-        "patienslikeme-stage": [
-          "patienslikeme"
+        "patientslikeme-stage": [
+          "patientslikeme"
         ]
       }
     }

@@ -1,7 +1,7 @@
 {
     "hosting": [
         {
-            "target": "patienslikeme-stage",
+            "target": "patientslikeme-stage",
             "public": "./out",
             "rewrites": [
                 {

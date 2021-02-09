@@ -4,7 +4,7 @@ import { Mail } from './../config/images';
 export const LogoComponent = () => {
   return (
     <div id="logo">
-      patienslikeme
+      patientslikeme
     </div>
   );
 };
