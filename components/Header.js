@@ -36,6 +36,7 @@ export default class Header extends React.Component {
             </li>
           )}
         </ul>
+        <p>Powered by GPT-3</p>
       </div>
     );
   }
