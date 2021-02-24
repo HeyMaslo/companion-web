@@ -1,21 +1,15 @@
 import { computed, observable } from 'mobx';
 import { Persona } from '../dependencies/persona/web';
-
-//import { Colors } from '../pages/api/config/persona';
-
-////http://c0bra.github.io/color-scheme-js/
-var ColorScheme = require('color-scheme');
+import ColorScheme from 'color-scheme';
 
 var scheme = new ColorScheme();
 scheme
-  .from_hue(getRandomInt(360)) // Start the scheme
-  .scheme('contrast') // Use the 'triade' scheme, that is, colors
-  // selected from 3 points equidistant around
-  // the color wheel.
-  .variation('soft'); // default pastel soft light hard pale
+  .from_hue(getRandomInt(360))
+  .scheme('contrast')
+  .variation('soft');
 
 export var colorpalette = scheme.colors();
-//document.documentElement.style.setProperty('$orb1', '#333333');
+
 updatetheme();
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -51,7 +45,6 @@ export class PersonaViewModel {
       persona: {
         ringRes: 100,
         radius: 180,
-        colors: colorpalette,
       },
       analytics: {
         appName: 'masloland',
