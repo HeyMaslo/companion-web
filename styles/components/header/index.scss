@@ -2,11 +2,11 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
     position: absolute;
     left: 0;
-    bottom: 100px;
+    bottom: 20px;
 
     &.header {
         &.hidden {
@@ -18,15 +18,14 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 0;
         list-style-type: none;
-        width: 300px;
+        width: 400px;
         padding: 0;
-        position: absolute;
-        top: 40px;
-        left: 40px;
         z-index: 999;
+        align-items: center;
+        margin: 0 40px;
 
+        span,
         a {
             @include font-family(14px, $orb1, 600);
             text-transform: uppercase;
@@ -36,5 +35,10 @@
 		a:hover{
 			color:$orb2;
 		}
+    }
+
+    p {
+        margin: 0 40px;
+        @include font-family(14px, $orb1, 600);
     }
 }
