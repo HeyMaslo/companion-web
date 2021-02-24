@@ -45,6 +45,7 @@ export class PersonaViewModel {
       persona: {
         ringRes: 100,
         radius: 180,
+        colors: colorpalette,
       },
       analytics: {
         appName: 'masloland',
