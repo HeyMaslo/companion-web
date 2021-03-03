@@ -1,6 +1,7 @@
 import { Button, Link } from '@material-ui/core';
 import React from 'react';
 import { infoModules } from '../data/infoModules';
+
 export default class InfoModulesOptionsPage extends React.Component {
   constructor(props) {
     super(props);

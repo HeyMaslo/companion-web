@@ -26,7 +26,6 @@ ReactGA.initialize(trackingId);
 
 
 
-
 @observer
 export class Home extends React.Component {
   constructor(props) {
@@ -36,6 +35,7 @@ export class Home extends React.Component {
     };
 
     this.persona = PersonaViewModel;
+
     this.chatViewModel = ChatViewModel;
     this.access = AccessViewModel;
     this.chatViewModel.persona = this.persona;

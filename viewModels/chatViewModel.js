@@ -34,7 +34,6 @@ export class ChatViewModel {
   @observable renderButtons = false;
   @observable buttons = [];
   @observable pauseLoop = false;
-
   @observable showInformationModule = false;
   @observable moduleName = null;
   @observable submoduleSelected = null;
@@ -51,7 +50,7 @@ export class ChatViewModel {
     const dtreeParam = qs.parse(window.location.search, {ignoreQueryPrefix: true})
     if (dtreeParam.dtreeId) {
       this.dtreeId = dtreeParam.dtreeId
-    } 
+    }
 
     try {
       const chars = await getCharacters(this.dtreeId);
@@ -198,7 +197,6 @@ export class ChatViewModel {
    */
   async _gpt3_chat() {
     this.chatStates.typing = true;
-
     const suggestion = await getSuggestion(this.dtreeId, this.currentNodeId, this.gpt3Cache);
 
     const masloNode = {

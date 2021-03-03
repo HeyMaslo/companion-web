@@ -19,13 +19,11 @@
             .wrapper {
                 height: 130px;
             }
-
             .input-row {
                 display: none;
             }
         }
     }
-
     .wrapper {
         width: 100%;
         max-width: $chat-max-width;
@@ -50,7 +48,6 @@
 				
                 justify-content: flex-end;
                 position: relative;
-
                 transition: width 600ms ease-out, height 600ms ease-out;
 
                 &.chat-height {
@@ -59,7 +56,7 @@
 
                 &.move-top {
                     height: 150px;
-					
+				
                 }
             }
         }
