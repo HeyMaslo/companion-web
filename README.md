@@ -1,102 +1,119 @@
-# Getting Started
+# Maslo
 
-## General
+Welcome to my repository!
+- I live here: [talktome.maslo.ai/](https://talktome.maslo.ai/)
+- My conversational tree is here: [beta.storymapr.com/dialogue_trees/5febdca151bc6f194a77a2f5/workbench](https://beta.storymapr.com/dialogue_trees/5febdca151bc6f194a77a2f5/workbench)
+- My Github is here: [github.com/HeyMaslo/companion-web](https://github.com/HeyMaslo/companion-web)
 
-Make sure you have nodejs v12.6 installed.
+![alt text](screenshot.png)
 
-## Maslo Persona setup
 
-Run the command below to download the package
+## Getting Started
 
+To Create a new Companion you are going to need:
+- A Github account to download the code
+- A [Stroymapr](https://beta.storymapr.com/) account to edit the conversational tree
+- A [firebase](https://console.firebase.google.com) account to publish it online.
+
+Make sure you are running node v12.6!  Use nvm if you must.
+
+- In Github Desktop add a new repository to your local files.
+- Fork it and give it a name.
+- Using the command prompt naviguate to your `companion-web` folder folder with `cd`
+- Get the Persona
 ```bash
 cd dependencies && git clone git@github.com:HeyMaslo/maslo-persona.git persona && cd persona && git fetch --all && git checkout colors-config && cd ../../
 ```
-
-## Dependencies setup
-
+- Install dependencies
 ```bash
 yarn install
 ```
-
-## Development server
-
+- Run the development server:
 ```bash
 yarn dev
 ```
+- Access your local companion by opening `http://localhost:3000/` with Chrome.
+- CONGRATS! You have your own personal companion.
 
-open `http://localhost:3000` on browser
+## Personalize your Companion 
 
+### Update the guided conversation with Storymapr
+- Go to [beta.storymapr.com/dialogue_trees](https://beta.storymapr.com/dialogue_trees)
+- Display all the trees and pick an existing companion tree like [MasloWebCompanion_greg](https://beta.storymapr.com/dialogue_trees/5fd2da87c860c2582a1e483c/workbench)
+- `Clone` it. Rename the Dialogue. Edit your tree. Click  `Share` and `Publish`
+- Note the tree ID in the url: `https://beta.storymapr.com/dialogue_trees/ TREE ID /workbench`
 
-# StoryMapr association
+- To update the default Storymapr tree go to `next.config.js` and find the following lines
+```
+env: {
+        STORY_MAPR_API_URL: 'https://beta.storymapr.com',
+        DTR_ID: '5fdaa6cac860c2255f029942',
+    }
+```
+- Replace DTR_ID by your tree ID
+- To preview Storymapr actions add your tree id in the URL as follows: ```http://localhost:3000/?dtreeId=5faeef6bc860c23e30275e36```
 
-Open the file `next.config.js` and change the `env.DTR_ID` with the Storymapr tree you would like to integrate on comapnion web.
+- Update the page title in `.components/LogoComponent.js`
+- Update the tab title in `./pages/_document.js`
 
-If you want to test others tree on the fly just add the param `dtreeId={tree id}` on url, like `http://localhost:3000/?dtreeId=5faeef6bc860c23e30275e36`.
+### Change the style, colors and name
+- Go to [c0bra.github.io/color-scheme-js](http://c0bra.github.io/color-scheme-js/) and create the palette of your choice.
+- Go to `./viewModels/PersonaViewModel.js` and replace the following lines with your new parameters:
+```
+scheme
+   .scheme('analogic')
+   .distance(0.1)
+   .add_complement(false)
+   .variation('pastel')
+   .web_safe(false);
+```
+- Custom colors go to: [google.com/search?q=color+picker](https://www.google.com/search?q=color+picker) and copy the HEX code
+- Then replace `colorpalette[ index ] = ' HEX ';` then replace the HEX code of the color of your choice (without the hash `#`)
+- Invert the color palette by enabling the line `colorpalette.reverse();`
+Paiper's thought bubbles are gradients extracted from the color palette in `./components/PaiperComponent.js`
+By default:
+meta bubbles are of a random color between colorpalette[0] and colorpalette[1],
+console bubbles are of a random color between colorpalette[2] and colorpalette[3],
+data bubbles are of a random color between colorpalette[4] and colorpalette[5].
 
-# Deployment
+- Colors of individual element can be edited here `./styles/colors.scss`
+- Modify the background in `./styles/components/background/index.scss`
 
-You should have a firebase project and a hosting set up previously.
+- Set your browser in full screen and take a screenshot. Replace the file `./screenshot.png`.
 
-## Configuration file
+## Publish Your Companion
 
-open the file `.firebaserc` and do the needed changes following the example below.
-
-replace `<project name>` with the project name and `<hosting name>` with the host name
-
-```json
+- Connect to your [firebase](https://console.firebase.google.com)
+- Select the project that maslo invited you to `maslo-377f0`
+- Select `Hosting` on the left panel.
+- Click `Add another Site` and name your new companion.
+- In your file directory go to `./firebase.json` and name your target like so `"target": "COMPANIONNAME-stage"`
+- Then go to `.firebaserc` and write:
+```
 {
-  "projects": {
-    "default": "<project name>"
-  },
   "targets": {
-    "<project name>": {
+    "maslo-377f0": {
       "hosting": {
-        "companion-web-stage": [
-          "<hosting name>"
+        "COMPANIONNAME-stage": [
+          "COMPANIONNAME"
         ]
       }
     }
   }
 }
 ```
-
-do the same process on the file `firebase.json`
-
-```json
-{
-    "hosting": [
-        {
-            "target": "companion-web-stage",
-            "site": "<hosting name>",
-            "public": "./out",
-            "rewrites": [
-                {
-                  "source": "**/**",
-                  "function": "nextjs-server"
-                }
-            ]
-        }
-    ]
-}
+- Go to `./package.json` and in `"scripts"` add the line 
 ```
-
-## Deploy
-
-make sure you have firebase-tools instaled.
-
-run the following commands
-
-```bash
-yarn build
+"deploy:COMPANIONNAME": "yarn build && yarn export && firebase deploy --only hosting:COMPANIONNAME-stage"
 ```
+- In the cmd line type `yarn deploy:COMPANIONNAME`
+- In your browser go to `https://COMPANIONNAME.web.app/`
+- CONGRATS! you have deployed your new companion.
 
-```bash
-yarn export
+## Certificate of Computational Birth
+
+```shell
+Birthdate - 29th of December 2020
+Birthplace - Venice, CA
+Nursery - [Maslo](https://dreamjournal.maslo.ai/)
 ```
-
-```bash
-firebase deploy --only hosting:companion-web-stage
-```
-
-
-
