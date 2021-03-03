@@ -17,6 +17,7 @@
         border-radius: 15px;
         box-shadow: $global-shadow;
         margin-left: 20px;
+        overflow: hidden;
 
         h1 {
             @include font-family(14px, $info-modules-title, 600);
@@ -51,14 +52,12 @@
         }
 
         .options-container {
-            background-color: $info-modules-options-bg;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            height: 100%;
             box-shadow: $info-modules-options-shadow;
+            max-height: 550px;
+            overflow: auto;
 
             .options-container-list {
-                padding: 0 20px;
+                padding: 10px 20px;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
@@ -66,7 +65,9 @@
             }
         }
 
-        button {}
+        img {
+            height: 50px;
+        }
 
         span,
         a {
@@ -82,6 +83,9 @@
             text-align: center;
             border-radius: 30px;
         }
+        a:hover {
+            box-shadow: $global-shadow-hover;
+        }
     }
 
     #info-modules-options-card {
@@ -91,7 +95,7 @@
         justify-content: space-between;
         margin-bottom: 10px;
         box-shadow: $global-shadow;
-        padding-left: 10px;
+        padding: 10px 10px;
         border-radius: 15px;
         cursor: pointer;
 
@@ -103,11 +107,17 @@
 
         img {
             border-radius: 14px;
+            width: 75px;
+            height: auto;
         }
 
         p {
             margin-bottom: 0;
-            @include font-family(18px, $info-modules-subtitle, 600);
+            @include font-family(15px, $info-modules-subtitle, 600);
+        }
+
+        &:hover {
+            box-shadow: $global-shadow-hover;
         }
     }
 }

@@ -51,6 +51,14 @@ module.exports = withSass({ dynamicAssetPrefix = false, ...nextConfig } = {
     },
     env: {
         STORY_MAPR_API_URL: 'https://beta.storymapr.com',
-        DTR_ID: '5f8ebcb251bc6f18d9f1fc83',
+        DTR_ID: '5fd2da87c860c2582a1e483c',
+        API_KEY: "AIzaSyDQQ2tD2xfigMFsR33Sa3wrUuua_UfJDGI",
+        AUTHDOMAIN: "maslo-377f0.firebaseapp.com",
+        BASEURL: "https://maslo-377f0.firebaseio.com",
+        PROJECT_ID: "maslo-377f0",
+        STORAGEBUCKET: "maslo-377f0.appspot.com",
+        MESSAGING_SENDER_ID: "778596067777",
+        APP_ID: "1:778596067777:web:3256b22df641ab822ba740",
+        MEASUREMENT_ID: ""
     }
 });

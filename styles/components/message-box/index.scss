@@ -2,16 +2,20 @@
     display: flex;
     background-color: $message-box-bg-color;
     max-width: 280px;
-    padding: 22px;
+    padding:0px 20px;
     border-radius: $border-radius;
     margin: 0;
     height: auto;
     flex-direction: row;
     align-items: center;
+	align-self: flex-start;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+	transition:all 1s ease-out;
+	box-shadow: $global-shadow;
+	pointer-events: auto; 
     &.shadow {
-        box-shadow: $global-shadow;
+        
     }
     &.opacity_0 {
         opacity: 1;
@@ -29,6 +33,20 @@
         opacity: 0;
     }
     p {
-        @include font-family(18px, $p1);
+        @include font-family(14px, $p2);
     }
+	&.user, &.user p{
+	float:right;
+	align-self: flex-end;
+	color:$p1;	
+	border-radius:$border-radius $border-radius 3px $border-radius;
+	}
+	&.bot, &.bot p{
+	background-color:$orb1;
+	border-radius: 3px $border-radius $border-radius $border-radius ;
+	color:$p2;
+	}
+}
+#message-box:hover{
+	box-shadow: 0 0 0 black;
 }

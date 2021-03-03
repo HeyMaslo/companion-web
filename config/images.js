@@ -3,9 +3,77 @@ import Wave2 from '../assets/img/wave-2.svg';
 import Logo from '../assets/img/maslo.svg';
 import EditIcon from '../assets/img/edit-icon.svg';
 
+// ico
+import Ico from '../assets/img/favicon.ico';
+
 // open source modules
 import CompanionKitIcon from '../assets/img/opensource/companionkit-icon.svg';
 import CompanionServerIcon from '../assets/img/opensource/companionserver-icon.svg';
+
+// comapnions orb
+import BabeOrb from '../assets/img/companions/babe-orb.svg';
+import EvaOrb from '../assets/img/companions/eva-orb.svg';
+import EmilyOrb from '../assets/img/companions/emily-orb.svg';
+import SigbeeOrb from '../assets/img/companions/sigbee-orb.svg';
+import OptiOrb from '../assets/img/companions/opti-orb.svg';
+import StellaOrb from '../assets/img/companions/stella-orb.svg';
+import CareerCompanionOrb from '../assets/img/companions/career-companion-orb.svg';
+import CANBINDOrb from '../assets/img/companions/can-bind-orb.svg';
+import PaiperOrb from '../assets/img/companions/paiper-orb.svg';
+import HealthOrb from '../assets/img/companions/public-health-companion-orb.svg';
+
+// companions icons
+import BabeMainIcon from '../assets/img/companions/babe-main-icon.svg';
+import EvaMainIcon from '../assets/img/companions/eva-main-icon.svg';
+import EmilyMainIcon from '../assets/img/companions/emily-main-icon.svg';
+import SigbeeMainIcon from '../assets/img/companions/sigbee-main-icon.svg';
+import OptiMainIcon from '../assets/img/companions/opti-main-icon.svg';
+import StellaMainIcon from '../assets/img/companions/stella-main-icon.svg';
+import CareerMainIcon from '../assets/img/companions/career-main-icon.svg';
+import CanBindMainIcon from '../assets/img/companions/can-bind-main-icon.svg';
+import PaiperMainIcon from '../assets/img/companions/paiper-main-icon.svg';
+import HealthMainIcon from '../assets/img/companions/health-main-icon.svg';
+
+// companions graphic
+import BabeGraphic from '../assets/img/companions/babe-graphic.svg';
+import CanBindGraphic from '../assets/img/companions/can-bind-graphic.svg';
+import EvaGtaphic from '../assets/img/companions/eva-graphic.svg';
+import EmilyGraphic from '../assets/img/companions/emily-graphic.svg';
+import SigbeeGraphic from '../assets/img/companions/sigbee-graphic.svg';
+import OptiGraphic from '../assets/img/companions/opti-graphic.svg';
+import StellaGraphic from '../assets/img/companions/stella-graphic.svg';
+import CareerGraphic from '../assets/img/companions/career-graphic.svg';
+import PaiperGraphic from '../assets/img/companions/paiper-graphic.svg';
+import HealthGraphic from '../assets/img/companions/health-graphic.svg';
+
+import CompanionWebIcon from '../assets/img/opensource/companionweb-icon.png';
+import MaslolandIcon from '../assets/img/opensource/masloland-icon.png';
+import MasloPlatformIcon from '../assets/img/opensource/masloplatform-icon.jpg';
+import TimeIcon from '../assets/img/opensource/time-icon.jpg';
+import NewsIcon from '../assets/img/opensource/news-icon.jpg';
+import omIcon from '../assets/img/opensource/om-icon.jpg';
+import ArtMachineIcon from '../assets/img/opensource/artmachine-icon.jpg';
+import ProphetIcon from '../assets/img/opensource/prophet-icon.jpg';
+import OrageIcon from '../assets/img/opensource/orage-icon.jpg';
+import theprojectofthecenturyIcon from '../assets/img/opensource/theprojectofthecentury-icon.jpg';
+import SequencerIcon from '../assets/img/opensource/sequencer-icon.jpg';
+import HyperObjectWebIcon from '../assets/img/opensource/hyperobjectweb-icon.jpg';
+import PaiperIcon from '../assets/img/opensource/paiper-icon.jpg';
+import TheAvatarIcon from '../assets/img/opensource/theavatar-icon.jpg';
+
+import Masloland from '../assets/img/opensource/masloland.jpg';
+import MasloPlatform from '../assets/img/opensource/masloplatform.jpg';
+import Time from '../assets/img/opensource/time.jpg';
+import News from '../assets/img/opensource/news.jpg';
+import om from '../assets/img/opensource/om.jpg';
+import ArtMachine from '../assets/img/opensource/artmachine.jpg';
+import Prophet from '../assets/img/opensource/prophet.jpg';
+import Orage from '../assets/img/opensource/orage.jpg';
+import theprojectofthecentury from '../assets/img/opensource/theprojectofthecentury.jpg';
+import Sequencer from '../assets/img/opensource/sequencer.jpg';
+import HyperObjectWeb from '../assets/img/opensource/hyperobjectweb.jpg';
+import Paiper from '../assets/img/opensource/paiper.jpg';
+import TheAvatar from '../assets/img/opensource/theavatar.jpg';
 
 // companion kit
 import BabeApp from '../assets/img/opensource/companionkit/babe-app.svg';
@@ -33,6 +101,8 @@ import CompanionKitOrb from '../assets/img/opensource/companionkit/companion-kit
 
 import CompanionServerInfoGraphic from '../assets/img/opensource/companionserver/companion-server-graphic.svg';
 
+import ResearchPaperIcon from '../assets/img/opensource/researchpaper-icon.png';
+
 export {
   Wave1,
   Wave2,
@@ -56,6 +126,65 @@ export {
   ObservingIcon,
   ServerIcon,
   SignalIcon,
+  PaiperOrb,
   TaggingIcon,
   ToosIcon,
+  CompanionWebIcon,
+  BabeOrb,
+  CANBINDOrb,
+  EvaOrb,
+  EmilyOrb,
+  SigbeeOrb,
+  CareerCompanionOrb,
+  StellaOrb,
+  OptiOrb,
+  MaslolandIcon,
+  MasloPlatformIcon,
+  TimeIcon,
+  NewsIcon,
+  omIcon,
+  ArtMachineIcon,
+  ProphetIcon,
+  OrageIcon,
+  theprojectofthecenturyIcon,
+  SequencerIcon,
+  HyperObjectWebIcon,
+  PaiperIcon,
+  TheAvatarIcon,
+  Masloland,
+  MasloPlatform,
+  Time,
+  News,
+  om,
+  ArtMachine,
+  Prophet,
+  Orage,
+  theprojectofthecentury,
+  Sequencer,
+  HyperObjectWeb,
+  Paiper,
+  TheAvatar,
+  ResearchPaperIcon,
+  Ico,
+  HealthOrb,
+  BabeMainIcon,
+  BabeGraphic,
+  CanBindGraphic,
+  EvaMainIcon,
+  EvaGtaphic,
+  EmilyMainIcon,
+  EmilyGraphic,
+  SigbeeMainIcon,
+  SigbeeGraphic,
+  OptiMainIcon,
+  OptiGraphic,
+  StellaMainIcon,
+  StellaGraphic,
+  CareerMainIcon,
+  CareerGraphic,
+  CanBindMainIcon,
+  PaiperMainIcon,
+  PaiperGraphic,
+  HealthMainIcon,
+  HealthGraphic,
 };

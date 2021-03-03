@@ -43,15 +43,9 @@ export class PersonaComponent extends React.Component {
 
     // position for info modules
     if (this.state.addPostionClass && this.props.infoModules) {
-      classNames = `persona-position-100 move-to-top-2`
+      classNames = `persona-position-100 move-to-top-2`;
     }
-    
-    return (
-      <div
-        id="persona"
-        className={`${classNames}`}
-        ref={this.element}
-      />
-    );
+
+    return <div id="persona" className={`${classNames}`} ref={this.element} />;
   }
 }

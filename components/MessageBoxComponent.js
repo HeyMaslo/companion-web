@@ -1,6 +1,5 @@
 import { observer } from 'mobx-react';
 import React from 'react';
-import TypingLoadingComponent from './TypingLoadingComponent';
 
 @observer
 export default class MessageBoxComponent extends React.Component {
@@ -12,9 +11,11 @@ export default class MessageBoxComponent extends React.Component {
     return (
       <div
         id={`message-box`}
-        className={`${this.props.withShadow ? 'shadow' : ''} ${
-          this.props?.opacity
-        }`}>
+        className={`
+		${this.props.withShadow ? 'shadow' : ''} 
+		${this.props?.opacity} 
+		${this.props?.author}
+		`}>
         <p>{this.props.text}</p>
       </div>
     );

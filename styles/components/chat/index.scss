@@ -1,16 +1,21 @@
 #chat {
     width: 100%;
+    height: 80%;
+    max-width: 800px;
     display: flex;
-    flex-direction: row;
-    align-self: center;
+    flex-direction: column;
     position: absolute;
-    justify-content: center;
+    justify-content: flex-end;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 2;
+    margin: 0 20px;
+
     &.chat-wrapper {
+	pointer-events:none;
         &.move-top {
-            height: 130px;
+            height: 152px;
+			
             .wrapper {
                 height: 130px;
             }
@@ -20,43 +25,48 @@
         }
     }
     .wrapper {
-        max-width: $chat-max-width;
         width: 100%;
-        margin-top: 20px;
+        max-width: $chat-max-width;
+		max-height:100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         flex-direction: column;
-        height: 550px;
+        align-self: flex-end;
+        margin: 0 20% 0 0;
+		
         .chat-transcript {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            height: 100%;
+            align-items: flex-end;
             .user-column,
             .bot-column {
                 display: flex;
                 flex-direction: column;
+                width: 100%;
                 overflow-y: auto;
+				
                 justify-content: flex-end;
-                padding: 20px;
-                width: 300px;
                 position: relative;
                 transition: width 600ms ease-out, height 600ms ease-out;
+
                 &.chat-height {
-                    height: 450px;
+                    height: 100%;
                 }
+
                 &.move-top {
-                    height: 120px;
+                    height: 150px;
+				
                 }
             }
         }
+
         .input-row {
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
-            padding: 20px;
+            height: 100px;
             max-width: $chat-max-width;
-            margin-top: 100px;
         }
     }
 }

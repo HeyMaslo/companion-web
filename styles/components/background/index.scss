@@ -1,9 +1,9 @@
 #background {
   z-index: -1;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 
   background-image: linear-gradient(
@@ -12,5 +12,14 @@
     #{$global-bg-page-gradient-two} 51.09%,
     #{$global-bg-page-gradient-three} 105.63%
   );
-  opacity: 0.4;    
+  background-image:url('https://danvilleband.org/wp-content/uploads/2016/07/db-header-stars-bg.gif');
+
+	background-size:cover;
+	
+	mix-blend-mode:overlay;
+	overflow:hidden;
+	opacity:.4;
+}
+body{
+background-color:$orb7;
 }

@@ -1,5 +1,30 @@
 #logo {
+    @include font-family(30px, $orb1, 400);
     position: absolute;
-    top: 40px;
+    top: 27px;
     left: 40px;
+    display: flex;
+    align-items: center;
+
+    a {
+        @include font-family(16px, $orb1, 400);
+        text-decoration: none;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+            margin-right: 10px;
+			margin-top:3px;
+            g {
+                stroke: $orb1
+            }
+        }
+		
+    }
+	a:hover{
+		color:$orb2;
+		svg g{stroke: $orb2}
+	}
 }

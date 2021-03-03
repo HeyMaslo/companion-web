@@ -3,6 +3,10 @@ import { Button, FormControl, TextField } from '@material-ui/core';
 import { EditIcon } from '../config/images';
 import { observer } from 'mobx-react';
 
+
+
+
+
 @observer
 export default class ChatInputComponent extends React.Component {
   constructor(props) {
@@ -17,11 +21,13 @@ export default class ChatInputComponent extends React.Component {
     this.submit = this.submit.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
-
+	
   submit() {
     const { text } = this.state;
     if (text !== '') {
       this.setState({ text: '' });
+	  
+	  
       return this.props?.submit({ text });
     }
   }
@@ -74,7 +80,7 @@ export default class ChatInputComponent extends React.Component {
           </div>
         </div>
         <div className="information-tip">
-          <p>max 140 characters</p>
+          <p></p>
         </div>
       </div>
     );

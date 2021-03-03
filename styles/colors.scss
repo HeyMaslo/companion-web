@@ -1,21 +1,47 @@
+$orb1:var(--oc1);
+$orb2:var(--oc2);
+$orb3:var(--oc3);
+$orb4:var(--oc4);
+$orb5:var(--oc5);
+$orb6:var(--oc6);
+$orb7:var(--oc7);
+$orb8:var(--oc8);
+
+
 $global-bg-page-gradient-one: #7D5DEF;
 $global-bg-page-gradient-two: #B38FF3;
 $global-bg-page-gradient-three: #F5B4BA;
 
-$global-shadow: 0px 6px 10px rgba(50, 27, 154, 0.25);
+
+$global-shadow:inset 0 0 0 rgba(0, 0, 0, .2),
+4px 4px 4px rgba(0, 0, 0, .1),
+inset 0 0 0 rgba(0, 0, 0, .2),
+0 0 8px rgba(0, 0, 0, .1);
+$global-shadow-hover:inset 4px 4px 4px rgba(0, 0, 0, .1),
+0 0 0 rgba(0, 0, 0, .2),
+inset 0 0 8px rgba(0, 0, 0, .1),
+0 0 0 rgba(0, 0, 0, .2);
+$global-shadow-deeper:inset 8px 8px 8px rgba(0, 0, 0, .1),
+0 0 0 rgba(0, 0, 0, .2),
+inset 0 0 16px rgba(0, 0, 0, .1),
+0 0 0 rgba(0, 0, 0, .2);
+
 
 // typograph
 $h1: #321B9A;
-$p1: #321B9A;
+$p1: rgba(0, 0, 0, .6);
+$p2: white;
 
 // message box
 $message-box-bg-color: #FFFFFF;
 
 // message input
-$message-input-bg-color: #FFFFFF;
-$message-input-border-color: #321B9A;
+$message-input-bg-color: transparent;
+$message-input-border-color: $orb2;
 $message-input-information-tip-color: #B78FF3;
-$message-input-text-color: rgba(50, 27, 154, 0.6);
+$message-input-text-color: #FFFFFF;
+$message-input-done-bg-color: #cccccc;
+$message-input-done-text-color: $p1;
 $message-input-done-bg-color: #B78FF3;
 $message-input-done-text-color: #FFFFFF;
 
@@ -28,3 +54,17 @@ $info-modules-subtitle: #321B9A;
 $info-modules-content: #26242E;
 $info-modules-options-card-border: rgba(50, 27, 154, 0.45);
 $info-modules-page-title: #2F2F2F;
+
+// heart
+$heart-bg: $orb7;
+$heart-btn-text: #FFFFFF;
+
+// form
+$login-form-bg: #F2F2F2;
+$login-form-title: #2F2F2F;
+$login-form-input-shadow:  0px 4px 15px rgba(0, 0, 0, 0.1);
+$login-form-input-shadow-hover:inset 4px 4px 4px rgba(0, 0, 0, .1),0 0 0 rgba(0, 0, 0, .2),inset 0 0 8px rgba(0, 0, 0, .1),0 0 0 rgba(0, 0, 0, .2);
+$login-form-border: #000000;
+$login-form-signup-btn: $orb1;
+$login-form-btn-shadow:  0px 4px 15px rgba(0, 0, 0, 0.1);
+$login-form-btn: $orb5;
