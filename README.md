@@ -3,7 +3,7 @@
 Welcome to my repository!
 - I live here: [spacecompanion.web.app](https://spacecompanion.web.app/)
 - My conversational tree is here: [beta.storymapr.com/dialogue_trees/605c34b1c860c2022c7d073c/workbench](https://beta.storymapr.com/dialogue_trees/605c34b1c860c2022c7d073c/workbench)
-- My Github is here: [github.com/HeyMaslo/companion-web/tree/nissa](https://github.com/HeyMaslo/companion-web/tree/space)
+- My Github is here: [github.com/HeyMaslo/companion-web/tree/space](https://github.com/HeyMaslo/companion-web/tree/space)
 
 ![alt text](screenshot.png)
 
