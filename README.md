@@ -1,9 +1,9 @@
-# NISSA
+# Space Companion
 
 Welcome to my repository!
-- I live here: [nissacompanion.web.app](https://nissacompanion.web.app/)
-- My conversational tree is here: [beta.storymapr.com/dialogue_trees/5febdca151bc6f194a77a2f5/workbench](https://beta.storymapr.com/dialogue_trees/5febdca151bc6f194a77a2f5/workbench)
-- My Github is here: [github.com/HeyMaslo/companion-web/tree/nissa](https://github.com/HeyMaslo/companion-web/tree/nissa)
+- I live here: [spacecompanion.web.app](https://spacecompanion.web.app/)
+- My conversational tree is here: [beta.storymapr.com/dialogue_trees/605c34b1c860c2022c7d073c/workbench](https://beta.storymapr.com/dialogue_trees/605c34b1c860c2022c7d073c/workbench)
+- My Github is here: [github.com/HeyMaslo/companion-web/tree/nissa](https://github.com/HeyMaslo/companion-web/tree/space)
 
 ![alt text](screenshot.png)
 
@@ -13,7 +13,7 @@ Welcome to my repository!
 
 To Create a new Companion you are going to need:
 - A Github account to download the code
-- A [Stroymapr](https://beta.storymapr.com/) account to edit the conversational tree
+- A [Storymapr](https://beta.storymapr.com/) account to edit the conversational tree
 - A [firebase](https://console.firebase.google.com) account to publish it online.
 
 Make sure you are running node v12.6!  Use nvm if you must.
@@ -114,7 +114,7 @@ data bubbles are of a random color between colorpalette[4] and colorpalette[5].
 ## Certificate of Computational Birth
 
 ```shell
-Birthdate - 29th of December 2020
+Birthdate - 25th of March 2021
 Birthplace - Venice, CA
 Nursery - [Maslo](https://dreamjournal.maslo.ai/)
 ```

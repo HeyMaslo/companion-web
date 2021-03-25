@@ -27,7 +27,7 @@ export default class PaiperComponent extends React.Component {
   componentDidMount() {
     const script1 = document.createElement("script");
     script1.async = true;
-    script1.src = "https://alivemachine.io/how/js/patch.js";
+    script1.src = "https://alivemachine.io/paiper15/js/patch.js";
     document.body.appendChild(script1);
 	
 	
@@ -48,9 +48,6 @@ export default class PaiperComponent extends React.Component {
         function patchInitialized(patch) {
 			//text is activated by default
             //patch.setVariable("command","paiper");
-			patch.setVariable("command","image");
-			patch.setVariable("command","twitter");
-			patch.setVariable("command","meta");
         }
 		
 		
@@ -86,7 +83,6 @@ export default class PaiperComponent extends React.Component {
 				//alert(colorpalette[0]);
 				
 				//alert(colors[0]);
-				CABLES.patch.setVariable("colorpalette", colors);
 				loaded=true;
 			}
             // The patch is ready now, all assets have been loaded
@@ -105,7 +101,7 @@ export default class PaiperComponent extends React.Component {
 					alpha:true,
 					premultipliedAlpha:true
 				},
-				variables:{"colorpalette":colors}
+				//variables:{"colorpalette":colors}
             });
         });
 		

@@ -1,11 +1,10 @@
 #logo {
-    @include font-family(30px, $orb1, 400);
+    @include font-family(30px, white, 200);
     position: absolute;
     top: 27px;
     left: 40px;
     display: flex;
     align-items: center;
-
     a {
         @include font-family(16px, $orb1, 400);
         text-decoration: none;

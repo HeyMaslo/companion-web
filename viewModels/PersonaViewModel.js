@@ -18,14 +18,14 @@ export var colorpalette = scheme.colors();
 var temp = colorpalette;
 
 
-colorpalette[0] = '8900FF';
-colorpalette[1] = 'FF00EE';
-colorpalette[2] = 'FF00AE';
-colorpalette[3] = 'FF0067';
-colorpalette[4] = 'FF3700';
-colorpalette[5] = 'FF7700';
-colorpalette[6] = 'F1FC15';
-colorpalette[7] = 'FFFFFF';//top
+colorpalette[0] = 'black';
+colorpalette[7] = '090020';
+colorpalette[6] = '130040';
+colorpalette[5] = '1c0060';
+colorpalette[4] = '260080';
+colorpalette[3] = '30009f';
+colorpalette[2] = '3900bf';
+colorpalette[1] = 'white';//top
 colorpalette.reverse();
 updatetheme();
 function getRandomInt(max) {

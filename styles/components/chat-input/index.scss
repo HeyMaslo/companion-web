@@ -9,9 +9,8 @@
     justify-content: space-between;
     border-radius: 300px 300px 0 300px;
     padding: 0 0 5px 0;
-    transition: all .5s ease-out;
     box-shadow: $global-shadow-hover;
-    border-bottom: solid 2px $orb7;
+    border-bottom: solid 1px white;
 	margin-top:20px;
     &.disabled {
         box-shadow: none;
@@ -28,7 +27,7 @@
 
         .input {
             textarea {
-                @include font-family(15px, $message-input-text-color);
+                @include font-family(15px, white);
 
                 &::placeholder {
                     transform: translateY(40px);
@@ -45,24 +44,30 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-
+			
             .done {
-                background-color: $orb5;
+                background-color: transparent;
                 max-width: 56px;
-                padding: 2px;
-                border-radius: $border-radius;
+                padding: 2px 2px 0 2px;
                 width: 100%;
                 box-shadow: $global-shadow;
-
-                margin-bottom: 10px;
-
+				color:yellow;
+				border:solid 1px yellow;
+                margin-bottom: 12px;
+				
                 span {
-                    @include font-family(12px, $message-input-done-text-color);
+                    @include font-family(12px, yellow);
+					
                 }
             }
 
             .done:hover {
-                box-shadow: $global-shadow-hover;
+               background-color: yellow;
+			   color:black;
+			   box-shadow: 0 0 16px yellow;
+            }
+			.done span:hover {
+			   color:black;
             }
         }
 

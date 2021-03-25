@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap');
 
-$font-family: 'Quicksand';
+$font-family: 'Overpass Mono';
 
 @mixin font-family($size: 12px, $color: $h1, $weight: 500) {
     font-family: $font-family;

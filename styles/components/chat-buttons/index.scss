@@ -1,17 +1,16 @@
 #chat-button {
     display: flex;
-    background-color: $orb5;
+    background-color: transparent;
     max-width: 280px;
-	padding:10px 12px;
-    border-radius: $border-radius;
+	padding:5px 10px;
     margin: 0;
     flex-direction: row;
     align-items: flex-start;
 	align-self: flex-end;
     justify-content: center;
-    margin-bottom: 5px;
-	box-shadow:$global-shadow;
+    margin-bottom: 3px;
 	transition:all .1s ease-out;
+	border:solid 1px yellow;
     &.opacity_0 {
         opacity: 1;
     }
@@ -28,12 +27,16 @@
         opacity: 0;
     }
     span {
-        @include font-family(14px, $p2);
+        @include font-family(12px, yellow);
         text-transform: none;
+		
     }
 }
 #chat-button:hover{
-	box-shadow:$global-shadow-hover;
-	border-radius: $border-radius $border-radius 3px  $border-radius ;
-
+	background-color:yellow;
+color:black;
+box-shadow:0 0 16px yellow;
+}
+#chat-button span:hover{
+color:black;
 }
