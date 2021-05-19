@@ -11,21 +11,17 @@ import WavesComponent from '../components/WavesComponent';
 import ChatViewModel from '../viewModels/ChatViewModel';
 import PersonaViewModel from '../viewModels/PersonaViewModel';
 import LogoComponent from '../components/LogoComponent';
-import PaiperComponent from '../components/PaiperComponent';
-import messageFromChatInput from '../components/ChatInputComponent';
+// import PaiperComponent from '../components/PaiperComponent';
+// import messageFromChatInput from '../components/ChatInputComponent';
 import AccessViewModel from '../viewModels/accessViewModel';
 import LoginFormComponent from '../components/LoginFormComponent';
 import SignupFormComponent from '../components/SignupFormComponent';
 import ResetPasswordFormComponent from '../components/ResetPasswordFormComponent';
 import firebase from '../firebase/index';
 
-
-	import ReactGA from 'react-ga';
-const trackingId = "G-PN3TWVQF8G"; // Replace with your Google Analytics tracking ID
+import ReactGA from 'react-ga';
+const trackingId = 'G-PN3TWVQF8G'; // Replace with your Google Analytics tracking ID
 ReactGA.initialize(trackingId);
-
-
-
 @observer
 export class Home extends React.Component {
   constructor(props) {
@@ -44,8 +40,7 @@ export class Home extends React.Component {
   componentDidMount() {
     firebase.bootstrap();
     this.access.bootstrap();
-	ReactGA.pageview(window.location.pathname + window.location.search);
-
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   initialized = async () => {
@@ -71,7 +66,7 @@ export class Home extends React.Component {
             <ChatComponent
               infoModules={this.chatViewModel.showInformationModule}
             />
-            <PaiperComponent messageFromPaiper={messageFromChatInput} />
+            {/* <PaiperComponent messageFromPaiper={messageFromChatInput} /> */}
             {this.chatViewModel.showInformationModule && (
               <InfoModulesWrapper
                 submodule={this.chatViewModel.submoduleSelected}>
