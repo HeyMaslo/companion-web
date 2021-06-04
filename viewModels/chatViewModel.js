@@ -55,12 +55,26 @@ export class ChatViewModel {
     try {
       const chars = await getCharacters(this.dtreeId);
 
+     //assign bot name
       this.masloBotCharacter = chars.find(
-        (char) => char.name == this.masloBotName
-      );
+        (char) => char.name.includes('bot')
+      ); 
+      //if can't guess who is the bot, assign generic name
+      if(this.masloBotCharacter==undefined){
+        this.masloBotCharacter = chars.find(
+            (char) => char.name == this.masloBotName
+        );
+      } 
+      // assign user name
       this.userCharacter = chars.find(
-        (char) => char.name == this.userCharacterName
+        (char) => char.name.includes('user')
       );
+      //if can't guess who is the bot, assign generic name
+      if(this.userCharacter==undefined){
+           this.userCharacter = chars.find(
+            (char) => char.name == this.userCharacterName
+        );
+      }
 
       // clean of properties to ints
       Object.entries(this.userCharacter.properties).forEach(([key, value]) => {
@@ -198,7 +212,6 @@ export class ChatViewModel {
   async _gpt3_chat() {
     this.chatStates.typing = true;
     const suggestion = await getSuggestion(this.dtreeId, this.currentNodeId, this.gpt3Cache);
-
     const masloNode = {
       speaker_ids: [this.masloBotCharacter.smid],
       listener_ids: [this.userCharacter.smid],
